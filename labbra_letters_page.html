@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LABBRA - Interactive Letter Display</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Helvetica", "Arial", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+      }
+
+      .labbra-container {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        max-width: 1200px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .letter-column {
+        position: relative;
+        width: 150px;
+        height: 600px;
+        background: linear-gradient(180deg, #1a9d4a 0%, #0f8832 100%);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .letter-column::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .letter-column:hover::before {
+        opacity: 1;
+      }
+
+      .letter-column:hover {
+        transform: translateY(-20px) scale(1.05);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        z-index: 10;
+      }
+
+      .letter {
+        font-size: 4rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        z-index: 2;
+        position: relative;
+      }
+
+      .letter-column:hover .letter {
+        transform: scale(1.2);
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+      }
+
+      .description {
+        position: absolute;
+        bottom: -200px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        border-radius: 10px;
+        width: 280px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 15;
+        backdrop-filter: blur(10px);
+      }
+
+      .letter-column:hover .description {
+        bottom: -180px;
+        opacity: 1;
+      }
+
+      .description h3 {
+        color: #1a9d4a;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .description p {
+        color: #333;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .title {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+        z-index: 5;
+      }
+
+      .title h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+      }
+
+      .title p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .back-button {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .back-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .labbra-container {
+          flex-wrap: wrap;
+          gap: 15px;
+          padding: 10px;
+        }
+
+        .letter-column {
+          width: 120px;
+          height: 200px;
+          margin: 5px;
+        }
+
+        .letter {
+          font-size: 2.5rem;
+        }
+
+        .description {
+          width: 250px;
+          bottom: -150px;
+        }
+
+        .letter-column:hover .description {
+          bottom: -130px;
+        }
+
+        .title h1 {
+          font-size: 2rem;
+        }
+
+        .title p {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .letter-column {
+          width: 100px;
+          height: 180px;
+        }
+
+        .letter {
+          font-size: 2rem;
+        }
+
+        .description {
+          width: 220px;
+          padding: 15px;
+        }
+      }
+
+      /* Animation for page load */
+      .letter-column {
+        animation: slideUp 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      .letter-column:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .letter-column:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .letter-column:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .letter-column:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .letter-column:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .letter-column:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes slideUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Pulse animation for letters */
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .letter-column:hover .letter {
+        animation: pulse 1s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="labbra_main_page.html" class="back-button">← Back to Main</a>
+
+    <div class="title">
+      <h1>LABBRA SYSTEM</h1>
+      <p>Safe Steps, Save Lives</p>
+    </div>
+
+    <div class="labbra-container">
+      <div class="letter-column">
+        <div class="letter">L</div>
+        <div class="description">
+          <h3>London</h3>
+          <p>
+            Representing <strong>London</strong>, one of the six UCF students we
+            honor. The 'L' stands for <strong>Life-saving</strong> technology
+            that detects pedestrian accidents in real-time, ensuring immediate
+            emergency response.
+          </p>
+        </div>
+      </div>
+
+      <div class="letter-column">
+        <div class="letter">A</div>
+        <div class="description">
+          <h3>Alexandria</h3>
+          <p>
+            Honoring <strong>Alexandria</strong>, whose memory drives our
+            mission. The 'A' represents <strong>Advanced</strong> AI-powered
+            detection systems that use machine learning to identify accidents
+            with precision.
+          </p>
+        </div>
+      </div>
+
+      <div class="letter-column">
+        <div class="letter">B</div>
+        <div class="description">
+          <h3>Brooke</h3>
+          <p>
+            In memory of <strong>Brooke</strong>, whose memorial reminds us
+            daily of this crisis. The 'B' stands for
+            <strong>Breakthrough</strong> technology that bridges the gap
+            between accident occurrence and emergency response.
+          </p>
+        </div>
+      </div>
+
+      <div class="letter-column">
+        <div class="letter">B</div>
+        <div class="description">
+          <h3>Brandon</h3>
+          <p>
+            Remembering <strong>Brandon</strong> and his impact on our
+            community. This 'B' represents <strong>Beacon</strong> systems that
+            serve as watchful guardians on our streets, monitoring 24/7 for
+            pedestrian safety.
+          </p>
+        </div>
+      </div>
+
+      <div class="letter-column">
+        <div class="letter">R</div>
+        <div class="description">
+          <h3>Reuel</h3>
+          <p>
+            Honoring <strong>Reuel</strong> and his legacy. The 'R' stands for
+            <strong>Rapid</strong> response capabilities that reduce emergency
+            service arrival times by up to 40%, potentially saving countless
+            lives.
+          </p>
+        </div>
+      </div>
+
+      <div class="letter-column">
+        <div class="letter">A</div>
+        <div class="description">
+          <h3>Austin</h3>
+          <p>
+            In memory of <strong>Austin</strong>, the final name in our tribute.
+            This 'A' represents <strong>Awareness</strong> - spreading knowledge
+            about pedestrian safety and the technology that can protect our
+            communities.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Add some interactive sound effects (optional)
+      document.querySelectorAll(".letter-column").forEach((column) => {
+        column.addEventListener("mouseenter", () => {
+          // You can add sound effects here if desired
+          column.style.filter = "brightness(1.1)";
+        });
+
+        column.addEventListener("mouseleave", () => {
+          column.style.filter = "brightness(1)";
+        });
+      });
+
+      // Add keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          window.location.href = "labbra_main_page.html";
+        }
+      });
+
+      // Add touch support for mobile
+      document.querySelectorAll(".letter-column").forEach((column) => {
+        column.addEventListener("touchstart", () => {
+          column.classList.add("touch-active");
+        });
+
+        column.addEventListener("touchend", () => {
+          setTimeout(() => {
+            column.classList.remove("touch-active");
+          }, 300);
+        });
+      });
+    </script>
+  </body>
+</html>

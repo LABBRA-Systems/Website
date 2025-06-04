@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Who is LABBRA - Six Lives, One Mission</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-red: #ff3b3b;
+        --primary-dark: #1a1a1a;
+        --secondary-gray: #6b7280;
+        --light-gray: #f9fafb;
+        --white: #ffffff;
+        --accent-blue: #3b82f6;
+        --success-green: #10b981;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--primary-dark);
+        color: var(--white);
+        overflow-x: hidden;
+        height: 100vh;
+      }
+
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 1rem 0;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--primary-dark);
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .logo-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--secondary-gray);
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-dark);
+      }
+
+      .nav-links a.active {
+        color: var(--primary-red);
+      }
+
+      .cta-button {
+        background: var(--primary-red);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background: #e53e3e;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 59, 59, 0.3);
+      }
+
+      /* Main Container */
+      .labbra-container {
+        display: flex;
+        height: 100vh;
+        padding-top: 80px;
+        position: relative;
+      }
+
+      /* Letter Columns */
+      .letter-column {
+        flex: 1;
+        height: calc(100vh - 80px);
+        background: var(--primary-red);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+        border-right: 2px solid var(--primary-dark);
+      }
+
+      .letter-column:last-child {
+        border-right: none;
+      }
+
+      .letter-column.expanded {
+        flex: 8;
+        background: var(--white);
+        color: var(--primary-dark);
+      }
+
+      .letter-column:not(.expanded) {
+        flex: 0.5;
+      }
+
+      .letter {
+        font-size: 4rem;
+        font-weight: 900;
+        color: var(--white);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        transition: all 0.6s ease;
+        z-index: 2;
+        position: relative;
+      }
+
+      .letter-column.expanded .letter {
+        font-size: 4rem;
+        color: var(--primary-red);
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        z-index: 3;
+      }
+
+      .letter-column:not(.expanded):hover {
+        flex: 1.2;
+        background: #ff5555;
+      }
+
+      .letter-column:not(.expanded):hover .letter {
+        font-size: 4.5rem;
+      }
+
+      /* Story Content */
+      .story-content {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+        padding: 5rem 3rem 3rem 3rem;
+        height: 100%;
+        overflow-y: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .letter-column.expanded .story-content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .story-header {
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+      }
+
+      .story-header h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary-red);
+        margin-bottom: 0.5rem;
+      }
+
+      .story-header .subtitle {
+        font-size: 1.2rem;
+        color: var(--secondary-gray);
+        font-weight: 500;
+      }
+
+      .story-body {
+        max-width: 800px;
+      }
+
+      .story-body p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        color: var(--secondary-gray);
+      }
+
+      .foundation-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary-red);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .foundation-link:hover {
+        background: #e53e3e;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 59, 59, 0.3);
+      }
+
+      .quote {
+        background: var(--light-gray);
+        padding: 2rem;
+        border-radius: 12px;
+        border-left: 4px solid var(--primary-red);
+        margin: 2rem 0;
+        font-style: italic;
+        color: var(--primary-dark);
+      }
+
+      /* Close Button */
+      .close-button {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        background: rgba(0, 0, 0, 0.1);
+        border: none;
+        color: var(--secondary-gray);
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .close-button:hover {
+        background: rgba(0, 0, 0, 0.2);
+        color: var(--primary-dark);
+      }
+
+      /* Page Header */
+      .page-header {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 10;
+        pointer-events: none;
+        transition: all 0.6s ease;
+      }
+
+      .page-header.hidden {
+        opacity: 0;
+        transform: translate(-50%, -150%) scale(0.8);
+      }
+
+      .page-header h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .page-header p {
+        font-size: 1.5rem;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .labbra-container {
+          flex-direction: column;
+          height: auto;
+          min-height: 100vh;
+        }
+
+        .letter-column {
+          height: 120px;
+          flex: none;
+        }
+
+        .letter-column.expanded {
+          height: calc(100vh - 80px);
+          flex: none;
+        }
+
+        .letter {
+          font-size: 2.5rem;
+        }
+
+        .letter-column.expanded .letter {
+          font-size: 2.5rem;
+          top: 0.5rem;
+          left: 1rem;
+        }
+
+        .story-content {
+          padding: 3rem 2rem 2rem 2rem;
+        }
+
+        .story-header h2 {
+          font-size: 1.8rem;
+        }
+
+        .page-header h1 {
+          font-size: 2.5rem;
+        }
+
+        .page-header p {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .letter-column {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+
+      .letter-column:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .letter-column:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .letter-column:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .letter-column:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .letter-column:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .letter-column:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <img src="LABBRA.png" alt="LABBRA Logo" />
+          </div>
+          LABBRA Systems
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="who-is-labbra.html" class="active">Who is LABBRA</a></li>
+          <li><a href="problem.html">The Problem</a></li>
+          <li><a href="solution.html">Our Solution</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="donate.html" class="cta-button">Donate</a>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header" id="pageHeader">
+      <h1>Who is LABBRA?</h1>
+      <p>Six lives, one mission - Click any letter to learn their story</p>
+    </div>
+
+    <!-- LABBRA Letter Columns -->
+    <div class="labbra-container">
+      <!-- L - London -->
+      <div class="letter-column" data-letter="L">
+        <div class="letter">L</div>
+        <div class="story-content">
+          <button class="close-button" onclick="closeStory()">&times;</button>
+          <div class="story-header">
+            <h2>London</h2>
+            <p class="subtitle">A bright light taken too soon</p>
+          </div>
+          <div class="story-body">
+            <p>
+              London was a vibrant student whose life was tragically cut short
+              in a pedestrian accident. Their memory serves as a powerful
+              reminder of why pedestrian safety technology is so crucial.
+            </p>
+
+            <div class="quote">
+              "London's spirit lives on in every life we save through better
+              technology and awareness."
+            </div>
+
+            <p>
+              The London Foundation continues their legacy by advocating for
+              safer streets and supporting families affected by pedestrian
+              accidents. Their work focuses on education, awareness, and pushing
+              for better infrastructure to protect pedestrians.
+            </p>
+
+            <p>
+              London's story represents the 'L' in LABBRA - standing for
+              <strong>Life-saving</strong> technology that detects pedestrian
+              accidents in real-time, ensuring immediate emergency response.
+            </p>
+
+            <a href="#" class="foundation-link"> Visit London Foundation → </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- A - Alexandria -->
+      <div class="letter-column" data-letter="A">
+        <div class="letter">A</div>
+        <div class="story-content">
+          <button class="close-button" onclick="closeStory()">&times;</button>
+          <div class="story-header">
+            <h2>Alexandria</h2>
+            <p class="subtitle">
+              Remembered for their kindness and determination
+            </p>
+          </div>
+          <div class="story-body">
+            <p>
+              Alexandria was known for their compassionate nature and dedication
+              to helping others. Their tragic loss in a pedestrian accident has
+              motivated our team to develop technology that could prevent
+              similar tragedies.
+            </p>
+
+            <div class="quote">
+              "Alexandria's memory drives us to create a world where no family
+              has to experience this loss."
+            </div>
+
+            <p>
+              In honor of Alexandria, the 'A' in LABBRA represents
+              <strong>Advanced</strong> AI-powered detection systems that use
+              machine learning to identify accidents with precision and speed.
+            </p>
+
+            <p>
+              Their legacy continues through our commitment to developing the
+              most sophisticated pedestrian safety technology possible, ensuring
+              that every crosswalk becomes a safer place for everyone.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- B - Brooke -->
+      <div class="letter-column" data-letter="B">
+        <div class="letter">B</div>
+        <div class="story-content">
+          <button class="close-button" onclick="closeStory()">&times;</button>
+          <div class="story-header">
+            <h2>Brooke</h2>
+            <p class="subtitle">A memorial that reminds us daily</p>
+          </div>
+          <div class="story-body">
+            <p>
+              Brooke Dawkins' memorial stands as a daily reminder of the
+              pedestrian safety crisis near UCF campus. Their story has become a
+              rallying point for change and safer infrastructure.
+            </p>
+
+            <div class="quote">
+              "Every time we pass Brooke's memorial, we're reminded why this
+              work matters."
+            </div>
+
+            <p>
+              The Brooke Dawkins Foundation works tirelessly to improve
+              pedestrian safety through advocacy, education, and supporting
+              technological solutions like LABBRA Systems.
+            </p>
+
+            <p>
+              Brooke's name represents the 'B' in LABBRA - standing for
+              <strong>Breakthrough</strong> technology that bridges the gap
+              between accident occurrence and emergency response, potentially
+              saving countless lives.
+            </p>
+
+            <a href="#" class="foundation-link">
+              Visit Brooke Dawkins Foundation →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- B - Brandon -->
+      <div class="letter-column" data-letter="B">
+        <div class="letter">B</div>
+        <div class="story-content">
+          <button class="close-button" onclick="closeStory()">&times;</button>
+          <div class="story-header">
+            <h2>Brandon</h2>
+            <p class="subtitle">A guardian spirit watching over our streets</p>
+          </div>
+          <div class="story-body">
+            <p>
+              Brandon's impact on the UCF community was profound. Their loss in
+              a pedestrian accident has inspired a movement toward better safety
+              measures and technological solutions.
+            </p>
+
+            <div class="quote">
+              "Brandon's spirit watches over every intersection we protect."
+            </div>
+
+            <p>
+              This second 'B' in LABBRA represents
+              <strong>Beacon</strong> systems that serve as watchful guardians
+              on our streets, monitoring 24/7 for pedestrian safety and ready to
+              respond at a moment's notice.
+            </p>
+
+            <p>
+              Brandon's memory motivates our team to ensure that our technology
+              serves as a protective beacon, just as Brandon was a beacon of
+              light in their community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- R - Reuel -->
+      <div class="letter-column" data-letter="R">
+        <div class="letter">R</div>
+        <div class="story-content">
+          <button class="close-button" onclick="closeStory()">&times;</button>
+          <div class="story-header">
+            <h2>Reuel</h2>
+            <p class="subtitle">Speed and response in their honor</p>
+          </div>
+          <div class="story-body">
+            <p>
+              Reuel's story emphasizes the critical importance of rapid response
+              in emergency situations. Their loss has taught us that every
+              second counts when it comes to saving lives.
+            </p>
+
+            <div class="quote">
+              "In Reuel's memory, we work to make every second count."
+            </div>
+
+            <p>
+              The 'R' in LABBRA stands for <strong>Rapid</strong> response
+              capabilities that reduce emergency service arrival times by up to
+              40%, potentially saving countless lives through faster
+              intervention.
+            </p>
+
+            <p>
+              Reuel's legacy lives on in our commitment to developing the
+              fastest, most reliable emergency response system possible,
+              ensuring that help arrives when it's needed most.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- A - Austin -->
+      <div class="letter-column" data-letter="A">
+        <div class="letter">A</div>
+        <div class="story-content">
+          <button class="close-button" onclick="closeStory()">&times;</button>
+          <div class="story-header">
+            <h2>Austin</h2>
+            <p class="subtitle">Spreading awareness and hope</p>
+          </div>
+          <div class="story-body">
+            <p>
+              Austin completes our LABBRA family, representing the final piece
+              of our mission. Their story reminds us that awareness and
+              education are just as important as technology.
+            </p>
+
+            <div class="quote">
+              "Austin's legacy is one of awareness, education, and hope for a
+              safer future."
+            </div>
+
+            <p>
+              This final 'A' in LABBRA represents <strong>Awareness</strong> -
+              spreading knowledge about pedestrian safety and the technology
+              that can protect our communities.
+            </p>
+
+            <p>
+              Austin's memory drives our outreach efforts, ensuring that
+              communities understand both the risks and the solutions available
+              to protect pedestrians at every crosswalk.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let currentExpanded = null;
+
+      // Add click event listeners to all letter columns
+      document.querySelectorAll(".letter-column").forEach((column) => {
+        column.addEventListener("click", () => {
+          const letter = column.dataset.letter;
+          expandStory(column);
+        });
+      });
+
+      function expandStory(column) {
+        // Close any currently expanded story
+        if (currentExpanded && currentExpanded !== column) {
+          currentExpanded.classList.remove("expanded");
+        }
+
+        // Expand the clicked column
+        column.classList.add("expanded");
+        currentExpanded = column;
+
+        // Hide the page header
+        document.getElementById("pageHeader").classList.add("hidden");
+      }
+
+      function closeStory() {
+        if (currentExpanded) {
+          currentExpanded.classList.remove("expanded");
+          currentExpanded = null;
+        }
+
+        // Show the page header
+        document.getElementById("pageHeader").classList.remove("hidden");
+      }
+
+      // Close story when clicking outside
+      document.addEventListener("click", (e) => {
+        if (currentExpanded && !currentExpanded.contains(e.target)) {
+          closeStory();
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeStory();
+        }
+      });
+    </script>
+  </body>
+</html>

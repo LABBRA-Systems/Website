@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LABBRA System - Safe Steps, Save Lives. Advanced impact detection system for pedestrian safety.">
+    <title>LABBRA System: Safe Steps, Save Lives</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f7f7f7;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav .logo {
+            color: #1A9D4A;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #1A9D4A;
+        }
+
+        /* Global styling */
+        .cta-button {
+            background-color: #1A9D4A;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            text-align: center;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background-color: #0f8832;
+        }
+
+        .cta-button:active {
+            background-color: #107c2e;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .section-heading h2 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .section-heading p {
+            font-size: 1.2rem;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('20241217_071805.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px 0;
+            position: relative;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .hero h3 {
+            margin: 20px 0;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        /* About Section */
+        .about {
+            background-color: #fff;
+            padding: 80px 0;
+        }
+
+        .about p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #f3f3f3;
+        }
+
+        .feature-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .feature {
+            flex: 1;
+            max-width: 300px;
+            margin: 20px;
+            background: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature img {
+            margin-bottom: 20px;
+            height: 100px;
+            width: 100px;
+            object-fit: contain;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        /* Impact Section */
+        .impact {
+            background-color: #fff;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .impact p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Call to Action Section */
+        .cta {
+            background-color: #1A9D4A;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: #f1f1f1;
+            margin-bottom: 30px;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            background-color: #fff;
+            color: #1A9D4A;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+        .nav-button:hover {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer p {
+            font-size: 1rem;
+        }
+
+        /* Page content containers */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Team Members Styling */
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-member {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-image {
+            margin-bottom: 20px;
+        }
+
+        .team-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #1A9D4A;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .team-image img {
+            transform: scale(1.05);
+        }
+
+        .team-member h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .team-member h4 {
+            font-size: 1.1rem;
+            color: #1A9D4A;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .team-member p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero {
+                margin-top: 120px;
+                padding: 100px 0 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p, .hero h3 {
+                font-size: 1.2rem;
+            }
+
+            .feature-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                max-width: 90%;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-button {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">LABBRA System</div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('main')">Home</a></li>
+                <li><a onclick="showPage('problem')">The Problem</a></li>
+                <li><a onclick="showPage('project')">Our Project</a></li>
+                <li><a onclick="showPage('team')">Team</a></li>
+                <li><a onclick="showPage('funding')">Support Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Page Content -->
+    <div id="main" class="page active">
+        <section class="hero">
+            <div class="container">
+                <h1>The LABBRA System</h1>
+                <p>Safe Steps, Save Lives</p>
+                <h3>Advanced Impact Detection System for Pedestrian Safety</h3>
+                
+                <div class="nav-buttons">
+                    <button class="nav-button" onclick="showPage('problem')">Learn About The Problem</button>
+                    <button class="nav-button" onclick="showPage('project')">Discover Our Solution</button>
+                    <button class="nav-button" onclick="showPage('team')">Meet Our Team</button>
+                    <button class="nav-button" onclick="showPage('funding')">Support Our Mission</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>About the LABBRA System</h2>
+                    <p>The LABBRA System is an innovative, advanced impact detection technology designed to protect pedestrians by reducing response times in emergency situations.</p>
+                </div>
+                <p>With a vision detection system powered by edge computing devices and wide-angle cameras, it helps emergency responders act quickly and efficiently, potentially saving lives. Named after six of the UCF students (London, Alexandria, Brooke, Brandon, Reuel, Austin) who tragically lost their lives while walking around campus, the LABBRA System honors their memory by improving pedestrian safety through cutting-edge technology.</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Key Features</h2>
+                    <p>Explore the innovative features that make LABBRA System stand out in pedestrian safety technology.</p>
+                </div>
+                <div class="feature-container">
+                    <div class="feature">
+                        <img src="detection_and_zone_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Detection Icon">
+                        <h3>Advanced Detection</h3>
+                        <p>Uses wide-angle cameras and real-time edge computing to detect accidents instantly.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="warning_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Response Icon">
+                        <h3>Fast Response Time</h3>
+                        <p>Reduces 911 response time, increasing the chances of survival for victims.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="rainy_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Design Icon">
+                        <h3>Durable Design</h3>
+                        <p>Built to withstand harsh environments, ensuring reliability in all conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Making a Difference</h2>
+                    <p>The LABBRA System can save lives by improving emergency response times and reducing pedestrian fatalities.</p>
+                </div>
+                <p>By integrating cutting-edge technology into real-world applications, we aim to bring about a safer, faster, and more efficient way of responding to pedestrian accidents. Together, we can make a life-saving difference.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Make a Change?</h2>
+                <p>Your support can help save lives. Join us in improving pedestrian safety.</p>
+                <button class="cta-button" onclick="showPage('funding')">Support Our Mission</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Problem Page -->
+    <div id="problem" class="page">
+        <section class="hero" style="padding: 120px 0 80px 0;">
+            <div class="container">
+                <h1>The Problem</h1>
+                <p>Understanding the Scale of Pedestrian Deaths</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>A Growing Crisis</h2>
+                    <p>On average in 2024, two pedestrians died every day on Florida's streets, totaling 686 deaths. This number continues to rise both statewide and nationally.</p>
+                </div>
+                <p>We are reminded of these tragedies every day when we cross the road next to Brooke Dawkins' memorial. As students, we have witnessed many close calls near campus. While some proactive measures exist, current solutions are costly, hard to scale, and preventative. To truly save lives, we need a reactive system that responds in real-time.</p>
+
+                <!-- Image Display Section -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; gap: 30px;">
+                    <!-- First Image with Description -->
+                    <div style="flex: 1; min-width: 300px; max-width: 600px; margin-bottom: 30px;">
+                        <img src="Crash dashboard .png" alt="Florida Crash Dashboard" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <p style="text-align: center; margin-top: 15px; font-size: 1.1rem; color: #555;"><strong>Florida Crash Dashboard</strong> - Showing 686 pedestrian fatalities in 2024, with 10,480 pedestrian crashes reported (FLHSMV).</p>
+                    </div>
+                    
+                    <!-- Second Image with Description -->
+                    <div style="flex: 1; min-width: 300px; max-width: 600px; margin-bottom: 30px;">
+                        <img src="2008-2022 pd's arround ucf.png" alt="Pedestrian Accident Hotspots" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <p style="text-align: center; margin-top: 15px; font-size: 1.1rem; color: #555;"><strong>Pedestrian Deaths in the UCF Area</strong> - Every blue dot represents a pedestrian death near campus and surrounding areas, between 2008 and 2022 (Smart Growth America).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>We Need a Solution</h2>
+                <p>The time for action is now. Every day we wait, more lives are lost.</p>
+                <button class="cta-button" onclick="showPage('project')">See Our Solution</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Project Page -->
+    <div id="project" class="page">
+        <section class="hero" style="padding: 120px 0 80px 0;">
+            <div class="container">
+                <h1>Our Project</h1>
+                <p>The LABBRA System Solution</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>How LABBRA Works</h2>
+                    <p>Advanced technology for real-time pedestrian safety</p>
+                </div>
+                <p>The LABBRA System uses cutting-edge computer vision and edge computing to detect pedestrian accidents in real-time. Our system is designed to be cost-effective, scalable, and highly reliable, providing immediate alerts to emergency services when accidents occur.</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Technical Specifications</h2>
+                    <p>Built with precision and reliability in mind</p>
+                </div>
+                <div class="feature-container">
+                    <div class="feature">
+                        <img src="detection_and_zone_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Detection Icon">
+                        <h3>AI-Powered Detection</h3>
+                        <p>Machine learning algorithms trained on thousands of hours of traffic data to accurately identify pedestrian accidents.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="warning_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Response Icon">
+                        <h3>Instant Alerts</h3>
+                        <p>Automatic 911 dispatch with GPS coordinates and accident details, reducing response time by up to 40%.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="rainy_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Design Icon">
+                        <h3>Weather Resistant</h3>
+                        <p>IP67 rated housing ensures reliable operation in all weather conditions, 24/7/365.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Help Us Deploy LABBRA</h2>
+                <p>Your support can help us install these life-saving systems throughout Central Florida.</p>
+                <button class="cta-button" onclick="showPage('funding')">Support Our Project</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Team Page -->
+    <div id="team" class="page">
+        <section class="hero" style="padding: 120px 0 80px 0;">
+            <div class="container">
+                <h1>Our Team</h1>
+                <p>Dedicated to saving lives through technology</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Meet the LABBRA Team</h2>
+                    <p>Students and professionals united by a common mission</p>
+                </div>
+                <p>Our team consists of passionate students, engineers, and safety advocates who are committed to making pedestrian safety a priority. We're driven by the memory of those we've lost and motivated by the lives we can save.</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Team Members</h2>
+                    <p>Meet the people behind the LABBRA System</p>
+                </div>
+                <div class="team-container">
+                    <div class="team-member">
+                        <div class="team-image">
+                            <img src="https://via.placeholder.com/200x200/1A9D4A/FFFFFF?text=Team+Member" alt="Team Member 1">
+                        </div>
+                        <h3>John Smith</h3>
+                        <h4>Project Lead & Software Engineer</h4>
+                        <p>Computer Science senior at UCF with expertise in computer vision and machine learning. Leading the development of LABBRA's AI detection algorithms.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-image">
+                            <img src="https://via.placeholder.com/200x200/1A9D4A/FFFFFF?text=Team+Member" alt="Team Member 2">
+                        </div>
+                        <h3>Sarah Johnson</h3>
+                        <h4>Hardware Engineer</h4>
+                        <p>Electrical Engineering graduate specializing in embedded systems. Responsible for designing the ruggedized hardware components of the LABBRA System.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-image">
+                            <img src="https://via.placeholder.com/200x200/1A9D4A/FFFFFF?text=Team+Member" alt="Team Member 3">
+                        </div>
+                        <h3>Michael Rodriguez</h3>
+                        <h4>Safety Analyst & Researcher</h4>
+                        <p>Public Safety graduate student focused on traffic safety analysis. Conducts research on pedestrian accident patterns and system effectiveness metrics.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-image">
+                            <img src="https://via.placeholder.com/200x200/1A9D4A/FFFFFF?text=Team+Member" alt="Team Member 4">
+                        </div>
+                        <h3>Emily Chen</h3>
+                        <h4>Community Outreach Coordinator</h4>
+                        <p>Communications major passionate about pedestrian safety advocacy. Manages community partnerships and educational outreach programs.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 60px; text-align: center; padding: 40px; background-color: rgba(26, 157, 74, 0.1); border-radius: 15px;">
+                    <h3 style="color: #1A9D4A; margin-bottom: 20px;">In Memory Of</h3>
+                    <p style="font-size: 1.1rem; color: #555;"><strong>London, Alexandria, Brooke, Brandon, Reuel, Austin</strong> - Six UCF students whose lives were tragically cut short. Their memory drives our mission every day and reminds us why this work is so important.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Get Involved</h2>
+                <p>Join our team or support our mission to make streets safer for everyone.</p>
+                <button class="cta-button" onclick="showPage('funding')">Support Our Mission</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Funding Page -->
+    <div id="funding" class="page">
+        <section class="hero" style="padding: 120px 0 80px 0;">
+            <div class="container">
+                <h1>Support Our Mission</h1>
+                <p>Help us save lives with the LABBRA System</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Fundraising Goal</h2>
+                    <p>Every dollar brings us closer to deploying life-saving technology</p>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div style="background-color: #e0e0e0; border-radius: 25px; height: 30px; margin: 20px 0;">
+                        <div style="background: linear-gradient(90deg, #FF6B6B, #FF8E53); height: 100%; border-radius: 25px; width: 0%; transition: width 0.3s ease; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9rem;">
+                            $0 / $8,000 completed
+                        </div>
+                    </div>
+                    <p style="text-align: center; color: #555; font-size: 1.1rem;">Anything helps - Help us get to 100%!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>The 500 Mile Challenge</h2>
+                    <p>Raising awareness one mile at a time</p>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.2rem; color: #555; margin-bottom: 30px;">Our team lead, Ben Mingst, is rollerblading 500 miles to raise awareness and funds for pedestrian safety. Each mile represents the lives lost and the hope for a safer future.</p>
+                    
+                    <!-- Miles Progress -->
+                    <div style="background-color: #e0e0e0; border-radius: 25px; height: 25px; margin: 20px 0;">
+                        <div style="background: linear-gradient(90deg, #FF6B6B, #FF8E53); height: 100%; border-radius: 25px; width: 0%; transition: width 0.3s ease; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9rem;">
+                            0 / 500 miles completed
+                        </div>
+                    </div>
+                    <p style="color: #555;">Follow along on our YouTube!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Connect With Us</h2>
+                    <p>Follow our progress and spread the word</p>
+                </div>
+                
+                <!-- Social Media Links -->
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px;">
+                    <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 15px 25px; background-color: #1877F2; color: white; border-radius: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <span style="font-size: 1.5rem;">📘</span>
+                        Facebook
+                    </a>
+                    <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 15px 25px; background-color: #1DA1F2; color: white; border-radius: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <span style="font-size: 1.5rem;">🐦</span>
+                        Twitter
+                    </a>
+                    <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 15px 25px; background-color: #E4405F; color: white; border-radius: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <span style="font-size: 1.5rem;">📷</span>
+                        Instagram
+                    </a>
+                    <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 15px 25px; background-color: #0A66C2; color: white; border-radius: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <span style="font-size: 1.5rem;">💼</span>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Donate to Save Lives</h2>
+                <p>Your contribution directly supports the development and deployment of LABBRA systems.</p>
+                <a href="https://gofundme.com/your-campaign-link" target="_blank" class="cta-button" style="display: inline-block; margin-top: 20px; font-size: 1.3rem; padding: 20px 40px;">
+                    Donate on GoFundMe
+                </a>
+                <p style="margin-top: 15px; font-size: 1rem; color: #f1f1f1;">Every donation brings us closer to saving lives on our roads</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 LABBRA System. All rights reserved. Safe Steps, Save Lives.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Animate progress bars when funding page is viewed
+        function animateProgressBars() {
+            const progressBar = document.getElementById('progress-bar');
+            if (progressBar) {
+                setTimeout(() => {
+                    progressBar.style.width = '35%';
+                }, 500);
+            }
+        }
+
+        // Call animation when funding page is shown
+        const originalShowPage = showPage;
+        showPage = function(pageId) {
+            originalShowPage(pageId);
+            if (pageId === 'funding') {
+                animateProgressBars();
+            }
+        };
+    </script>
+</body>
+</html>
