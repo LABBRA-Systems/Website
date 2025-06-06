@@ -2829,6 +2829,98 @@ body {
     background: var(--white) !important;
   }
 
+  /* Donate page specific mobile fixes */
+  .hero.page-hero.donate .mobile-menu-toggle span {
+    background: var(--white) !important;
+  }
+
+  .hero.page-hero.donate .mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px) !important;
+    background: var(--white) !important;
+  }
+
+  .hero.page-hero.donate .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .hero.page-hero.donate .mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px) !important;
+    background: var(--white) !important;
+  }
+
+  /* Donate page countdown section mobile */
+  .countdown-section .section-container {
+    padding: 0 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Challenge progress grid - mobile override */
+  .countdown-section div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .countdown-display,
+  .miles-display,
+  .raised-display {
+    padding: 1.5rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .countdown-display div,
+  .miles-display div,
+  .raised-display div {
+    font-size: 2.8rem !important;
+  }
+
+  /* Donation grid mobile */
+  .challenge-donation-section .donation-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .gofundme-container,
+  .miles-container {
+    padding: 1.5rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Social media section mobile override */
+  .challenge-donation-section div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Challenge donation section mobile */
+  .challenge-donation-section {
+    padding: 3rem 0 !important;
+  }
+
+  .challenge-donation-section .section-container {
+    padding: 0 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   /* Problem page mobile styles */
   .hero.problem-hero {
     padding-top: 100px;
