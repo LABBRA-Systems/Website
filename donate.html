@@ -8,567 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --primary-red: #ff3b3b;
-        --primary-dark: #1a1a1a;
-        --secondary-gray: #6b7280;
-        --light-gray: #f9fafb;
-        --white: #ffffff;
-        --accent-blue: #3b82f6;
-        --success-green: #10b981;
-        --warning-orange: #f59e0b;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-        line-height: 1.6;
-        color: var(--primary-dark);
-        background-color: var(--white);
-        overflow-x: hidden;
-      }
-
-      /* Navigation */
-      .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        padding: 1rem 0;
-      }
-
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-weight: 800;
-        font-size: 1.5rem;
-        color: var(--primary-dark);
-        text-decoration: none;
-      }
-
-      .logo-icon {
-        width: 40px;
-        height: 40px;
-        background: white;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
-
-      .logo-icon img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-        align-items: center;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--secondary-gray);
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
-
-      .nav-links a:hover {
-        color: var(--primary-dark);
-      }
-
-      .nav-links a.active {
-        color: var(--primary-red);
-      }
-
-      .cta-button {
-        background: var(--primary-red);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-
-      .cta-button:hover {
-        background: #e53e3e;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(255, 59, 59, 0.3);
-      }
-
-      /* Hero Section */
-      .hero {
-        padding: 120px 0 80px 0;
-        background: linear-gradient(
-          135deg,
-          var(--success-green) 0%,
-          #059669 100%
-        );
-        color: white;
-        text-align: center;
-      }
-
-      .hero-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .hero h1 {
-        font-size: 3.5rem;
-        font-weight: 900;
-        margin-bottom: 1.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      }
-
-      .hero p {
-        font-size: 1.25rem;
-        max-width: 600px;
-        margin: 0 auto 2rem auto;
-        opacity: 0.9;
-      }
-
-      .hero-stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .stat-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .stat-number {
-        font-size: 2.5rem;
-        font-weight: 900;
-        margin-bottom: 0.5rem;
-        color: var(--warning-orange);
-      }
-
-      .stat-label {
-        font-size: 1rem;
-        opacity: 0.9;
-      }
-
-      /* Progress Section */
-      .progress-section {
-        padding: 5rem 0;
-        background: white;
-      }
-
-      .section-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: 4rem;
-      }
-
-      .section-header h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: var(--primary-dark);
-      }
-
-      .section-header p {
-        font-size: 1.2rem;
-        color: var(--secondary-gray);
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .progress-card {
-        background: var(--light-gray);
-        padding: 3rem;
-        border-radius: 20px;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .progress-bar-container {
-        background: #e5e7eb;
-        border-radius: 25px;
-        height: 40px;
-        margin: 2rem 0;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .progress-bar {
-        background: linear-gradient(
-          90deg,
-          var(--primary-red),
-          var(--warning-orange)
-        );
-        height: 100%;
-        border-radius: 25px;
-        width: 35%;
-        transition: width 1s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: bold;
-        font-size: 0.9rem;
-      }
-
-      .progress-text {
-        font-size: 1.1rem;
-        color: var(--secondary-gray);
-        margin-top: 1rem;
-      }
-
-      .goal-amount {
-        font-size: 3rem;
-        font-weight: 900;
-        color: var(--primary-red);
-        margin: 1rem 0;
-      }
-
-      /* Donation Options */
-      .donation-section {
-        padding: 5rem 0;
-        background: var(--light-gray);
-      }
-
-      .donation-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .donation-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 16px;
-        text-align: center;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        cursor: pointer;
-      }
-
-      .donation-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-        border-color: var(--primary-red);
-      }
-
-      .donation-amount {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: var(--primary-red);
-        margin-bottom: 1rem;
-      }
-
-      .donation-card h3 {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        color: var(--primary-dark);
-      }
-
-      .donation-card p {
-        color: var(--secondary-gray);
-        margin-bottom: 1.5rem;
-      }
-
-      .donation-card .btn {
-        background: var(--primary-red);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        width: 100%;
-      }
-
-      .donation-card .btn:hover {
-        background: #e53e3e;
-        transform: translateY(-2px);
-      }
-
-      /* Challenge Section */
-      .challenge-section {
-        padding: 5rem 0;
-        background: white;
-      }
-
-      .challenge-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-
-      .challenge-content h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: var(--primary-dark);
-      }
-
-      .challenge-content p {
-        font-size: 1.1rem;
-        color: var(--secondary-gray);
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-      }
-
-      .miles-progress {
-        background: var(--light-gray);
-        padding: 2rem;
-        border-radius: 16px;
-        margin: 2rem 0;
-      }
-
-      .miles-bar-container {
-        background: #e5e7eb;
-        border-radius: 25px;
-        height: 30px;
-        margin: 1rem 0;
-        overflow: hidden;
-      }
-
-      .miles-bar {
-        background: linear-gradient(
-          90deg,
-          var(--accent-blue),
-          var(--success-green)
-        );
-        height: 100%;
-        border-radius: 25px;
-        width: 5.76%;
-        transition: width 1s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: bold;
-      }
-
-      .challenge-visual {
-        text-align: center;
-      }
-
-      .challenge-icon {
-        width: 200px;
-        height: 200px;
-        background: linear-gradient(
-          135deg,
-          var(--accent-blue),
-          var(--success-green)
-        );
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 2rem auto;
-        font-size: 4rem;
-        color: white;
-        animation: bounce 2s infinite;
-      }
-
-      @keyframes bounce {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-          transform: translateY(0);
-        }
-        40% {
-          transform: translateY(-10px);
-        }
-        60% {
-          transform: translateY(-5px);
-        }
-      }
-
-      /* Impact Section */
-      .impact-section {
-        padding: 5rem 0;
-        background: var(--primary-dark);
-        color: white;
-        text-align: center;
-      }
-
-      .impact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .impact-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .impact-card h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        color: var(--warning-orange);
-      }
-
-      .impact-card p {
-        opacity: 0.9;
-        line-height: 1.6;
-      }
-
-      /* CTA Section */
-      .final-cta {
-        padding: 5rem 0;
-        background: linear-gradient(
-          135deg,
-          var(--primary-red) 0%,
-          var(--warning-orange) 100%
-        );
-        color: white;
-        text-align: center;
-      }
-
-      .final-cta h2 {
-        font-size: 3rem;
-        font-weight: 900;
-        margin-bottom: 1rem;
-      }
-
-      .final-cta p {
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .btn-large {
-        background: white;
-        color: var(--primary-dark);
-        padding: 1.5rem 3rem;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.2rem;
-        transition: all 0.3s ease;
-      }
-
-      .btn-large:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
-      }
-
-      /* Mobile Responsive */
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-
-        .hero-stats {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1rem;
-        }
-
-        .challenge-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-          text-align: center;
-        }
-
-        .challenge-icon {
-          width: 150px;
-          height: 150px;
-          font-size: 3rem;
-        }
-
-        .cta-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .final-cta h2 {
-          font-size: 2rem;
-        }
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .donation-card {
-        animation: fadeInUp 0.8s ease-out forwards;
-      }
-
-      .donation-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .donation-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .donation-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .donation-card:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Navigation -->
@@ -581,136 +21,244 @@
           LABBRA Systems
         </a>
         <ul class="nav-links">
+          <div class="mobile-close">&times;</div>
           <li><a href="index.html">Home</a></li>
           <li><a href="who-is-labbra.html">Who is LABBRA</a></li>
           <li><a href="problem.html">The Problem</a></li>
           <li><a href="solution.html">Our Solution</a></li>
           <li><a href="team.html">Team</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html" class="mobile-donate">Donate</a></li>
         </ul>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <a href="donate.html" class="cta-button active">Donate</a>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-container">
-        <h1>Support Our Mission</h1>
-        <p>
-          Help us deploy life-saving LABBRA systems and honor the memory of six
-          UCF students. Every donation brings us closer to preventing future
-          tragedies.
-        </p>
+    <!-- Hero Section - Challenge Progress -->
+    <section
+      class="hero page-hero donate countdown-section"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--accent-blue),
+          var(--primary-dark)
+        );
+        color: white;
+        padding: 120px 0 80px 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      "
+    >
+      <div class="section-container">
+        <div
+          class="section-header"
+          style="text-align: center; margin-bottom: 3rem"
+        >
+          <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem">
+            500 for LABBRA Challenge
+          </h2>
+          <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem">
+            Track our progress towards the August 18th deadline
+          </p>
+        </div>
 
-        <div class="hero-stats">
-          <div class="stat-card">
-            <div class="stat-number">$8,000</div>
-            <div class="stat-label">Fundraising Goal</div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+          "
+        >
+          <!-- Days Left -->
+          <div
+            class="countdown-display"
+            style="
+              text-align: center;
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2rem;
+              border-radius: 16px;
+            "
+          >
+            <div
+              id="countdown"
+              style="
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 1rem;
+              "
+            >
+              73
+            </div>
+            <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8)">
+              Days Left
+            </p>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">500</div>
-            <div class="stat-label">Miles Challenge</div>
+
+          <!-- Miles Left -->
+          <div
+            class="miles-display"
+            style="
+              text-align: center;
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2rem;
+              border-radius: 16px;
+            "
+          >
+            <div
+              style="
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 1rem;
+              "
+            >
+              471.2
+            </div>
+            <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8)">
+              Miles Left
+            </p>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">More</div>
-            <div class="stat-label">Lives We Could Save</div>
+
+          <!-- Total Raised -->
+          <div
+            class="raised-display"
+            style="
+              text-align: center;
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2rem;
+              border-radius: 16px;
+            "
+          >
+            <div
+              style="
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 1rem;
+              "
+            >
+              $150
+            </div>
+            <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8)">
+              Total Raised
+            </p>
           </div>
+        </div>
+
+        <!-- Donate Button -->
+        <div style="text-align: center; margin-top: 3rem">
+          <a
+            href="https://www.gofundme.com/f/skating-500-miles-for-pedestrian-safety"
+            class="btn-large"
+            target="_blank"
+            style="
+              display: inline-block;
+              background: white;
+              color: var(--primary-dark);
+              padding: 1.5rem 3rem;
+              border-radius: 12px;
+              text-decoration: none;
+              font-weight: 700;
+              font-size: 1.2rem;
+              transition: all 0.3s ease;
+              text-align: center;
+              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            "
+            >Donate Now</a
+          >
         </div>
       </div>
     </section>
 
-    <!-- Progress Section -->
-    <section class="progress-section">
+    <!-- Combined Challenge & Donation Section -->
+    <section
+      class="challenge-donation-section"
+      style="padding: 4rem 0; background: #f8f9fa"
+    >
       <div class="section-container">
-        <div class="section-header">
-          <h2>Our Progress</h2>
-          <p>
-            Track our fundraising progress as we work toward deploying LABBRA
-            systems throughout Central Florida.
+        <div
+          class="section-header"
+          style="text-align: center; margin-bottom: 3rem"
+        >
+          <h2>The 500 Mile Challenge</h2>
+          <p
+            style="
+              max-width: 800px;
+              margin: 0 auto;
+              font-size: 1.1rem;
+              color: var(--secondary-gray);
+            "
+          >
+            Our team lead, Ben Mingst, is rollerblading 500 miles to raise
+            awareness and funds for pedestrian safety. Your donations directly
+            fund the development of our first LABBRA prototype.
           </p>
         </div>
 
-        <div class="progress-card">
-          <div class="goal-amount">$8,000</div>
-          <p>Fundraising Goal</p>
-
-          <div class="progress-bar-container">
-            <div class="progress-bar" id="progressBar">$2,800 raised (35%)</div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 3rem;
+          "
+          class="donation-grid"
+        >
+          <!-- GoFundMe Embed -->
+          <div
+            class="gofundme-container"
+            style="
+              background: white;
+              padding: 2rem;
+              border-radius: 16px;
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3
+              style="
+                margin-bottom: 1.5rem;
+                color: var(--primary-dark);
+                text-align: center;
+              "
+            >
+              Support Our Mission
+            </h3>
+            <div class="gofundme-integration">
+              <div
+                class="gfm-embed"
+                data-url="https://www.gofundme.com/f/skating-500-miles-for-pedestrian-safety/widget/large?sharesheet=manage hero&attribution_id=sl:8f0bfc79-1ece-4e55-966a-f56cf7980f65"
+              ></div>
+            </div>
           </div>
 
-          <p class="progress-text">
-            Every dollar helps us get closer to saving lives. Help us reach
-            100%!
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Donation Options -->
-    <section class="donation-section">
-      <div class="section-container">
-        <div class="section-header">
-          <h2>Choose Your Impact</h2>
-          <p>
-            Select a donation amount that works for you. Every contribution
-            makes a difference in pedestrian safety.
-          </p>
-        </div>
-
-        <div class="donation-grid">
-          <div class="donation-card">
-            <div class="donation-amount">$25</div>
-            <h3>Supporter</h3>
-            <p>
-              Help fund research and development of our AI detection algorithms.
-            </p>
-            <button class="btn" onclick="donate(25)">Donate $25</button>
-          </div>
-
-          <div class="donation-card">
-            <div class="donation-amount">$50</div>
-            <h3>Advocate</h3>
-            <p>
-              Support hardware components and testing equipment for our systems.
-            </p>
-            <button class="btn" onclick="donate(50)">Donate $50</button>
-          </div>
-
-          <div class="donation-card">
-            <div class="donation-amount">$100</div>
-            <h3>Champion</h3>
-            <p>
-              Fund a complete camera system for one intersection monitoring
-              setup.
-            </p>
-            <button class="btn" onclick="donate(100)">Donate $100</button>
-          </div>
-
-          <div class="donation-card">
-            <div class="donation-amount">$250</div>
-            <h3>Guardian</h3>
-            <p>
-              Sponsor a full LABBRA system deployment at a high-risk
-              intersection.
-            </p>
-            <button class="btn" onclick="donate(250)">Donate $250</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Challenge Section -->
-    <section class="challenge-section">
-      <div class="section-container">
-        <div class="challenge-grid">
-          <div class="challenge-content">
-            <h2>The 500 Mile Challenge</h2>
-            <p>
-              Our team lead, Ben Mingst, is rollerblading 500 miles to raise
-              awareness and funds for pedestrian safety. Each mile represents
-              the lives lost and the hope for a safer future.
-            </p>
-
+          <!-- Miles Progress -->
+          <div
+            class="miles-container"
+            style="
+              background: white;
+              padding: 2rem;
+              border-radius: 16px;
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3
+              style="
+                margin-bottom: 1.5rem;
+                color: var(--primary-dark);
+                text-align: center;
+              "
+            >
+              Challenge Progress
+            </h3>
             <div class="miles-progress">
               <div
                 style="
@@ -720,13 +268,20 @@
                   margin-bottom: 1rem;
                 "
               >
-                <h4 style="margin: 0; font-size: 1.5rem; font-weight: bold">
+                <h4
+                  style="
+                    margin: 0;
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    color: var(--primary-dark);
+                  "
+                >
                   Miles Completed
                 </h4>
                 <div style="text-align: right">
                   <div
                     style="
-                      font-size: 1.5rem;
+                      font-size: 2rem;
                       font-weight: bold;
                       color: var(--accent-blue);
                     "
@@ -738,145 +293,252 @@
                   </div>
                 </div>
               </div>
-              <div class="miles-bar-container">
-                <div class="miles-bar" id="milesBar"></div>
+              <div
+                class="miles-bar-container"
+                style="
+                  background: #e9ecef;
+                  height: 12px;
+                  border-radius: 6px;
+                  overflow: hidden;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <div
+                  class="miles-bar"
+                  id="milesBar"
+                  style="
+                    height: 100%;
+                    background: linear-gradient(
+                      90deg,
+                      var(--accent-blue),
+                      var(--primary-dark)
+                    );
+                    width: 0;
+                    transition: width 2s ease-out;
+                    border-radius: 6px;
+                  "
+                ></div>
               </div>
               <div
                 style="
                   text-align: center;
-                  margin-top: 0.5rem;
                   font-size: 0.9rem;
                   color: var(--secondary-gray);
+                  margin-bottom: 1rem;
                 "
               >
                 5.76% Complete
               </div>
-              <p style="margin-top: 1rem">
-                Follow Ben's journey on our social media channels!
+              <p
+                style="
+                  text-align: center;
+                  margin: 0;
+                  color: var(--secondary-gray);
+                "
+              >
+                Follow Ben's journey on our social media!
               </p>
             </div>
-
-            <p>
-              Every mile Ben completes brings us closer to our goal and spreads
-              awareness about the importance of pedestrian safety technology.
-            </p>
           </div>
+        </div>
 
-          <div class="challenge-visual">
-            <h3>Follow the Journey</h3>
+        <!-- Social Media & Journey Tracking -->
+        <div
+          style="
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+          "
+        >
+          <h3
+            style="
+              text-align: center;
+              margin-bottom: 2rem;
+              color: var(--primary-dark);
+              font-size: 1.8rem;
+            "
+          >
+            Follow the Journey
+          </h3>
 
-            <!-- YouTube Channel Embed -->
-            <div style="margin-bottom: 2rem">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 2rem;
+              margin-bottom: 2rem;
+            "
+          >
+            <!-- YouTube -->
+            <div style="text-align: center">
               <h4 style="margin-bottom: 1rem; color: var(--primary-dark)">
                 Latest Videos
               </h4>
               <iframe
                 width="100%"
-                height="315"
+                height="200"
                 src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID"
                 title="Ben's Rollerblading Journey"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
-                style="border-radius: 12px; max-width: 560px"
-              >
-              </iframe>
+                style="border-radius: 12px"
+              ></iframe>
             </div>
 
-            <!-- Strava Activities Embed -->
-            <div>
+            <!-- Strava -->
+            <div style="text-align: center">
               <h4 style="margin-bottom: 1rem; color: var(--primary-dark)">
                 Recent Workouts
               </h4>
               <div
-                class="strava-embed-placeholder"
-                data-embed-type="activity"
-                data-embed-id="14665062237"
-                data-style="standard"
-                data-from-embed="false"
-              ></div>
+                style="
+                  height: 200px;
+                  overflow-y: auto;
+                  border-radius: 12px;
+                  background: #f5f5f5;
+                  padding: 1rem;
+                "
+              >
+                <div
+                  class="strava-embed-placeholder"
+                  data-embed-type="activity"
+                  data-embed-id="14665062237"
+                  data-style="standard"
+                  data-from-embed="false"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Instagram -->
+            <div style="text-align: center">
+              <h4 style="margin-bottom: 1rem; color: var(--primary-dark)">
+                Instagram Updates
+              </h4>
+              <div
+                style="
+                  height: 200px;
+                  background: #f5f5f5;
+                  border-radius: 12px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--secondary-gray);
+                "
+              >
+                <p>Follow @labbrasystems<br />for daily updates!</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Impact Section -->
-    <section class="impact-section">
-      <div class="section-container">
-        <div class="section-header">
-          <h2 style="color: white">Your Impact</h2>
-          <p style="color: rgba(255, 255, 255, 0.8)">
-            See how your donation directly contributes to saving lives and
-            honoring memory.
-          </p>
-        </div>
-
-        <div class="impact-grid">
-          <div class="impact-card">
-            <h3>Technology Development</h3>
-            <p>
-              Your donations fund the development of cutting-edge AI algorithms
-              that can detect pedestrian accidents with 95%+ accuracy.
-            </p>
-          </div>
-
-          <div class="impact-card">
-            <h3>Hardware Deployment</h3>
-            <p>
-              Contributions help us purchase and install weather-resistant
-              camera systems at high-risk intersections throughout Central
-              Florida.
-            </p>
-          </div>
-
-          <div class="impact-card">
-            <h3>Emergency Response</h3>
-            <p>
-              Your support enables faster emergency response times, potentially
-              reducing fatalities by up to 40% through quicker intervention.
-            </p>
-          </div>
-
-          <div class="impact-card">
-            <h3>Community Awareness</h3>
-            <p>
-              Donations support outreach programs that educate communities about
-              pedestrian safety and the technology protecting them.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="final-cta">
-      <div class="section-container">
-        <h2>Every Dollar Saves Lives</h2>
-        <p>
-          Join us in honoring London, Alexandria, Brooke, Brandon, Reuel, and
-          Austin by supporting technology that prevents future tragedies.
-        </p>
-
-        <div class="cta-buttons">
-          <a href="#" class="btn-large" onclick="donate('custom')"
-            >Donate Now</a
-          >
-          <a
-            href="contact.html"
-            class="btn-large"
+        <!-- Journey Details -->
+        <div
+          style="
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+          "
+        >
+          <p
             style="
-              background: transparent;
-              border: 2px solid white;
-              color: white;
+              font-size: 1.1rem;
+              line-height: 1.6;
+              color: var(--secondary-gray);
+              margin-bottom: 1.5rem;
             "
-            >Get Involved</a
           >
+            This journey is dedicated to spreading awareness about pedestrian
+            safety dangers, showcasing Florida's beauty, and working towards
+            building a safer world where people can rollerblade safely. Every
+            mile brings us closer to our goal and spreads awareness about the
+            importance of pedestrian safety technology.
+          </p>
+
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 1rem;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="https://www.gofundme.com/f/skating-500-miles-for-pedestrian-safety"
+              class="btn-large"
+              target="_blank"
+              style="
+                background: var(--accent-blue);
+                color: white;
+                text-decoration: none;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                font-weight: 600;
+              "
+            >
+              Donate Now
+            </a>
+            <a
+              href="team.html"
+              class="btn-large"
+              style="
+                background: transparent;
+                border: 2px solid var(--accent-blue);
+                color: var(--accent-blue);
+                text-decoration: none;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                font-weight: 600;
+              "
+            >
+              Meet Our Team
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <script>
+      // Mobile menu functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileToggle = document.querySelector(".mobile-menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+        const mobileClose = document.querySelector(".mobile-close");
+
+        if (mobileToggle && navLinks) {
+          mobileToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            mobileToggle.classList.toggle("active");
+          });
+        }
+
+        if (mobileClose && navLinks) {
+          mobileClose.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+            mobileToggle.classList.remove("active");
+          });
+        }
+
+        // Close menu when clicking on a link
+        const navLinksItems = document.querySelectorAll(".nav-links a");
+        navLinksItems.forEach((link) => {
+          link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+            mobileToggle.classList.remove("active");
+          });
+        });
+      });
+
+      // Countdown to August 18th - Updated to show fixed 73 days
+      function updateCountdown() {
+        // Fixed countdown showing 73 days left
+        document.getElementById("countdown").textContent = "73";
+      }
+
       // Donation function
       function donate(amount) {
         if (amount === "custom") {
@@ -899,9 +561,15 @@
 
       // Animate progress bars on page load
       window.addEventListener("load", () => {
+        // Update countdown immediately (now shows fixed 73 days)
+        updateCountdown();
+
+        // Animate miles progress bar
         setTimeout(() => {
-          document.getElementById("progressBar").style.width = "35%";
-          document.getElementById("milesBar").style.width = "5.76%";
+          const milesBar = document.getElementById("milesBar");
+          if (milesBar) {
+            milesBar.style.width = "5.76%";
+          }
         }, 1000);
       });
 
@@ -950,5 +618,8 @@
 
     <!-- Strava Embed Script -->
     <script src="https://strava-embeds.com/embed.js"></script>
+
+    <!-- GoFundMe Embed Script -->
+    <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
   </body>
 </html>
