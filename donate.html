@@ -86,16 +86,26 @@
         .gofundme-container {
           width: 100% !important;
           max-width: 100% !important;
-          overflow: hidden !important;
+          overflow: visible !important;
           box-sizing: border-box !important;
-          min-height: 500px !important;
+          min-height: 450px !important;
+          height: auto !important;
         }
 
         .gfm-embed {
           width: 100% !important;
           max-width: 100% !important;
-          overflow: hidden !important;
-          min-height: 450px !important;
+          overflow: visible !important;
+          min-height: 400px !important;
+          height: auto !important;
+        }
+
+        /* GoFundMe iframe specific fixes */
+        .gfm-embed iframe {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          min-height: 350px !important;
         }
 
         /* Follow the Journey Mobile */
@@ -162,6 +172,21 @@
           max-width: 100% !important;
           overflow-x: hidden !important;
           box-sizing: border-box !important;
+          /* Reduce section padding on mobile */
+          .hero-section,
+          .challenge-section,
+          .follow-journey-section {
+            padding: 20px 15px !important;
+          }
+
+          /* Reduce margins between sections */
+          .challenge-section {
+            margin-top: 10px !important;
+          }
+
+          .follow-journey-section {
+            margin-top: 10px !important;
+          }
         }
       }
 
@@ -232,11 +257,19 @@
 
         /* GoFundMe embed height for very small screens */
         .gofundme-container {
-          min-height: 600px !important;
+          min-height: 400px !important;
+          height: auto !important;
         }
 
         .gfm-embed {
-          min-height: 550px !important;
+          min-height: 350px !important;
+          height: auto !important;
+        }
+
+        /* GoFundMe iframe fixes for very small screens */
+        .gfm-embed iframe {
+          min-height: 300px !important;
+          height: auto !important;
         }
       }
     </style>
@@ -513,7 +546,7 @@
             <div class="gofundme-integration">
               <div
                 class="gfm-embed"
-                data-url="https://www.gofundme.com/f/skating-500-miles-for-pedestrian-safety/widget/large?sharesheet=manage hero&attribution_id=sl:8f0bfc79-1ece-4e55-966a-f56cf7980f65"
+                data-url="https://www.gofundme.com/f/skating-500-miles-for-pedestrian-safety/widget/medium?sharesheet=manage hero&attribution_id=sl:8f0bfc79-1ece-4e55-966a-f56cf7980f65"
               ></div>
             </div>
           </div>
