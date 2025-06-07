@@ -12,10 +12,31 @@
     <style>
       /* Mobile Responsive Styles for Donate Page */
       @media (max-width: 768px) {
+        /* Fix mobile overflow issues */
+        body {
+          overflow-x: hidden !important;
+        }
+
+        /* Navigation fixes for mobile */
+        .navbar {
+          padding: 0 1rem !important;
+        }
+
+        .nav-container {
+          max-width: 100% !important;
+          padding: 0 !important;
+        }
+
+        .mobile-menu-toggle {
+          margin-right: 0 !important;
+          z-index: 1000 !important;
+        }
+
         /* Hero Section Mobile */
         .hero {
           padding: 80px 0 60px 0 !important;
           min-height: 80vh !important;
+          overflow-x: hidden !important;
         }
 
         .hero h1 {
@@ -61,16 +82,44 @@
           gap: 2rem !important;
         }
 
+        /* GoFundMe embed container fixes */
+        .gofundme-container {
+          width: 100% !important;
+          max-width: 100% !important;
+          overflow: hidden !important;
+          box-sizing: border-box !important;
+        }
+
+        .gfm-embed {
+          width: 100% !important;
+          max-width: 100% !important;
+          overflow: hidden !important;
+        }
+
         /* Follow the Journey Mobile */
-        .donation-grid + div > div:nth-child(2) > div {
+        .journey-grid {
           grid-template-columns: 1fr !important;
           gap: 1.5rem !important;
         }
 
-        /* YouTube, Strava, Instagram containers */
-        .donation-grid + div > div:nth-child(2) > div > div iframe,
-        .donation-grid + div > div:nth-child(2) > div > div > div {
+        /* YouTube, Strava, Instagram containers - prevent overflow */
+        .journey-grid > div {
+          width: 100% !important;
+          max-width: 100% !important;
+          overflow: hidden !important;
+          box-sizing: border-box !important;
+        }
+
+        .journey-grid iframe,
+        .journey-grid > div > div {
           height: 300px !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        /* Specific iframe fixes */
+        .journey-grid iframe {
+          box-sizing: border-box !important;
         }
 
         /* Button adjustments */
@@ -82,11 +131,35 @@
         /* Section containers */
         .section-container {
           padding: 0 1rem !important;
+          max-width: 100% !important;
+          overflow-x: hidden !important;
+          box-sizing: border-box !important;
         }
 
         /* Challenge donation section */
         .challenge-donation-section {
           padding: 3rem 0 !important;
+          overflow-x: hidden !important;
+        }
+
+        /* All containers prevent overflow */
+        .gofundme-container,
+        .miles-container,
+        .countdown-display,
+        .miles-display,
+        .raised-display {
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+          overflow: hidden !important;
+        }
+
+        /* Grid containers */
+        .countdown-grid,
+        .donation-grid,
+        .journey-grid {
+          max-width: 100% !important;
+          overflow-x: hidden !important;
+          box-sizing: border-box !important;
         }
       }
 
@@ -126,6 +199,33 @@
           width: 100% !important;
           max-width: 250px !important;
           text-align: center !important;
+        }
+
+        /* Extra aggressive overflow prevention for very small screens */
+        body {
+          overflow-x: hidden !important;
+          width: 100% !important;
+        }
+
+        /* Extra padding reduction for very small screens */
+        .section-container {
+          padding: 0 0.5rem !important;
+        }
+
+        /* Ensure all embedded content fits */
+        iframe,
+        embed,
+        object {
+          max-width: 100% !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        /* Fix Follow the Journey selectors for small screens */
+        .journey-grid iframe,
+        .journey-grid > div > div {
+          height: 250px !important;
+          width: 100% !important;
         }
       }
     </style>
