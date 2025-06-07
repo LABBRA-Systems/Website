@@ -9,6 +9,126 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Mobile Responsive Styles for Donate Page */
+      @media (max-width: 768px) {
+        /* Hero Section Mobile */
+        .hero {
+          padding: 80px 0 60px 0 !important;
+          min-height: 80vh !important;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem !important;
+          margin-bottom: 1.5rem !important;
+        }
+
+        .hero p {
+          font-size: 1.1rem !important;
+          margin-bottom: 2rem !important;
+        }
+
+        /* Challenge Progress Section Mobile */
+        .countdown-section {
+          padding: 60px 0 !important;
+        }
+
+        .countdown-section h2 {
+          font-size: 2rem !important;
+        }
+
+        /* Grid layouts for mobile */
+        .countdown-section > div > div:first-child {
+          grid-template-columns: 1fr !important;
+          gap: 1.5rem !important;
+        }
+
+        .countdown-display,
+        .miles-display,
+        .raised-display {
+          padding: 1.5rem !important;
+        }
+
+        .countdown-display div,
+        .miles-display div,
+        .raised-display div {
+          font-size: 2.5rem !important;
+        }
+
+        /* Donation Grid Mobile */
+        .donation-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+
+        /* Follow the Journey Mobile */
+        .donation-grid + div > div:nth-child(2) > div {
+          grid-template-columns: 1fr !important;
+          gap: 1.5rem !important;
+        }
+
+        /* YouTube, Strava, Instagram containers */
+        .donation-grid + div > div:nth-child(2) > div > div iframe,
+        .donation-grid + div > div:nth-child(2) > div > div > div {
+          height: 300px !important;
+        }
+
+        /* Button adjustments */
+        .btn-large {
+          padding: 1rem 2rem !important;
+          font-size: 1rem !important;
+        }
+
+        /* Section containers */
+        .section-container {
+          padding: 0 1rem !important;
+        }
+
+        /* Challenge donation section */
+        .challenge-donation-section {
+          padding: 3rem 0 !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        /* Extra small mobile devices */
+        .hero h1 {
+          font-size: 2rem !important;
+        }
+
+        .hero p {
+          font-size: 1rem !important;
+        }
+
+        .countdown-section h2 {
+          font-size: 1.8rem !important;
+        }
+
+        .countdown-display div,
+        .miles-display div,
+        .raised-display div {
+          font-size: 2rem !important;
+        }
+
+        /* Follow the Journey heights for very small screens */
+        .donation-grid + div > div:nth-child(2) > div > div iframe,
+        .donation-grid + div > div:nth-child(2) > div > div > div {
+          height: 250px !important;
+        }
+
+        /* Button stack on very small screens */
+        .donation-grid + div > div:last-child > div:last-child {
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+
+        .donation-grid + div > div:last-child > div:last-child a {
+          width: 100% !important;
+          max-width: 250px !important;
+          text-align: center !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <!0 Navigation 0>
@@ -135,6 +255,7 @@
         </div>
 
         <div
+          class="countdown-grid"
           style="
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -412,6 +533,7 @@
           </h3>
 
           <div
+            class="journey-grid"
             style="
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
