@@ -498,8 +498,7 @@ body {
   /* Hide donate button on mobile */
   .cta-button {
     display: none;
-  }
-    .nav-links {
+  }    .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
@@ -508,13 +507,16 @@ body {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 2rem;
     transition: transform 0.3s ease;
     z-index: 1001;
     box-sizing: border-box;
-    padding: 2rem;
+    padding: 80px 1rem 2rem 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     transform: translateX(100%);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -821,5 +823,16 @@ body {
   .nav-links.active li {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .nav-links {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }
