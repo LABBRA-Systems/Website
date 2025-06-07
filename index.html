@@ -3,171 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LABBRA Systems - Safe Steps, Save Lives</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <title>LABBRA Systems - Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=pages/home.html" />
+    <link rel="canonical" href="pages/home.html" />
+    <link rel="stylesheet" href="styles/redirect.css" />
+    <script src="js/nav.js" defer></script>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo">
-          <div class="logo-icon">
-            <img src="LABBRA.png" alt="LABBRA Logo" />
-          </div>
-          LABBRA Systems
-        </div>
-        <ul class="nav-links">
-          <div class="mobile-close">&times;</div>
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="who-is-labbra.html">Who is LABBRA</a></li>
-          <li><a href="problem.html">The Problem</a></li>
-          <li><a href="solution.html">Our Solution</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="donate.html" class="mobile-donate">Donate</a></li>
-        </ul>
-        <div class="mobile-menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <a href="donate.html" class="cta-button">Donate</a>
+    <div class="redirect-container">
+      <div class="logo">LABBRA Systems</div>
+      <div class="message">Redirecting you to our home page...</div>
+      <div class="spinner"></div>
+      <div class="fallback-link">
+        <p>
+          If you are not redirected automatically,
+          <a href="pages/home.html">click here</a>.
+        </p>
       </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <h1>Safe Steps, <span class="highlight">Save Lives</span></h1>
-          <p>
-            LABBRA Systems uses advanced AI technology to detect pedestrian
-            accidents in real-time, honoring the memory of six UCF students
-            while protecting future lives.
-          </p>
-          <div class="hero-buttons">
-            <a href="who-is-labbra.html" class="cta-button">Meet LABBRA</a>
-            <a href="solution.html" class="btn-secondary">Our Technology</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="logo-large">
-            <img src="LABBRA.png" alt="LABBRA Systems Logo" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-      <div class="stats-container">
-        <div class="stat-item">
-          <h3>15s</h3>
-          <p>911 alert response time</p>
-        </div>
-        <div class="stat-item">
-          <h3>24/7</h3>
-          <p>Continuous detection system</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-      <div class="features-container">
-        <div class="section-header">
-          <h2>Advanced Technology for Pedestrian Safety</h2>
-          <p>
-            Our AI-powered system combines cutting-edge computer vision with
-            real-time emergency response to save lives at crossroads.
-          </p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🤖</div>
-            <h3>AI Detection</h3>
-            <p>
-              Machine learning algorithms trained on thousands of hours of
-              traffic data to accurately identify pedestrian accidents in
-              real-time.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Instant Response</h3>
-            <p>
-              911 is contacted within 15 seconds with nearest DMS center
-              coordinates, accident details, videos, and photos.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
-            <h3>Weather Resistant</h3>
-            <p>
-              Our housing and mounting systems are reliable in weather
-              situations. With optional add-ons we can increase our uptime even
-              during power outages.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <script>
-      // Mobile menu functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileToggle = document.querySelector(".mobile-menu-toggle");
-        const navLinks = document.querySelector(".nav-links");
-        const mobileClose = document.querySelector(".mobile-close");
-
-        if (mobileToggle && navLinks) {
-          mobileToggle.addEventListener("click", function () {
-            navLinks.classList.toggle("active");
-            mobileToggle.classList.toggle("active");
-          });
-        }
-
-        if (mobileClose && navLinks) {
-          mobileClose.addEventListener("click", function () {
-            navLinks.classList.remove("active");
-            mobileToggle.classList.remove("active");
-          });
-        }
-
-        // Close menu when clicking on a link
-        const navLinksItems = document.querySelectorAll(".nav-links a");
-        navLinksItems.forEach((link) => {
-          link.addEventListener("click", function () {
-            navLinks.classList.remove("active");
-            mobileToggle.classList.remove("active");
-          });
-        });
-      });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Navbar scroll effect
-      window.addEventListener("scroll", () => {
-        const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 100) {
-          navbar.style.background = "rgba(255, 255, 255, 0.98)";
-          navbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
-        } else {
-          navbar.style.background = "rgba(255, 255, 255, 0.95)";
-          navbar.style.boxShadow = "none";
-        }
-      });
+      // Fallback redirect in case meta refresh doesn't work
+      setTimeout(function () {
+        window.location.href = "pages/home.html";
+      }, 1000);
     </script>
   </body>
 </html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate - Support LABBRA Systems</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/donate.css" />
+  </head>
+  <body>
+    <!-- Navigation Container -->
+    <div id="navbar-container"></div>
+    <div class="menu-overlay"></div>
+
+    <!0 Hero Section - We Need Your Help 0>
+    <section class="hero page-hero donate-hero">
+      <div class="section-container">
+        <div class="section-header donate-hero-header">
+          <h1 class="donate-hero-title">We Need Your Help</h1>
+          <p class="donate-hero-description">
+            We need $5,000 for hardware and testing, and $3,000 to market our
+            solution, get it in front of city officials, and create a lasting
+            impact even after graduation. Your donation directly funds research,
+            development, and securing a pilot program.
+          </p>
+
+          <!0 Donate Button 0>
+          <div class="donate-button-container">
+            <a
+              href="https://www.gofundme.com/f/skating-500-miles-for-pedestrian-safety"
+              class="btn-large donate-hero-button"
+              target="_blank"
+              >Donate Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!0 Challenge Progress Section 0>
+    <section class="countdown-section challenge-progress-section">
+      <div class="section-container">
+        <div class="section-header challenge-progress-header">
+          <h2 class="challenge-progress-title">500 for LABBRA Challenge</h2>
+          <p class="challenge-progress-description">
+            Track our progress towards the August 18th deadline
+          </p>
+        </div>
+
+        <div class="countdown-grid">
+          <!0 Days Left 0>
+          <div class="countdown-display countdown-display-card">
+            <div id="countdown" class="countdown-number">0</div>
+            <p class="countdown-label">Days Left</p>
+          </div>
+
+          <!0 Miles Left 0>
+          <div class="miles-display countdown-display-card">
+            <div class="miles-left-display countdown-number">471.2</div>
+            <p class="countdown-label">Miles Left</p>
+          </div>
+
+          <!0 Total Raised 0>
+          <div class="raised-display countdown-display-card">
+            <div class="total-raised-display countdown-number">$150</div>
+            <p class="countdown-label">Total Raised</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!0 Combined Challenge & Donation Section 0>
+    <section class="challenge-donation-section challenge-donation-bg">
+      <div class="section-container">
+        <div class="section-header challenge-donation-header">
+          <h2>The 500 Mile Challenge</h2>
+          <p class="challenge-donation-description">
+            Our team lead, Ben Mingst, is rollerblading 500 miles to raise
+            awareness and funds for pedestrian safety. Your donations directly
+            fund the development of our first LABBRA prototype.
+          </p>
+        </div>
+
+        <div class="donation-grid donation-grid-layout">
+          <!0 GoFundMe Embed 0>
+          <div class="gofundme-container donation-card-container">
+            <h3 class="donation-card-title">Support Our Mission</h3>
+            <div class="gofundme-integration">
+              <div
+                class="gfm-embed"
+                data-url="https://www.gofundme.com/f/skating-500-miles-for-pedestrian-safety/widget/large?sharesheet=fundraiser sidebar&attribution_id=sl:8f0bfc79-1ece-4e55-966a-f56cf7980f65"
+              ></div>
+            </div>
+          </div>
+
+          <!0 Miles Progress 0>
+          <div class="miles-container donation-card-container">
+            <h3 class="donation-card-title">Challenge Progress</h3>
+            <div class="miles-progress">
+              <div class="miles-progress-header">
+                <h4 class="miles-progress-title">Miles Completed</h4>
+                <div class="miles-progress-stats">
+                  <div class="miles-completed-display miles-completed-number">
+                    28.8
+                  </div>
+                  <div class="miles-progress-subtitle">of 500 miles</div>
+                </div>
+              </div>
+              <div class="miles-bar-container miles-progress-bar-container">
+                <div class="miles-bar miles-progress-bar" id="milesBar"></div>
+              </div>
+              <div class="completion-percentage completion-percentage-text">
+                5.76% Complete
+              </div>
+            </div>
+
+            <!0 Workouts List 0>
+            <div class="workouts-list-container">
+              <div
+                class="strava-embed-placeholder"
+                data-embed-type="activity"
+                data-embed-id="14724770594"
+                data-style="standard"
+                data-from-embed="false"
+              ></div>
+              <div
+                class="strava-embed-placeholder"
+                data-embed-type="activity"
+                data-embed-id="14665062237"
+                data-style="standard"
+                data-from-embed="false"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!0 Social Media & Journey Tracking 0>
+        <div class="journey-section-container">
+          <h3 class="journey-section-title">Follow the Journey</h3>
+
+          <div class="journey-grid journey-grid-layout">
+            <!0 YouTube 0>
+            <div class="journey-column">
+              <h4 class="journey-column-title">Latest Videos</h4>
+              <iframe
+                width="100%"
+                height="600"
+                src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID"
+                title="Ben's Rollerblading Journey"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                class="journey-iframe-style"
+              ></iframe>
+            </div>
+
+            <!0 Instagram 0>
+            <div class="journey-column">
+              <h4 class="journey-column-title">Instagram Updates</h4>
+              <div class="journey-instagram-container">
+                <p>Follow @labbrasystems<br />for daily updates!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../js/utils.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/donate.js"></script>
+    <script src="../js/nav.js"></script>
+
+    <!-- Strava Embed Script -->
+    <script src="https://strava-embeds.com/embed.js"></script>
+
+    <!-- GoFundMe Embed Script -->
+    <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+  </body>
+</html>

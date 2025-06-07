@@ -1,0 +1,978 @@
+/* ========================================
+   Donate Page Specific Styles
+   ======================================== */
+
+/* ========================================
+   DONATE HERO SECTION
+   ======================================== */
+.hero.page-hero.donate {
+  background: linear-gradient(135deg, var(--success-green) 0%, #247211 100%);
+  color: white;
+  min-height: 100vh !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.hero.page-hero {
+  padding: 120px 0 80px 0;
+  text-align: center;
+  min-height: auto;
+}
+
+.hero.page-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero.page-hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Donate Hero Specific Styles */
+.donate-hero {
+  background: linear-gradient(135deg, #2b992b, #3fcf3f) !important;
+  color: white;
+  padding: 0 !important;
+  min-height: 100vh !important;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donate-hero-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.donate-hero-title {
+  color: white;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  margin-bottom: 2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.donate-hero-description {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.donate-button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.donate-hero-button {
+  display: inline-block;
+  background: white;
+  color: #2d5a27;
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(2rem, 4vw, 3rem);
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+}
+
+.donate-hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  background: #f8f9fa;
+}
+
+/* ========================================
+   DONATE HERO STATS
+   ======================================== */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* ========================================
+   COUNTDOWN/CHALLENGE PROGRESS SECTION
+   ======================================== */
+.countdown-section {
+  background: linear-gradient(135deg, var(--accent-blue), var(--primary-dark));
+  color: white;
+  padding: 80px 0 80px 0;
+  display: flex;
+  align-items: center;
+}
+
+.challenge-progress-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.challenge-progress-title {
+  color: white !important;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.challenge-progress-description {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1.2rem;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.countdown-display-card {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+.countdown-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.countdown-label {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ========================================
+   DONATION PROGRESS SECTION
+   ======================================== */
+.progress-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.progress-card {
+  background: var(--light-gray);
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.goal-amount {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--primary-red);
+  margin: 1rem 0;
+}
+
+.progress-text {
+  font-size: 1.1rem;
+  color: var(--secondary-gray);
+  margin-top: 1rem;
+}
+
+/* ========================================
+   DONATION OPTIONS SECTION
+   ======================================== */
+.donation-section {
+  padding: 5rem 0;
+  background: var(--light-gray);
+}
+
+.donation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.donation-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.donation-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-red);
+}
+
+.donation-amount {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+}
+
+.donation-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.donation-card p {
+  color: var(--secondary-gray);
+  margin-bottom: 1.5rem;
+}
+
+.donation-card .btn {
+  background: var(--primary-red);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.donation-card .btn:hover {
+  background: #e53e3e;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   CHALLENGE DONATION SECTION
+   ======================================== */
+.challenge-donation-bg {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.challenge-donation-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.challenge-donation-description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--secondary-gray);
+}
+
+.donation-grid-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.donation-card-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.donation-card-title {
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+  text-align: center;
+}
+
+/* ========================================
+   GOFUNDME EMBED STYLING
+   ======================================== */
+.gofundme-container {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gofundme-integration {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gfm-embed {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gfm-embed iframe {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+/* ========================================
+   MILES PROGRESS COMPONENT
+   ======================================== */
+.miles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.miles-progress {
+  flex-shrink: 0;
+}
+
+.miles-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.miles-progress-title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+.miles-progress-stats {
+  text-align: right;
+}
+
+.miles-completed-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-blue);
+}
+
+.miles-progress-subtitle {
+  font-size: 0.9rem;
+  color: var(--secondary-gray);
+}
+
+.miles-progress-bar-container {
+  background: #e9ecef;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.miles-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-blue), var(--primary-dark));
+  width: 0;
+  transition: width 2s ease-out;
+  border-radius: 6px;
+}
+
+.completion-percentage-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--secondary-gray);
+  margin-bottom: 1rem;
+}
+
+.workouts-list-container {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 8px;
+  background: #f8f9fa;
+  padding: 1rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.workouts-list-container .strava-embed-placeholder {
+  flex: 0 0 280px;
+  min-width: 280px;
+  width: 280px;
+  margin: 0;
+}
+
+/* ========================================
+   CHALLENGE SECTION
+   ======================================== */
+.challenge-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.challenge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.challenge-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.challenge-content p {
+  font-size: 1.1rem;
+  color: var(--secondary-gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.miles-progress {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+}
+
+.miles-bar-container {
+  background: #e5e7eb;
+  border-radius: 25px;
+  height: 30px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.miles-bar {
+  background: linear-gradient(90deg, var(--accent-blue), var(--success-green));
+  height: 100%;
+  border-radius: 25px;
+  width: 5.76%;
+  transition: width 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.challenge-visual {
+  text-align: center;
+}
+
+.challenge-icon {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--success-green));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  font-size: 4rem;
+  color: white;
+  animation: bounce 2s infinite;
+}
+
+/* ========================================
+   JOURNEY SECTION
+   ======================================== */
+.journey-section-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.journey-section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-dark);
+  font-size: 1.8rem;
+}
+
+.journey-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.journey-column {
+  text-align: center;
+}
+
+.journey-column-title {
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.journey-iframe-style {
+  border-radius: 12px;
+}
+
+.journey-strava-container {
+  height: 600px;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: #f5f5f5;
+  padding: 1rem;
+}
+
+.journey-instagram-container {
+  height: 600px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-gray);
+}
+
+.journey-details-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.journey-details-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--secondary-gray);
+  margin-bottom: 1.5rem;
+}
+
+.journey-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.journey-donate-button {
+  background: var(--accent-blue);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.journey-team-button {
+  background: transparent;
+  border: 2px solid var(--accent-blue);
+  color: var(--accent-blue);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* ========================================
+   IMPACT SECTION
+   ======================================== */
+.impact-section {
+  padding: 5rem 0;
+  background: var(--primary-dark);
+  color: white;
+  text-align: center;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.impact-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.impact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--warning-orange);
+}
+
+.impact-card p {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* ========================================
+   FINAL CTA SECTION
+   ======================================== */
+.final-cta {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--warning-orange) 100%);
+  color: white;
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.final-cta p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   DONATE MOBILE RESPONSIVE
+   ======================================== */
+/* Desktop specific improvements */
+@media (min-width: 1200px) {
+  .donation-grid-layout {
+    max-width: 1400px;
+    gap: 4rem;
+    align-items: stretch;
+  }
+  
+  .gofundme-container {
+    height: auto;
+    min-height: 700px;
+    max-width: 100%;
+  }
+  
+  .gfm-embed {
+    min-height: 600px;
+    max-width: 100%;
+  }
+  
+  .gfm-embed iframe {
+    min-height: 600px;
+    max-width: 100%;
+  }
+  
+  .donate-hero-title {
+    font-size: 6rem;
+  }
+  
+  .donate-hero-description {
+    font-size: 1.8rem;
+    max-width: 900px;
+  }
+  
+  .donate-hero-button {
+    font-size: 1.4rem;
+    padding: 1.75rem 3.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .donation-grid-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .gofundme-container {
+    height: 550px;
+    min-height: 550px;
+  }
+  
+  .gfm-embed {
+    min-height: 500px;
+  }
+  
+  .gfm-embed iframe {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Donate page specific styles */
+  .donate-hero {
+    min-height: 100vh !important;
+    height: 100vh;
+    padding: 0 !important;
+  }
+
+  .donate-hero-header {
+    padding: 1rem;
+  }
+
+  .donate-button-container {
+    margin-top: 1.5rem;
+  }
+
+  .countdown-section .section-container {
+    padding: 0 1rem;
+  }
+
+  .countdown-section .section-header h2 {
+    font-size: 2rem !important;
+  }
+
+  .countdown-section .section-header p {
+    font-size: 1rem !important;
+  }
+
+  /* Challenge progress grid - mobile */
+  .countdown-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .countdown-display,
+  .miles-display,
+  .raised-display {
+    padding: 1.5rem !important;
+    margin: 0 !important;
+  }
+
+  .countdown-display div,
+  .miles-display div,
+  .raised-display div {
+    font-size: 2.8rem !important;
+  }
+
+  /* Donation sections */
+  .donation-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .donation-grid-layout {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .gofundme-container,
+  .miles-container {
+    padding: 1.5rem !important;
+    margin: 0 !important;
+  }
+
+  .workouts-list-container {
+    min-height: 180px !important;
+    margin-top: 1rem !important;
+    padding: 0.75rem !important;
+    gap: 0.75rem !important;
+  }
+  
+  .workouts-list-container .strava-embed-placeholder {
+    flex: 0 0 250px !important;
+    min-width: 250px !important;
+    width: 250px !important;
+  }
+
+  .journey-grid-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Challenge section */
+  .challenge-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .challenge-icon {
+    width: 150px;
+    height: 150px;
+    font-size: 3rem;
+  }
+
+  .challenge-content h2 {
+    font-size: 2rem;
+  }
+
+  /* Impact cards */
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .impact-card {
+    padding: 1.5rem;
+  }
+
+  /* Final CTA */
+  .final-cta h2 {
+    font-size: 2rem;
+  }
+
+  .final-cta p {
+    font-size: 1.1rem;
+  }
+
+  /* Journey Details */
+  .journey-buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .journey-donate-button,
+  .journey-team-button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  /* GoFundMe embed container fixes for mobile - medium widget */
+  .gofundme-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    min-height: 400px !important;
+    height: auto !important;
+  }
+
+  .gfm-embed {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    min-height: 350px !important;
+    height: auto !important;
+  }
+
+  .gfm-embed iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 300px !important;
+  }
+
+  /* Journey containers - prevent overflow */
+  .journey-grid-layout > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .journey-grid-layout iframe,
+  .journey-grid-layout > div > div {
+    height: 300px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Challenge donation section */
+  .challenge-donation-section {
+    padding: 3rem 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  /* All containers prevent overflow */
+  .gofundme-container,
+  .miles-container,
+  .countdown-display,
+  .miles-display,
+  .raised-display {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile devices */
+  .countdown-display div,
+  .miles-display div,
+  .raised-display div {
+    font-size: 2rem !important;
+  }
+
+  .countdown-section h2 {
+    font-size: 1.8rem !important;
+  }
+
+  /* Journey heights for very small screens */
+  .journey-grid-layout iframe,
+  .journey-grid-layout > div > div {
+    height: 250px !important;
+    width: 100% !important;
+  }
+
+  /* GoFundMe embed height for very small screens - medium widget */
+  .gofundme-container {
+    min-height: 350px !important;
+    height: auto !important;
+  }
+
+  .gfm-embed {
+    min-height: 300px !important;
+    height: auto !important;
+  }
+
+  .gfm-embed iframe {
+    min-height: 250px !important;
+    height: auto !important;
+  }
+}
+
+/* ========================================
+   DONATE ANIMATION CLASSES
+   ======================================== */
+.donation-card {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.donation-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.donation-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.donation-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.donation-card:nth-child(4) {
+  animation-delay: 0.4s;
+}

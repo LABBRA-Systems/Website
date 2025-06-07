@@ -1,0 +1,385 @@
+/* ========================================
+   Who is LABBRA Page Specific Styles
+   ======================================== */
+
+/* ========================================
+   WHO IS LABBRA BODY STYLES
+   ======================================== */
+.who-is-labbra-body {
+  background: var(--primary-dark);
+  color: var(--white);
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* ========================================
+   LABBRA CONTAINER
+   ======================================== */
+.labbra-container {
+  display: flex;
+  height: 100vh;
+  padding-top: 80px;
+  position: relative;
+}
+
+.letter-column {
+  flex: 1;
+  height: calc(100vh - 80px);
+  background: var(--primary-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  border-right: 2px solid var(--primary-dark);
+}
+
+.letter-column:last-child {
+  border-right: none;
+}
+
+.letter-column.expanded {
+  flex: 8;
+  background: var(--white);
+  color: var(--primary-dark);
+}
+
+.letter-column:not(.expanded) {
+  flex: 0.5;
+}
+
+.letter {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.6s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.letter-column.expanded .letter {
+  font-size: 4rem;
+  color: var(--primary-red);
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  z-index: 3;
+}
+
+.letter-column:not(.expanded):hover {
+  flex: 1.2;
+  background: #ff5555;
+}
+
+.letter-column:not(.expanded):hover .letter {
+  font-size: 4.5rem;
+}
+
+/* ========================================
+   STORY CONTENT
+   ======================================== */
+.story-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+  padding: 5rem 3rem 3rem 3rem;
+  height: 100%;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.letter-column.expanded .story-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story-header {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.story-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-red);
+  margin-bottom: 0.5rem;
+}
+
+.story-header .subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary-gray);
+  font-weight: 500;
+}
+
+.story-body {
+  max-width: 800px;
+}
+
+.story-body p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-gray);
+}
+
+.foundation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-red);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.foundation-link:hover {
+  background: #e53e3e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 59, 59, 0.3);
+}
+
+.quote {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-red);
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--primary-dark);
+}
+
+.close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  color: var(--secondary-gray);
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--primary-dark);
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+.page-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.6s ease;
+}
+
+.page-header.hidden {
+  opacity: 0;
+  transform: translate(-50%, -150%) scale(0.8);
+}
+
+.page-header h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-header p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   LONDON STORY COMPONENTS
+   ======================================== */
+.london-story-container {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.london-story-text {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.london-quote-box {
+  background: #e8f4fd;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid #2196f3;
+  margin: 1rem 0;
+}
+
+.london-quote-text {
+  margin: 0;
+  font-style: italic;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.london-foundation-box {
+  background: #fff3cd;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid #ffc107;
+  margin: 1rem 0;
+}
+
+.london-foundation-text {
+  margin: 0;
+  font-weight: 600;
+  color: #856404;
+}
+
+.london-link-container {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.london-foundation-link {
+  display: inline-block;
+  background: #2196f3;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ========================================
+   WHO IS LABBRA ANIMATIONS
+   ======================================== */
+.letter-column {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.letter-column:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.letter-column:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.letter-column:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.letter-column:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.letter-column:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.letter-column:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* ========================================
+   WHO IS LABBRA MOBILE RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  /* Who is LABBRA page mobile styles */
+  .who-is-labbra-body .mobile-menu-toggle span {
+    background: var(--primary-dark) !important;
+  }
+
+  .who-is-labbra-body .mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px) !important;
+    background: var(--primary-dark) !important;
+  }
+
+  .who-is-labbra-body .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .who-is-labbra-body .mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px) !important;
+    background: var(--primary-dark) !important;
+  }
+
+  .labbra-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .letter-column {
+    height: 120px;
+    flex: none;
+  }
+
+  .letter-column.expanded {
+    height: calc(100vh - 80px);
+    flex: none;
+  }
+
+  .letter {
+    font-size: 2.5rem;
+  }
+
+  .letter-column.expanded .letter {
+    font-size: 2.5rem;
+    top: 0.5rem;
+    left: 1rem;
+  }
+
+  .story-content {
+    padding: 3rem 2rem 2rem 2rem;
+  }
+
+  .story-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .page-header p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .story-content {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+}

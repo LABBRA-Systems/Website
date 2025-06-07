@@ -1,0 +1,321 @@
+/* ========================================
+   Team Page Specific Styles
+   ======================================== */
+
+/* ========================================
+   TEAM HERO SECTION
+   ======================================== */
+.hero.team-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  color: var(--primary-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.hero.team-hero .hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero.team-hero .hero-content h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  text-shadow: none;
+  color: var(--primary-dark);
+  line-height: 1.1;
+}
+
+.hero.team-hero .hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: var(--secondary-gray);
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero.page-hero.team {
+  background: linear-gradient(135deg, var(--light-gray) 0%, #e5e7eb 100%);
+  color: var(--primary-dark);
+  padding: 120px 0 80px 0;
+  text-align: center;
+  min-height: auto;
+}
+
+.hero.page-hero {
+  padding: 120px 0 80px 0;
+  text-align: center;
+  min-height: auto;
+}
+
+.hero.page-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero.page-hero.team h1 {
+  text-shadow: none;
+}
+
+.hero.page-hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.hero.page-hero.team p {
+  color: var(--secondary-gray);
+  opacity: 1;
+}
+
+/* ========================================
+   TEAM MAIN SECTION
+   ======================================== */
+.team-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.team-member {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-red), var(--accent-blue));
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.team-member .role {
+  font-size: 1rem;
+  color: var(--primary-red);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.team-member p {
+  color: var(--secondary-gray);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ========================================
+   MEMORIAL SECTION
+   ======================================== */
+.memorial-section {
+  padding: 5rem 0;
+  background: var(--light-gray);
+  text-align: center;
+}
+
+.memorial-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid var(--primary-red);
+}
+
+.memorial-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+}
+
+.memorial-card p {
+  font-size: 1.1rem;
+  color: var(--secondary-gray);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.memorial-names {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  letter-spacing: 1px;
+}
+
+/* ========================================
+   JOIN US SECTION
+   ======================================== */
+.join-section {
+  padding: 5rem 0;
+  background: var(--primary-dark);
+  color: white;
+  text-align: center;
+}
+
+.join-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.join-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.join-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   TEAM MOBILE RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  /* Team hero section */
+  .hero.team-hero {
+    min-height: 60vh;
+    padding: 100px 0 60px 0;
+  }
+
+  .hero.team-hero .hero-container {
+    padding: 0 1rem;
+    padding-top: 80px;
+  }
+
+  .hero.team-hero .hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .hero.team-hero .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  /* Hero sections */
+  .hero.page-hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .hero.page-hero p {
+    font-size: 1.1rem;
+  }
+
+  /* Team */
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .team-member {
+    padding: 1.5rem;
+  }
+
+  .member-photo {
+    width: 100px;
+    height: 100px;
+    font-size: 1.8rem;
+  }
+
+  /* Buttons */
+  .join-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Spacing adjustments */
+  .hero.page-hero {
+    padding: 100px 0 60px 0;
+  }
+
+  .team-section {
+    padding: 3rem 0;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero.team-hero .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero.team-hero .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero.page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .team-member {
+    padding: 1rem;
+  }
+}
+
+/* ========================================
+   TEAM ANIMATION CLASSES
+   ======================================== */
+.team-member {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.team-member:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.team-member:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.team-member:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.team-member:nth-child(4) {
+  animation-delay: 0.4s;
+}

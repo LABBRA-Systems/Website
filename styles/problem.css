@@ -1,0 +1,357 @@
+/* ========================================
+   Problem Page Specific Styles
+   ======================================== */
+
+/* ========================================
+   PROBLEM HERO SECTION
+   ======================================== */
+.hero.problem-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary-red) 0%, #e53e3e 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero.problem-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+.hero.problem-hero .hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.hero.problem-hero .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hero.problem-hero .hero-text {
+  text-align: left;
+}
+
+.hero.problem-hero .hero-text h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: white;
+  line-height: 1.1;
+}
+
+.hero.problem-hero .hero-text p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  color: white;
+}
+
+.hero.problem-hero .hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hero.problem-hero .hero-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   CRISIS STATS SECTION
+   ======================================== */
+.crisis-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.data-source {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.data-source p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  margin: 0;
+}
+
+.crisis-stats .stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.crisis-stats .stat-number {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: var(--warning-orange);
+}
+
+.crisis-stats .stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ========================================
+   PROBLEM SECTIONS
+   ======================================== */
+.problem-section {
+  padding: 5rem 0;
+}
+
+.data-section {
+  background: var(--light-gray);
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.data-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.data-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.data-card p {
+  color: var(--secondary-gray);
+  margin-bottom: 1.5rem;
+}
+
+.chart-placeholder {
+  height: 200px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-red) 0%,
+    var(--warning-orange) 100%
+  );
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ========================================
+   IMPACT SECTION
+   ======================================== */
+.impact-section {
+  background: white;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.impact-card {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: 16px;
+  border-left: 4px solid var(--primary-red);
+}
+
+.impact-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.impact-card p {
+  color: var(--secondary-gray);
+  font-style: italic;
+}
+
+/* ========================================
+   PROBLEM CTA SECTION
+   ======================================== */
+.problem-cta {
+  background: var(--primary-dark);
+  color: white;
+  text-align: center;
+}
+
+.problem-cta h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.problem-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* ========================================
+   PROBLEM MOBILE RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .hero.problem-hero .hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero.problem-hero .hero-text {
+    text-align: center;
+  }
+
+  .hero.problem-hero .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .crisis-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Problem page mobile styles */
+  .hero.problem-hero {
+    padding-top: 100px;
+  }
+
+  .hero.problem-hero .hero-container {
+    padding: 0 1rem;
+    min-height: 90vh;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hero.problem-hero .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .hero.problem-hero .hero-text {
+    text-align: center;
+  }
+
+  .hero.problem-hero .hero-text h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .hero.problem-hero .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .hero.problem-hero .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero.problem-hero .hero-buttons a {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+
+  .crisis-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .data-source {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .data-source p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .crisis-stats .stat-card {
+    padding: 1.5rem;
+  }
+
+  .crisis-stats .stat-number {
+    font-size: 2rem;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero.problem-hero .hero-text h1 {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .hero.problem-hero .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero.problem-hero .hero-container {
+    padding: 0 0.5rem;
+  }
+}
