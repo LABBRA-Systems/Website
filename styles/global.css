@@ -516,6 +516,10 @@ body {
     box-sizing: border-box;
     padding: 2rem;
     transform: translateX(100%);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: 100vh;
+    padding: 80px 1rem 2rem 1rem;
   }
   
   .nav-links.active {
