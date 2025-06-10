@@ -5,117 +5,527 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Problem - Pedestrian Safety Crisis</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/problem.css" />
+    <link rel="stylesheet" href="../styles/map.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.min.js"></script>
+    <style>
+      /* Map Container - Full Screen Hero */
+      .map-container {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        overflow: hidden;
+      }
+
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+
+      /* Data Attribution Box */
+      .map-attribution {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1600;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 12px 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .map-attribution-text {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #374151;
+        margin: 0;
+        text-align: center;
+        letter-spacing: 0.01em;
+      }
+
+      /* Loading styles */
+      .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        z-index: 2000;
+      }
+
+      /* Crisis Section */
+      .crisis-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
+        color: white;
+        padding: 6rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .crisis-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(220,38,38,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .crisis-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .crisis-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .crisis-title {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        color: #dc2626;
+        text-shadow: 0 0 20px rgba(220, 38, 38, 0.6),
+          0 0 40px rgba(220, 38, 38, 0.4);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        animation: pulse-glow 3s ease-in-out infinite alternate;
+      }
+
+      .crisis-subtitle {
+        font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+        font-weight: 600;
+        color: #f3f4f6;
+        opacity: 0.9;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.4;
+      }
+
+      @keyframes pulse-glow {
+        from {
+          text-shadow: 0 0 20px rgba(220, 38, 38, 0.6),
+            0 0 40px rgba(220, 38, 38, 0.4);
+        }
+        to {
+          text-shadow: 0 0 30px rgba(220, 38, 38, 0.8),
+            0 0 50px rgba(220, 38, 38, 0.6);
+        }
+      }
+
+      /* Stats Grid */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+        margin-top: 4rem;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(220, 38, 38, 0.5);
+      }
+
+      .stat-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #dc2626, #f59e0b);
+      }
+
+      .stat-number {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        color: #dc2626;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+      }
+
+      .stat-label {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #f3f4f6;
+        margin-bottom: 1rem;
+      }
+
+      .stat-description {
+        font-size: 1rem;
+        color: #d1d5db;
+        line-height: 1.6;
+        opacity: 0.9;
+        margin-bottom: 1rem;
+      }
+
+      .stat-source {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat-source a {
+        font-size: 0.85rem;
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 500;
+      }
+
+      .stat-source a:hover {
+        color: #dc2626;
+        text-decoration: underline;
+      }
+
+      /* Chart Container */
+      .chart-container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        margin-top: 3rem;
+        text-align: center;
+      }
+
+      .chart-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #f3f4f6;
+        margin-bottom: 2rem;
+      }
+
+      .trend-chart {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        height: 200px;
+        margin: 2rem 0;
+        gap: 1rem;
+      }
+
+      .trend-bar {
+        flex: 1;
+        background: linear-gradient(to top, #dc2626, #f59e0b);
+        border-radius: 4px 4px 0 0;
+        position: relative;
+        min-height: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .trend-bar:hover {
+        transform: scaleY(1.05);
+        box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+      }
+
+      .trend-year {
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9rem;
+        color: #d1d5db;
+        font-weight: 500;
+      }
+
+      .trend-value {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        color: #f3f4f6;
+        font-weight: 600;
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .map-attribution {
+          top: 15px;
+          padding: 8px 16px;
+          max-width: calc(100% - 40px);
+        }
+
+        .map-attribution-text {
+          font-size: 0.85rem;
+        }
+
+        .crisis-section {
+          padding: 4rem 0;
+        }
+
+        .crisis-container {
+          padding: 0 1rem;
+        }
+
+        .crisis-header {
+          margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .stat-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .trend-chart {
+          height: 150px;
+          gap: 0.5rem;
+        }
+
+        .chart-container {
+          padding: 2rem 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .map-attribution {
+          top: 10px;
+          padding: 6px 12px;
+        }
+
+        .map-attribution-text {
+          font-size: 0.8rem;
+        }
+
+        .crisis-container {
+          padding: 0 0.5rem;
+        }
+
+        .stat-card {
+          padding: 1.5rem 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation Container -->
     <div id="navbar-container"></div>
     <div class="menu-overlay"></div>
 
-    <!-- Hero Section -->
-    <section class="hero problem-hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>The Pedestrian Safety Crisis</h1>
-            <p>
-              Every day, pedestrians lose their lives on our roads. The
-              statistics are alarming, but behind every number is a story, a
-              family, a community forever changed.
-            </p>
-          </div>
-
-          <div class="hero-stats">
-            <div class="crisis-stats">
-              <div class="stat-card">
-                <div class="stat-number">7,314</div>
-                <div class="stat-label">
-                  Pedestrian deaths nationwide (2023)
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">20</div>
-                <div class="stat-label">Deaths per day on average</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">68,000+</div>
-                <div class="stat-label">Pedestrians injured annually</div>
-              </div>
-            </div>
-
-            <div class="data-source">
-              <p>Source: NHTSA Traffic Safety Facts 2023</p>
-            </div>
-          </div>
-        </div>
+    <!-- Interactive Map Section - Full Screen Hero -->
+    <section class="map-container">
+      <div id="loading" class="loading">
+        <p>Loading pedestrian data...</p>
       </div>
+
+      <!-- Map Attribution -->
+      <div class="map-attribution">
+        <p class="map-attribution-text">Pedestrian Deaths 2008 - 2023 (FARS)</p>
+      </div>
+
+      <div id="map"></div>
     </section>
 
-    <!-- Data Section -->
-    <section id="data-section" class="problem-section data-section">
-      <div class="section-container">
-        <div class="section-header">
-          <h2>Understanding the Scale</h2>
-          <p>
-            The data reveals a growing crisis that demands immediate action and
-            innovative solutions.
+    <!-- Crisis Statistics Section -->
+    <section class="crisis-section">
+      <div class="crisis-container">
+        <div class="crisis-header">
+          <h1 class="crisis-title">TOO MANY RED DOTS</h1>
+          <p class="crisis-subtitle">
+            Each red dot on that map represents a life lost. The numbers tell a
+            story of a growing crisis that demands immediate action.
           </p>
         </div>
 
-        <div class="data-grid">
-          <div class="data-card">
-            <h3>Florida Crash Dashboard</h3>
-            <div class="chart-placeholder">
-              <img
-                src="../media/Crash dashboard .png"
-                alt="Florida Crash Dashboard"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  border-radius: 8px;
-                "
-              />
-            </div>
-            <p>
-              Florida Highway Safety and Motor Vehicles (FLHSMV) reports show
-              686 pedestrian fatalities in 2024, with 10,480 pedestrian crashes
-              reported statewide. This represents a concerning trend that
-              continues to rise year over year.
+        <div class="stats-grid">
+          <!-- Hit and Run Statistics -->
+          <div class="stat-card">
+            <div class="stat-number">25%</div>
+            <div class="stat-label">Hit-and-Run Deaths</div>
+            <p class="stat-description">
+              1 in 4 pedestrian deaths in 2022 were hit-and-run crashes. That's
+              up from about 20% in 2013-2019 - drivers are increasingly fleeing
+              the scene.
             </p>
+            <div class="stat-source">
+              <a
+                href="https://www.iihs.org/topics/fatality-statistics/detail/pedestrians"
+                target="_blank"
+                rel="noopener"
+              >
+                Source: IIHS Fatality Facts 2022
+              </a>
+            </div>
           </div>
 
-          <div class="data-card">
-            <h3>UCF Area Hotspots</h3>
-            <div class="chart-placeholder">
-              <img
-                src="../media/2008-2022 pd's arround ucf.png"
-                alt="UCF Area Heat Map (2008-2022)"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  border-radius: 8px;
-                "
-              />
-            </div>
-            <p>
-              Data from Smart Growth America shows concentrated pedestrian
-              deaths around the UCF campus area between 2008 and 2022. Each
-              incident represents a life lost and a community impacted by
-              inadequate safety measures.
+          <!-- Daily Deaths -->
+          <div class="stat-card">
+            <div class="stat-number">20</div>
+            <div class="stat-label">Deaths Every Day</div>
+            <p class="stat-description">
+              About 20 people are struck and killed while walking every single
+              day in America. That's one death every 72 minutes.
             </p>
+            <div class="stat-source">
+              <a
+                href="https://www.ghsa.org/resource-hub/pedestrian-traffic-fatalities-state-2023-preliminary-data-january-december"
+                target="_blank"
+                rel="noopener"
+              >
+                Source: GHSA 2023 Pedestrian Data
+              </a>
+            </div>
+          </div>
+
+          <!-- 10-Year Increase -->
+          <div class="stat-card">
+            <div class="stat-number">48%</div>
+            <div class="stat-label">Increase Since 2014</div>
+            <p class="stat-description">
+              Pedestrian deaths have skyrocketed 48% in just one decade, while
+              overall traffic deaths increased by only 25%.
+            </p>
+            <div class="stat-source">
+              <a
+                href="https://www.ghsa.org/resource-hub/pedestrian-traffic-fatalities-january-june-2024"
+                target="_blank"
+                rel="noopener"
+              >
+                Source: GHSA 2024 Pedestrian Report
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
     <script src="../js/utils.js"></script>
     <script src="../js/components.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/florida-map.js"></script>
+
+    <script>
+      // Enhanced scroll behavior and animations
+      document.addEventListener("DOMContentLoaded", function () {
+        // Animate stat cards on scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animation = "fadeInUp 0.8s ease-out forwards";
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Observe stat cards
+        document.querySelectorAll(".stat-card").forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(30px)";
+          observer.observe(card);
+        });
+
+        // Observe chart container
+        const chartContainer = document.querySelector(".chart-container");
+        if (chartContainer) {
+          chartContainer.style.opacity = "0";
+          chartContainer.style.transform = "translateY(30px)";
+          observer.observe(chartContainer);
+        }
+
+        // Add CSS animation
+        const style = document.createElement("style");
+        style.textContent = `
+          @keyframes fadeInUp {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `;
+        document.head.appendChild(style);
+
+        // Animate trend bars on hover and scroll
+        const trendBars = document.querySelectorAll(".trend-bar");
+        const trendObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const bars = entry.target.querySelectorAll(".trend-bar");
+              bars.forEach((bar, index) => {
+                setTimeout(() => {
+                  bar.style.animation = "growUp 1s ease-out forwards";
+                }, index * 100);
+              });
+              trendObserver.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        const trendChart = document.querySelector(".trend-chart");
+        if (trendChart) {
+          trendChart.style.opacity = "0";
+          trendObserver.observe(trendChart);
+
+          // Add grow animation
+          const growStyle = document.createElement("style");
+          growStyle.textContent = `
+            @keyframes growUp {
+              from {
+                transform: scaleY(0);
+                opacity: 0;
+              }
+              to {
+                transform: scaleY(1);
+                opacity: 1;
+              }
+            }
+            .trend-bar {
+              transform-origin: bottom;
+              transform: scaleY(0);
+              opacity: 0;
+            }
+          `;
+          document.head.appendChild(growStyle);
+        }
+      });
+    </script>
   </body>
 </html>
