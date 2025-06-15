@@ -420,13 +420,51 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  width: 100%;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
-.workouts-list-container .strava-embed-placeholder {
-  flex: 0 0 280px;
-  min-width: 280px;
-  width: 280px;
-  margin: 0;
+/* Hide scrollbar but keep functionality */
+.workouts-list-container::-webkit-scrollbar {
+  display: none;
+}
+.workouts-list-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Workout list container styles */
+.workouts-list-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.workouts-list-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.strava-embed-placeholder {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  width: 100%;
+}
+
+.miles-container {
+  width: 100%;
+  max-width: 500px; /* Match GoFundMe width */
+}
+
+.gofundme-container {
+  width: 100%;
+  max-width: 500px;
 }
 
 /* ========================================
@@ -979,4 +1017,45 @@
 }
 .donation-card:nth-child(4) {
   animation-delay: 0.4s;
+}
+
+/* ========================================
+   SCROLLBAR STYLES
+   ======================================== */
+.workouts-list-container {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.workouts-list-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.workouts-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.workouts-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.workouts-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .workouts-list-container::-webkit-scrollbar {
+    display: none;
+  }
+  .workouts-list-container {
+    scrollbar-width: none;
+  }
 }
