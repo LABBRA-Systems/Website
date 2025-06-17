@@ -594,7 +594,7 @@ body {
       text-decoration: none;
       font-weight: 600;
       margin-top: 1rem;
-      padding-bottom: 2rem; /* Add vertical buffer at the bottom */
+      padding-bottom: 10rem; /* Add vertical buffer at the bottom */
     }
     
     /* Hide desktop donate button */
