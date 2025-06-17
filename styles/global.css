@@ -16,6 +16,8 @@
   --success-green: #10b981;
   --warning-orange: #f59e0b;
   --tech-purple: #8b5cf6;
+  --navbar-height: 76px; /* New variable for navbar total height */
+  --navbar-height-mobile: 60px; /* New variable for mobile navbar height */
 }
 
 /* ========================================
@@ -47,8 +49,9 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  z-index: 2000; /* Ensure navbar is above all map elements */
-  padding: 1rem 0;
+  z-index: 2000;
+  height: var(--navbar-height);
+  padding: 0;
   transition: all 0.3s ease;
   will-change: transform, background-color, box-shadow;
 }
@@ -859,5 +862,45 @@ body {
   .nav-links {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* ========================================
+   NAVIGATION STYLES
+   ======================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+  height: var(--navbar-height);
+  padding: 0;
+  transition: all 0.3s ease;
+  will-change: transform, background-color, box-shadow;
+}
+
+/* Add padding to the top of main content to account for fixed navbar */
+main {
+  padding-top: var(--navbar-height);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: var(--navbar-height-mobile);
+  }
+
+  main {
+    padding-top: var(--navbar-height-mobile);
+  }
+
+  /* Adjust hero sections for mobile */
+  .hero.page-hero {
+    padding-top: calc(var(--navbar-height-mobile) + 2rem) !important;
+    min-height: 100vh;
   }
 }
