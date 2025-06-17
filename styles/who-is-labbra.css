@@ -5,12 +5,7 @@
 /* ========================================
    WHO IS LABBRA BODY STYLES
    ======================================== */
-.who-is-labbra-body {
-  background: var(--primary-dark);
-  color: var(--white);
-  overflow-x: hidden;
-  height: 100vh;
-}
+
 
 /* ========================================
    LABBRA CONTAINER
@@ -18,7 +13,7 @@
 .labbra-container {
   display: flex;
   height: 100vh;
-  padding-top: 80px;
+  padding-top: 52px;
   position: relative;
 }
 
