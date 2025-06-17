@@ -13,6 +13,24 @@
   z-index: 1;
 }
 
+/* Disable map scroll/touch interactions on mobile */
+@media (max-width: 768px) {
+  .map-container {
+    pointer-events: none; /* Disable all pointer events */
+    touch-action: none; /* Disable touch actions */
+    user-select: none; /* Prevent text selection */
+  }
+  
+  #map {
+    pointer-events: none;
+    touch-action: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
 /* Data Attribution Box */
 .map-attribution {
   position: absolute;
