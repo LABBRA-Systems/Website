@@ -507,21 +507,46 @@ body {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-start; /* Changed to flex-start for better distribution */
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem; /* Increased gap for better spacing */
     transition: transform 0.3s ease;
     z-index: 1001;
     box-sizing: border-box;
-    padding: 80px 1rem 2rem 1rem;
+    padding: 100px 1rem 2rem 1rem; /* Increased top padding to push content down */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
     transform: translateX(100%);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     max-height: 100vh;
-    padding: 80px 1rem 2rem 1rem;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem; /* Slightly larger font */
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    width: 90%; /* Slightly narrower for better appearance */
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  /* Special styling for the donate link to make it stand out */
+  .nav-links a[href*="donate"] {
+    margin-top: 0.5rem;
+    background-color: var(--primary-red);
+    color: white !important;
+    width: 90%;
+    padding: 1rem 1.5rem;
+  }
+
+  /* Adjust for extra tall screens like S22 */
+  @media (min-height: 800px) {
+    .nav-links {
+      padding-top: 120px; /* Even more top padding for tall screens */
+      gap: 2rem; /* Larger gaps for better distribution */
+    }
   }
   
   .nav-links.active {
@@ -594,7 +619,6 @@ body {
       text-decoration: none;
       font-weight: 600;
       margin-top: 1rem;
-      padding-bottom: 10rem; /* Add vertical buffer at the bottom */
     }
     
     /* Hide desktop donate button */
