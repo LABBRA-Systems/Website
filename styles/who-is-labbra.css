@@ -115,6 +115,8 @@
 
 .story-body {
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
 }
 
 .story-body p {
@@ -319,19 +321,19 @@
   }
 
   .labbra-container {
+    padding-top: 60px; /* Reduced padding to match navbar height */
     flex-direction: column;
-    height: auto;
-    min-height: 100vh;
+    height: calc(100vh - 60px); /* Adjust height to prevent the black gap */
   }
 
   .letter-column {
-    height: 120px;
-    flex: none;
+    height: calc((100vh - 60px) / 6); /* Divide remaining space equally */
+    border-right: none;
+    border-bottom: 2px solid var(--primary-dark);
   }
 
   .letter-column.expanded {
-    height: calc(100vh - 80px);
-    flex: none;
+    height: calc(100vh - 60px);
   }
 
   .letter {
@@ -377,4 +379,18 @@
   .story-content {
     padding: 2rem 1rem 1rem 1rem;
   }
+}
+/* ========================================
+   BROOKE STORY COMPONENTS
+   ======================================== */
+.brooke-images {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+}
+
+.brooke-images img {
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
