@@ -418,10 +418,14 @@
     gap: 1rem;
   }
 
-  .london-images img,
-  .brooke-images img {
+  .london-images img {
     width: 80%;
     max-width: 300px;
+  }
+  
+  .brooke-images img {
+    width: 95% !important;
+    max-width: 400px !important;
   }
 }
 
