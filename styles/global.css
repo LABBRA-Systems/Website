@@ -925,3 +925,44 @@ main {
     min-height: 100vh;
   }
 }
+
+/* ========================================
+   PROJECT DISCLAIMER STYLES
+   ======================================== */
+.project-disclaimer {
+  background: #fff3cd;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.project-disclaimer p {
+  margin: 0;
+  color: #856404;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.donate-disclaimer {
+  background: #fff3cd;
+  border: 2px solid #ffc107;
+  margin: 2rem 0;
+}
+
+.donate-disclaimer p {
+  color: #856404;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .project-disclaimer {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .project-disclaimer p {
+    font-size: 0.9rem;
+  }
+}
