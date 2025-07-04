@@ -114,7 +114,7 @@
 }
 
 .story-body {
-  max-width: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -221,25 +221,67 @@
   margin-bottom: 1rem;
 }
 
+.london-images {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.london-images img {
+  width: 45%;
+  max-height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}
+
 .london-story-text {
   margin-bottom: 1rem;
   line-height: 1.6;
   color: #333;
 }
 
-.london-quote-box {
-  background: #e8f4fd;
+.accident-details {
+  background: #fff5f5;
   padding: 1rem;
   border-radius: 6px;
-  border-left: 4px solid #2196f3;
+  border-left: 4px solid #f56565;
   margin: 1rem 0;
 }
 
-.london-quote-text {
+.news-articles {
+  background: #f0f8ff;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid #3182ce;
+  margin: 1rem 0;
+}
+
+.news-articles h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #2c5282;
+  font-size: 1.1rem;
+}
+
+.news-articles ul {
   margin: 0;
-  font-style: italic;
-  color: #1976d2;
-  font-weight: 500;
+  padding-left: 1.2rem;
+}
+
+.news-articles li {
+  margin-bottom: 0.5rem;
+}
+
+.news-articles a {
+  color: #3182ce;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.news-articles a:hover {
+  text-decoration: underline;
 }
 
 .london-foundation-box {
@@ -269,6 +311,13 @@
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.london-foundation-link:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(33, 150, 243, 0.3);
 }
 
 /* ========================================
@@ -361,6 +410,19 @@
   .page-header p {
     font-size: 1.2rem;
   }
+  /* Mobile image adjustments */
+  .london-images,
+  .brooke-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .london-images img,
+  .brooke-images img {
+    width: 80%;
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -383,14 +445,66 @@
 /* ========================================
    BROOKE STORY COMPONENTS
    ======================================== */
+.brooke-story-container {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
 .brooke-images {
   display: flex;
   justify-content: space-around;
   margin-bottom: 1.5rem;
+  gap: 1rem;
 }
 
 .brooke-images img {
   width: 30%;
+  max-height: 300px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}
+
+.brooke-story-text {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.brooke-foundation-box {
+  background: #e8f5e8;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid #4caf50;
+  margin: 1rem 0;
+}
+
+.brooke-foundation-text {
+  margin: 0;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.brooke-link-container {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.brooke-foundation-link {
+  display: inline-block;
+  background: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.brooke-foundation-link:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
 }
