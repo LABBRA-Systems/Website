@@ -7,7 +7,7 @@
 const DONATE_CONFIG = {
   miles: {
     goal: 500,
-    completed: 170.01, // Easy to change - update this value to reflect current progress
+    completed: 207.94, // Easy to change - update this value to reflect current progress
   },
   fundraising: {
     totalRaised: 175, // Easy to change - update this value to reflect current donations
