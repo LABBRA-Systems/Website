@@ -26,10 +26,12 @@ const DONATE_CONFIG = {
 function calculateValues() {
   const { goal, completed } = DONATE_CONFIG.miles;
   return {
-    milesLeft: goal - completed,
-    completionPercentage: (completed / goal) * 100,
-    milesCompleted: completed,
-    totalRaised: DONATE_CONFIG.fundraising.totalRaised
+    milesLeft: +(goal - completed).toFixed(2),
+    completionPercentage: +((completed / goal) * 100).toFixed(2),
+    milesCompleted: +completed.toFixed(2),
+    totalRaised: +DONATE_CONFIG.fundraising.totalRaised.toFixed
+      ? +DONATE_CONFIG.fundraising.totalRaised.toFixed(2)
+      : DONATE_CONFIG.fundraising.totalRaised
   };
 }
 
