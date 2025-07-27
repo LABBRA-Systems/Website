@@ -585,153 +585,486 @@
     font-size: 3rem;
   }
 
+  .hero.solution-hero .hero-buttons {
+    justify-content: center;
+  }
+
   .t-chart {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
   .image-container {
-    padding-bottom: 50%; /* Slightly shorter on tablets */
+    padding-bottom: 55%; /* Better aspect ratio for tablets */
   }
 
   .timeline-phases {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+
+  .comparison-section {
+    padding: 4rem 0;
+  }
+
+  .image-comparison-container {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
   .hero.solution-hero {
-    padding: 100px 0 60px 0;
-    min-height: 90vh;
+    padding: 80px 0 40px 0;
+    min-height: 100vh;
   }
 
   .hero.solution-hero .hero-container {
     padding: 0 1rem;
+    min-height: calc(100vh - 80px);
   }
 
   .hero.solution-hero .hero-content {
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .hero.solution-hero .hero-text h1 {
     font-size: 2.5rem;
     line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero.solution-hero .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
   }
 
   .hero.solution-hero .hero-buttons {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 
   .hero.solution-hero .hero-buttons a {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     text-align: center;
     padding: 1rem 2rem;
+    font-size: 1rem;
+    min-height: 48px; /* Better touch target */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .intersection-image {
-    max-width: 350px;
+    max-width: 320px;
+    width: 90%;
+  }
+
+  /* Comparison Section Mobile Improvements */
+  .comparison-section {
+    padding: 3rem 0;
   }
 
   .image-comparison-container {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+    margin: 0 1rem;
   }
 
   .image-container {
-    padding-bottom: 60%; /* Taller on mobile for better visibility */
+    padding-bottom: 65%; /* Better mobile aspect ratio */
+    border-radius: 12px;
+  }
+
+  .slider-handle {
+    width: 6px; /* Thicker for easier mobile interaction */
+  }
+
+  .slider-button {
+    width: 60px; /* Larger touch target */
+    height: 60px;
+  }
+
+  .slider-button svg {
+    width: 14px;
+    height: 14px;
   }
 
   .comparison-labels {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
     text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .label {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  /* Comparison Chart Mobile Improvements */
+  .comparison-chart-section {
+    padding: 3rem 0;
+  }
+
+  .t-chart {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .chart-column {
+    padding: 1.5rem;
   }
 
   .comparison-items {
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .comparison-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+    padding: 1.25rem;
   }
 
+  .item-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.75rem;
+    flex-shrink: 0;
+  }
+
+  .item-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .item-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Timeline Mobile Improvements */
   .timeline-section {
     padding: 3rem 0;
   }
 
+  .timeline-header {
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+  }
+
   .timeline-header h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
   }
 
   .timeline-header p {
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .funding-cta {
+    padding: 1.25rem 2rem;
+    font-size: 1.1rem;
+    min-height: 48px;
+  }
+
+  .timeline-phases {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
   }
 
   .phase-card {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .phase-header h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .phase-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .phase-duration {
+    font-size: 1rem;
   }
 
   .goal {
-    font-size: 0.85rem;
-    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+    padding: 1rem;
+    line-height: 1.5;
   }
 
-  .vision-section {
+  /* CTA Section Mobile Improvements */
+  .cta-section {
     padding: 3rem 0;
   }
 
-  .vision-section h2 {
-    font-size: 2rem;
+  .cta-content {
+    padding: 0 1rem;
   }
 
-  .vision-section p {
-    font-size: 1rem;
+  .cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.1rem;
     margin-bottom: 2rem;
-  }
-
-  .stat {
-    padding: 1.5rem;
   }
 
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 
   .cta-button.primary,
   .cta-button.secondary {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
+    padding: 1.25rem 2rem;
+    font-size: 1.1rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
+  .hero.solution-hero {
+    padding: 70px 0 30px 0;
+  }
+
+  .hero.solution-hero .hero-container {
+    padding: 0 0.75rem;
+  }
+
   .hero.solution-hero .hero-text h1 {
     font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .hero.solution-hero .hero-text p {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero.solution-hero .hero-buttons a {
+    max-width: 260px;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .intersection-image {
+    max-width: 280px;
+  }
+
+  /* Section Headers */
+  .section-header h2 {
+    font-size: 1.8rem !important;
+    line-height: 1.2;
+  }
+
+  .section-header p {
+    font-size: 0.95rem !important;
+    padding: 0 0.5rem;
+  }
+
+  /* Comparison Section */
+  .image-comparison-container {
+    padding: 1rem 0.75rem;
+    margin: 0 0.75rem;
   }
 
   .image-container {
-    padding-bottom: 65%; /* Even taller on small screens */
+    padding-bottom: 70%; /* Taller aspect ratio for small screens */
+    border-radius: 10px;
+  }
+
+  .slider-handle {
+    width: 5px;
   }
 
   .slider-button {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 
   .slider-button svg {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .comparison-labels {
+    margin-top: 1rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  /* Comparison Chart */
+  .t-chart {
+    padding: 0 0.75rem;
+    gap: 1.5rem;
+  }
+
+  .chart-column {
+    padding: 1.25rem;
+  }
+
+  .column-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .column-header .icon {
+    font-size: 2rem;
+  }
+
+  .comparison-item {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .item-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+
+  .item-content h4 {
+    font-size: 1rem;
+  }
+
+  .item-content p {
+    font-size: 0.9rem;
+  }
+
+  /* Timeline */
+  .timeline-header {
+    padding: 0 0.75rem;
+  }
+
+  .timeline-header h2 {
+    font-size: 1.9rem;
+  }
+
+  .timeline-header p {
+    font-size: 1rem;
+  }
+
+  .funding-cta {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .timeline-phases {
+    padding: 0 0.75rem;
+  }
+
+  .phase-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .phase-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .phase-subtitle {
+    font-size: 1rem;
+  }
+
+  .phase-duration {
+    font-size: 0.9rem;
+  }
+
+  .goal {
+    font-size: 0.9rem;
+    padding: 0.875rem;
+  }
+
+  /* CTA Section */
+  .cta-content {
+    padding: 0 0.75rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.9rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .cta-button.primary,
+  .cta-button.secondary {
+    max-width: 260px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Additional Mobile Touch Improvements */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  .comparison-item:hover {
+    transform: none; /* Disable hover effects on mobile */
+  }
+
+  .chart-column:hover {
+    transform: none;
+  }
+
+  .phase-card:hover {
+    transform: none;
+  }
+
+  .goal:hover {
+    transform: none;
+  }
+
+  /* Better mobile scrolling */
+  .comparison-section,
+  .comparison-chart-section,
+  .timeline-section,
+  .cta-section {
+    overflow-x: hidden;
+  }
+
+  /* Ensure proper spacing */
+  .container {
+    padding: 0 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Disable image hover effects on mobile */
+  .intersection-image:hover {
+    transform: none;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero.solution-hero {
+    min-height: 100vh;
+    padding: 60px 0 30px 0;
+  }
+
+  .hero.solution-hero .hero-content {
+    gap: 2rem;
+  }
+
+  .image-container {
+    padding-bottom: 50%; /* Shorter in landscape */
   }
 }

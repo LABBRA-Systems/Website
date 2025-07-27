@@ -287,9 +287,9 @@
               <span class="phase-duration">May 2026 - Dec 2026</span>
             </div>
             <div class="phase-goals">
-              <div class="goal">3 Systems deployed</div>
-              <div class="goal">6 employees</div>
-              <div class="goal">$400k investment</div>
+              <div class="goal">First Systems Deployed</div>
+              <div class="goal">Expand team</div>
+              <div class="goal">Seek investment</div>
             </div>
           </div>
         </div>
@@ -327,9 +327,12 @@
         const slider = document.querySelector(".comparison-slider");
         const handle = document.querySelector(".slider-handle");
         const afterImage = document.querySelector(".after-image");
+        const imageContainer = document.querySelector(".image-container");
 
-        if (slider && handle && afterImage) {
+        if (slider && handle && afterImage && imageContainer) {
           let isActive = false;
+          let startX = 0;
+          let currentX = 0;
 
           function updateSlider(x) {
             const rect = slider.getBoundingClientRect();
@@ -340,41 +343,138 @@
             afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
           }
 
-          handle.addEventListener("mousedown", () => {
+          // Mouse events
+          handle.addEventListener("mousedown", (e) => {
             isActive = true;
+            startX = e.clientX;
+            document.body.style.userSelect = "none";
           });
 
           document.addEventListener("mousemove", (e) => {
             if (!isActive) return;
+            e.preventDefault();
             updateSlider(e.clientX);
           });
 
           document.addEventListener("mouseup", () => {
             isActive = false;
+            document.body.style.userSelect = "";
           });
 
-          // Touch events for mobile
-          handle.addEventListener("touchstart", (e) => {
-            isActive = true;
+          // Enhanced touch events for mobile
+          handle.addEventListener(
+            "touchstart",
+            (e) => {
+              isActive = true;
+              startX = e.touches[0].clientX;
+              e.preventDefault();
+              // Add visual feedback
+              handle.style.transform = "translateX(-50%) scale(1.1)";
+            },
+            { passive: false }
+          );
+
+          document.addEventListener(
+            "touchmove",
+            (e) => {
+              if (!isActive) return;
+              e.preventDefault();
+              const touch = e.touches[0];
+              currentX = touch.clientX;
+              updateSlider(currentX);
+            },
+            { passive: false }
+          );
+
+          document.addEventListener(
+            "touchend",
+            (e) => {
+              if (!isActive) return;
+              isActive = false;
+              e.preventDefault();
+              // Remove visual feedback
+              handle.style.transform = "translateX(-50%) scale(1)";
+            },
+            { passive: false }
+          );
+
+          // Allow clicking/tapping anywhere on the slider to move handle
+          imageContainer.addEventListener("click", (e) => {
+            if (!isActive) {
+              updateSlider(e.clientX);
+            }
+          });
+
+          imageContainer.addEventListener(
+            "touchstart",
+            (e) => {
+              if (
+                e.target === imageContainer ||
+                e.target.classList.contains("comparison-image")
+              ) {
+                const touch = e.touches[0];
+                updateSlider(touch.clientX);
+              }
+            },
+            { passive: true }
+          );
+
+          // Keyboard accessibility
+          handle.addEventListener("keydown", (e) => {
+            const rect = slider.getBoundingClientRect();
+            const currentPos = parseFloat(handle.style.left) || 50;
+            let newPos = currentPos;
+
+            switch (e.key) {
+              case "ArrowLeft":
+                newPos = Math.max(0, currentPos - 5);
+                break;
+              case "ArrowRight":
+                newPos = Math.min(100, currentPos + 5);
+                break;
+              case "Home":
+                newPos = 0;
+                break;
+              case "End":
+                newPos = 100;
+                break;
+              default:
+                return;
+            }
+
             e.preventDefault();
+            const newX = rect.left + (newPos / 100) * rect.width;
+            updateSlider(newX);
           });
 
-          document.addEventListener("touchmove", (e) => {
-            if (!isActive) return;
-            e.preventDefault();
-            const touch = e.touches[0];
-            updateSlider(touch.clientX);
-          });
-
-          document.addEventListener("touchend", () => {
-            isActive = false;
-          });
+          // Make handle focusable for keyboard navigation
+          handle.setAttribute("tabindex", "0");
+          handle.setAttribute("role", "slider");
+          handle.setAttribute("aria-label", "Image comparison slider");
+          handle.setAttribute("aria-valuemin", "0");
+          handle.setAttribute("aria-valuemax", "100");
+          handle.setAttribute("aria-valuenow", "50");
 
           // Initialize at 50%
-          updateSlider(
-            slider.getBoundingClientRect().left +
-              slider.getBoundingClientRect().width / 2
-          );
+          setTimeout(() => {
+            const rect = slider.getBoundingClientRect();
+            if (rect.width > 0) {
+              updateSlider(rect.left + rect.width / 2);
+            }
+          }, 100);
+
+          // Handle window resize
+          window.addEventListener("resize", () => {
+            setTimeout(() => {
+              const rect = slider.getBoundingClientRect();
+              if (rect.width > 0) {
+                const currentPercentage = parseFloat(handle.style.left) || 50;
+                updateSlider(
+                  rect.left + (currentPercentage / 100) * rect.width
+                );
+              }
+            }, 100);
+          });
         }
       });
     </script>
