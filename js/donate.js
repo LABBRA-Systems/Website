@@ -7,10 +7,10 @@
 const DONATE_CONFIG = {
   miles: {
     goal: 500,
-    completed: 348.9, // Easy to change - update this value to reflect current progress
+    completed: 400.07, // Easy to change - update this value to reflect current progress
   },
   fundraising: {
-    totalRaised: 548, // Easy to change - update this value to reflect current donations
+    totalRaised: 758, // Easy to change - update this value to reflect current donations
   },
   countdown: {
     targetDate: "August 18, 2025 00:00:00",
