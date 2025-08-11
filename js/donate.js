@@ -7,7 +7,7 @@
 const DONATE_CONFIG = {
   miles: {
     goal: 500,
-    completed: 500.89, // Easy to change - update this value to reflect current progress
+    completed: 500.05, // Easy to change - update this value to reflect current progress
   },
   fundraising: {
     totalRaised: 818, // Easy to change - update this value to reflect current donations
@@ -53,7 +53,7 @@ function updateMilesDisplay() {
   const values = calculateValues();
   
   updateElement(".miles-completed-display", values.milesCompleted);
-  updateElement(".miles-left-display", values.milesLeft);
+  updateElement(".miles-left-display", 0);
   updateElement(".completion-percentage", `${formatNumber(values.completionPercentage)}% Complete`);
   updateProgressBar("#milesBar", values.completionPercentage);
 }
