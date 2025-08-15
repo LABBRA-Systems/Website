@@ -10,7 +10,7 @@ const DONATE_CONFIG = {
     completed: 500.05, // Easy to change - update this value to reflect current progress
   },
   fundraising: {
-    totalRaised: 818, // Easy to change - update this value to reflect current donations
+    totalRaised: 943, // Easy to change - update this value to reflect current donations
   },
   countdown: {
     targetDate: "August 18, 2025 00:00:00",
