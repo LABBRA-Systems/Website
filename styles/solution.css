@@ -475,6 +475,51 @@
 }
 
 /* ========================================
+   TEAM UPDATES SECTION
+   ======================================== */
+.team-updates-section {
+  padding: 5rem 0;
+  background: var(--light-gray);
+}
+
+.linkedin-button-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  background: linear-gradient(135deg, #0077B5 0%, #005885 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #0077B5;
+  box-shadow: 0 4px 15px rgba(0, 119, 181, 0.2);
+}
+
+.linkedin-btn:hover {
+  background: transparent;
+  color: #0077B5;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 119, 181, 0.3);
+}
+
+.linkedin-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.linkedin-btn:hover svg {
+  transform: scale(1.15);
+}
+
+/* ========================================
    CTA SECTION
    ======================================== */
 .cta-section {
@@ -746,6 +791,72 @@
     line-height: 1.5;
   }
 
+  /* Team Updates Mobile Improvements */
+  .team-updates-section {
+    padding: 3rem 0;
+  }
+
+  .updates-container {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .update-post {
+    padding: 1.25rem;
+  }
+
+  .post-header {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .avatar-image {
+    width: 44px;
+    height: 44px;
+  }
+
+  .post-author h4 {
+    font-size: 0.95rem;
+  }
+
+  .post-badge {
+    font-size: 0.7rem;
+    padding: 0.125rem 0.375rem;
+  }
+
+  .post-meta {
+    font-size: 0.8rem;
+  }
+
+  .post-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hashtag {
+    font-size: 0.8rem;
+  }
+
+  .engagement-actions {
+    gap: 0.5rem;
+  }
+
+  .engagement-btn {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+  }
+
+  .engagement-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .view-more-btn {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
   /* Timeline Mobile Improvements */
   .timeline-section {
     padding: 3rem 0;
@@ -949,6 +1060,88 @@
     font-size: 0.9rem;
   }
 
+  /* Team Updates Small Mobile */
+  .updates-container {
+    padding: 0 0.75rem;
+  }
+
+  .update-post {
+    padding: 1rem;
+  }
+
+  .post-header {
+    gap: 0.5rem;
+  }
+
+  .avatar-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .post-author {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .post-author h4 {
+    font-size: 0.9rem;
+  }
+
+  .post-badge {
+    font-size: 0.65rem;
+  }
+
+  .post-meta {
+    font-size: 0.75rem;
+  }
+
+  .linkedin-logo svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .post-content p {
+    font-size: 0.85rem;
+  }
+
+  .hashtag {
+    font-size: 0.75rem;
+  }
+
+  .engagement-stats {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .engagement-actions {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .engagement-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    flex: 1;
+    justify-content: center;
+    min-width: 80px;
+  }
+
+  .engagement-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .view-more-btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .view-more-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
   /* Timeline */
   .timeline-header {
     padding: 0 0.75rem;
@@ -1032,9 +1225,26 @@
     transform: none;
   }
 
+  /* Disable team updates hover effects on mobile */
+  .update-post:hover {
+    transform: none;
+  }
+
+  .engagement-btn:hover {
+    background: transparent;
+    color: #666;
+    border-color: transparent;
+  }
+
+  .hashtag:hover {
+    color: #0077B5;
+    text-decoration: none;
+  }
+
   /* Better mobile scrolling */
   .comparison-section,
   .comparison-chart-section,
+  .team-updates-section,
   .timeline-section,
   .cta-section {
     overflow-x: hidden;
