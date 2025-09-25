@@ -18,8 +18,8 @@
 /* Hero grid layout: content + image */
 .hero-grid {
   display: grid;
-  /* content column + image column that grows between a min and % */
-  grid-template-columns: 1fr minmax(260px, 44%);
+  /* Use a pixel-based cap for the image column to avoid browser inconsistencies (Edge) */
+  grid-template-columns: 1fr minmax(260px, 460px);
   align-items: center;
   gap: 2.5rem;
 }
@@ -29,17 +29,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Prevent the figure from growing too large in some browsers (Edge) */
+  width: 100%;
+  max-width: 460px;
 }
 
 .hero-image {
   width: 100%;
   height: auto; /* natural scaling to avoid aggressive vertical cropping */
   max-height: 520px; /* prevents the image becoming too tall on large screens */
+  max-width: 460px; /* explicit max-width to guard against Edge scaling */
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 15px 40px rgba(10, 10, 10, 0.12);
   border: 1px solid rgba(0,0,0,0.04);
   display: block;
+  max-width: 100%; /* ensure the image never exceeds its parent's width */
 }
 
 @media (min-width: 1400px) {
