@@ -15,52 +15,6 @@
   overflow: hidden;
 }
 
-/* Hero grid layout: content + image */
-.hero-grid {
-  display: grid;
-  /* Use a pixel-based cap for the image column to avoid browser inconsistencies (Edge) */
-  grid-template-columns: 1fr minmax(260px, 460px);
-  align-items: center;
-  gap: 2.5rem;
-}
-
-.hero-figure {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Prevent the figure from growing too large in some browsers (Edge) */
-  width: 100%;
-  max-width: 460px;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto; /* natural scaling to avoid aggressive vertical cropping */
-  max-height: 520px; /* prevents the image becoming too tall on large screens */
-  max-width: 460px; /* explicit max-width to guard against Edge scaling */
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(10, 10, 10, 0.12);
-  border: 1px solid rgba(0,0,0,0.04);
-  display: block;
-  max-width: 100%; /* ensure the image never exceeds its parent's width */
-}
-
-@media (min-width: 1400px) {
-  .hero-grid {
-    grid-template-columns: 1fr minmax(320px, 48%);
-  }
-}
-
-/* Gentle overlay to ensure subtle contrast */
-.hero.team-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.02) 60%, rgba(0,0,0,0.02) 100%);
-}
 
 .hero.team-hero .hero-container {
   position: relative;
@@ -270,15 +224,9 @@
     padding: 100px 0 60px 0;
   }
 
-  /* Tighter hero spacing on mobile */
-  .hero.team-hero {
-    padding: 80px 0 40px 0;
-  }
-
   .hero.team-hero .hero-container {
     padding: 0 1rem;
-    padding-top: 60px;
-    max-width: 100%;
+    padding-top: 80px;
   }
 
   .hero.team-hero .hero-content h1 {
@@ -288,44 +236,6 @@
 
   .hero.team-hero .hero-content p {
     font-size: 1.1rem;
-  }
-
-  /* Mobile: stack columns, keep image smaller and below content */
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  /* Show image above text on mobile to keep it visible and avoid awkward cropping */
-  /* Show image after text on mobile to prioritize intro copy and keep layout tight */
-  .hero-figure {
-    order: 2; /* image after text */
-    display: flex;
-    justify-content: center;
-    padding: 0 0.5rem 0.75rem 0.5rem;
-  }
-
-  .hero-image {
-    width: 92%;
-    max-width: 520px;
-    height: auto;
-    max-height: 220px; /* smaller cap for phones */
-    object-fit: cover; /* keep the frame filled while reduced height */
-    object-position: center center;
-    border-radius: 12px;
-    margin: 0 auto;
-    background: var(--light-gray);
-  }
-
-  /* Center hero text on mobile for better balance */
-  .hero.team-hero .hero-content {
-    text-align: center;
-    padding: 0 0.75rem;
-  }
-
-  .hero.team-hero .hero-content h1 {
-    font-size: 2rem;
-    line-height: 1.15;
   }
 
   /* Hero sections */
