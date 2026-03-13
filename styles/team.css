@@ -1,20 +1,19 @@
 /* ========================================
-   Team Page Specific Styles
+   Team Page Styles
    ======================================== */
 
 /* ========================================
-   TEAM HERO SECTION
+   HERO
    ======================================== */
 .hero.team-hero {
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
-  background: var(--white);
+  background: linear-gradient(135deg, var(--light-gray) 0%, #e5e7eb 100%);
   color: var(--primary-dark);
   position: relative;
   overflow: hidden;
 }
-
 
 .hero.team-hero .hero-container {
   position: relative;
@@ -22,211 +21,401 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  text-align: center;
   padding-top: 80px;
 }
 
+.hero.team-hero .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-text-col {
+  text-align: left;
+}
+
 .hero.team-hero .hero-content h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 900;
   margin-bottom: 1.5rem;
-  text-shadow: none;
   color: var(--primary-dark);
   line-height: 1.1;
 }
 
+.hero.team-hero .hero-content .highlight {
+  color: var(--primary-red);
+}
+
 .hero.team-hero .hero-content p {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
   color: var(--secondary-gray);
   line-height: 1.6;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.hero.page-hero.team {
-  background: linear-gradient(135deg, var(--light-gray) 0%, #e5e7eb 100%);
-  color: var(--primary-dark);
-  padding: 120px 0 80px 0;
-  text-align: center;
-  min-height: auto;
+.hero-image-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.hero.page-hero {
-  padding: 120px 0 80px 0;
-  text-align: center;
-  min-height: auto;
+.team-hero-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.hero.page-hero h1 {
-  font-size: 3.5rem;
-  font-weight: 900;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero.page-hero.team h1 {
-  text-shadow: none;
-}
-
-.hero.page-hero p {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0.9;
-}
-
-.hero.page-hero.team p {
-  color: var(--secondary-gray);
-  opacity: 1;
+.hero-img-caption {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-style: italic;
+  margin-top: 0.5rem;
 }
 
 /* ========================================
-   TEAM MAIN SECTION
+   FOUNDER
    ======================================== */
-.team-section {
-  padding: 5rem 0;
+.founder-section {
+  padding: 6rem 0;
   background: white;
 }
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.team-member {
+.founder-card {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
   background: var(--light-gray);
-  padding: 2rem;
-  border-radius: 16px;
-  text-align: center;
-  transition: all 0.3s ease;
+  padding: 3rem;
+  border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.team-member:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-}
-
-.member-photo {
-  width: 120px;
-  height: 120px;
+.founder-photo-img {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-red), var(--accent-blue));
-  margin: 0 auto 1.5rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid rgba(0, 0, 0, 0.08);
 }
 
-.team-member h3 {
-  font-size: 1.5rem;
+.founder-info h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  color: var(--primary-dark);
+}
+
+.founder-role {
+  font-size: 1.1rem;
+  color: var(--primary-red);
   font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.founder-info p {
+  font-size: 1rem;
+  color: var(--secondary-gray);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.founder-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.founder-email {
+  display: inline-block;
+  color: var(--primary-red);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.founder-email:hover {
+  text-decoration: underline;
+}
+
+.founder-linkedin {
+  display: inline-block;
+  color: #0a66c2;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+}
+
+.founder-linkedin:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* ========================================
+   CREDIBILITY
+   ======================================== */
+.credibility-section {
+  padding: 5rem 0;
+  background: var(--light-gray);
+}
+
+.accelerator-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.accelerator-card p {
+  font-size: 0.9rem;
+  color: var(--secondary-gray);
+  margin-top: 0.25rem;
+}
+
+.accelerator-card {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.accelerator-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.accelerator-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.4;
+}
+
+/* ========================================
+   CO-FOUNDER SEARCH
+   ======================================== */
+.cofounder-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.cofounder-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.cofounder-text h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.cofounder-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--secondary-gray);
+  margin-bottom: 1rem;
+}
+
+.cofounder-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.role-card {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--primary-red);
+}
+
+.role-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--primary-dark);
 }
 
-.team-member .role {
-  font-size: 1rem;
-  color: var(--primary-red);
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.team-member p {
+.role-card p {
+  font-size: 0.95rem;
   color: var(--secondary-gray);
   line-height: 1.6;
-  font-size: 0.95rem;
 }
 
-/* ========================================
-   MEMORIAL SECTION
-   ======================================== */
-.memorial-section {
-  padding: 5rem 0;
-  background: var(--light-gray);
+.cofounder-cta {
   text-align: center;
 }
 
-.memorial-card {
-  background: white;
-  padding: 3rem;
-  border-radius: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border-left: 6px solid var(--primary-red);
+/* ========================================
+   INVESTORS
+   ======================================== */
+.investors-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #2d2d2d 100%);
+  color: white;
 }
 
-.memorial-card h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary-red);
+.investors-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.investors-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
   margin-bottom: 1rem;
 }
 
-.memorial-card p {
+.investors-content p {
   font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.investors-section .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.investors-section .btn-secondary:hover {
+  background: white;
+  color: var(--primary-dark);
+  border-color: white;
+}
+
+/* ========================================
+   CONTACT & SOCIAL
+   ======================================== */
+.contact-section {
+  padding: 6rem 0;
+  background: var(--light-gray);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.contact-info p {
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: var(--secondary-gray);
-  line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
-.memorial-names {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--primary-dark);
-  letter-spacing: 1px;
-}
-
-/* ========================================
-   JOIN US SECTION
-   ======================================== */
-.join-section {
-  padding: 5rem 0;
-  background: var(--primary-dark);
-  color: white;
-  text-align: center;
-}
-
-.join-section h2 {
-  font-size: 2.5rem;
+.contact-email {
+  display: inline-block;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  color: var(--primary-red);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.join-section p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+.contact-email:hover {
+  text-decoration: underline;
 }
 
-.join-buttons {
+.social-links h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--primary-dark);
+}
+
+.social-grid {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  color: var(--primary-red);
+}
+
+.social-card svg {
+  flex-shrink: 0;
+  color: var(--secondary-gray);
+  transition: color 0.3s ease;
+}
+
+.social-card:hover svg {
+  color: var(--primary-red);
 }
 
 /* ========================================
-   TEAM MOBILE RESPONSIVE
+   RESPONSIVE
    ======================================== */
+@media (max-width: 1024px) {
+  .hero.team-hero .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text-col {
+    text-align: center;
+  }
+
+  .cofounder-content,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
-  /* Team hero section */
   .hero.team-hero {
-    min-height: 60vh;
-    padding: 100px 0 60px 0;
+    min-height: 50vh;
+    padding: 100px 0 60px;
   }
 
   .hero.team-hero .hero-container {
     padding: 0 1rem;
-    padding-top: 80px;
+    padding-top: 60px;
   }
 
   .hero.team-hero .hero-content h1 {
@@ -235,87 +424,56 @@
   }
 
   .hero.team-hero .hero-content p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
-  /* Hero sections */
-  .hero.page-hero h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-
-  .hero.page-hero p {
-    font-size: 1.1rem;
-  }
-
-  /* Team */
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .team-member {
-    padding: 1.5rem;
-  }
-
-  .member-photo {
-    width: 100px;
-    height: 100px;
-    font-size: 1.8rem;
-  }
-
-  /* Buttons */
-  .join-buttons {
+  .founder-card {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .founder-photo-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .accelerator-grid {
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  /* Spacing adjustments */
-  .hero.page-hero {
-    padding: 100px 0 60px 0;
+  .founder-section,
+  .credibility-section,
+  .cofounder-section,
+  .contact-section {
+    padding: 4rem 0;
   }
 
-  .team-section {
-    padding: 3rem 0;
+  .cofounder-text h2,
+  .contact-info h2,
+  .investors-content h2 {
+    font-size: 2rem;
+  }
+
+  .social-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .social-card {
+    flex: 1;
+    min-width: 140px;
+    justify-content: center;
   }
 }
 
-/* Extra small devices */
 @media (max-width: 480px) {
   .hero.team-hero .hero-content h1 {
     font-size: 2rem;
   }
 
-  .hero.team-hero .hero-content p {
-    font-size: 1rem;
+  .founder-card {
+    padding: 1.5rem;
   }
-
-  .hero.page-hero h1 {
-    font-size: 2rem;
-  }
-
-  .team-member {
-    padding: 1rem;
-  }
-}
-
-/* ========================================
-   TEAM ANIMATION CLASSES
-   ======================================== */
-.team-member {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.team-member:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.team-member:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.team-member:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.team-member:nth-child(4) {
-  animation-delay: 0.4s;
 }

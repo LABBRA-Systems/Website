@@ -1,44 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LABBRA Systems - Safe Steps, Save Lives</title>
+    <title>LABBRA Systems | Safe Steps, Save Lives</title>
+    <meta name="description" content="LABBRA Systems is developing roadside intelligence designed to help reduce crashes, alert 911, and give cities actionable safety data." />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/home.css" />
   </head>
   <body>
-    <!-- Navigation Container -->
     <div id="navbar-container"></div>
     <div class="menu-overlay"></div>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-container">
         <div class="hero-content">
-          <h1>Safe Steps, <span class="highlight">Save Lives</span></h1>
+          <h1>Safe Steps,<br /><span class="highlight">Save Lives.</span></h1>
           <p>
-            We are developing the LABBRA Intersection as our senior design project,
-            with the hope of making it a real-world solution to improve
-            pedestrian safety.
+            We're developing a roadside system designed to help vehicles see
+            around corners, alert EMS when crashes happen, and give cities
+            real time safety analytics.
           </p>
-
           <div class="hero-buttons">
-            <a href="who-is-labbra.html" class="btn btn-primary">Meet LABBRA</a>
-            <a href="solution.html" class="btn btn-secondary">Our Technology</a>
+            <a href="solution.html" class="btn btn-primary">See Our Technology</a>
+            <a href="problem.html" class="btn btn-secondary">Why It Matters</a>
           </div>
         </div>
         <div class="hero-visual">
           <div class="logo-large">
-            <img src="../media/LABBRA.png" alt="LABBRA Systems Logo" />
+            <img src="../media/version 3.png" alt="LABBRA Gen 3 Hardware Render" />
+            <span class="render-disclosure">Conceptual render. Not final product.</span>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Why It Matters -->
+    <section class="why-it-matters-section">
+      <div class="section-container">
+        <div class="why-content">
+          <div class="why-text">
+            <h2>40,901 people died on U.S. roads in 2023.</h2>
+            <p>
+              Traditional infrastructure takes years to plan and millions to
+              build. Communities need solutions that deploy fast and provide
+              real insight.
+            </p>
+            <a href="problem.html" class="btn btn-primary">See the Full Picture</a>
+          </div>
+          <div class="why-stats">
+            <div class="why-stat">
+              <span class="why-stat-number">&lt;2 hrs</span>
+              <span class="why-stat-label">target install time</span>
+            </div>
+            <div class="why-stat">
+              <span class="why-stat-number">All weather</span>
+              <span class="why-stat-label">thermal + radar + RGB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works-section">
+      <div class="section-container">
+        <div class="section-header centered">
+          <h2>How It Works</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Designed to Install in Under Two Hours</h3>
+            <p>Solar powered. No trenching, no wiring, no civil work required.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Designed for All Conditions</h3>
+            <p>Thermal, radar, and RGB sensors built to work day or night, rain or fog.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Act and Inform</h3>
+            <p>Designed to deliver hazard alerts and stream analytics to city dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who We Serve + CTA -->
+    <section class="pilot-cta-section">
+      <div class="section-container">
+        <div class="pilot-cta-content">
+          <h2>Who This Is For</h2>
+          <div class="audience-tags">
+            <span class="audience-tag">DOTs</span>
+            <span class="audience-tag">Cities &amp; Counties</span>
+            <span class="audience-tag">Smart City Programs</span>
+            <span class="audience-tag">Campuses</span>
+            <span class="audience-tag">AV Developers</span>
+            <span class="audience-tag">Insurance Partners</span>
+          </div>
+          <p>
+            We're preparing for first deployments in mid 2026. Reach out.
+          </p>
+          <div class="pilot-cta-buttons">
+            <a href="mailto:bmingst@labbrasystems.com" class="btn btn-primary">Schedule a Meeting</a>
+            <a href="team.html" class="btn btn-outline">Meet the Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="../js/utils.js"></script>
     <script src="../js/components.js"></script>
     <script src="../js/common.js"></script>

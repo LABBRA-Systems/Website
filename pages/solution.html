@@ -1,327 +1,197 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LABBRA Intersection - LABBRA AI Technology</title>
+    <title>Our Solution | LABBRA Systems</title>
+    <meta
+      name="description"
+      content="Solar powered roadside intelligence. See how LABBRA's hardware, AI, and analytics work together to make roads safer."
+    />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/solution.css" />
   </head>
   <body>
-    <!-- Navigation Container -->
     <div id="navbar-container"></div>
     <div class="menu-overlay"></div>
 
-    <!-- Hero Section with LABBRA INTERSECTION Image -->
+    <!-- Hero -->
     <section class="hero solution-hero">
       <div class="hero-container">
         <div class="hero-content">
           <div class="hero-image">
             <img
-              src="../media/LABBRA INTERSECTION.png"
-              alt="LABBRA Intersection Technology"
+              src="../media/roadside unit mockup.png"
+              alt="LABBRA Roadside Unit Render"
               class="intersection-image"
             />
+            <span class="render-disclosure"
+              >Conceptual render. Not final product.</span
+            >
           </div>
           <div class="hero-text">
-            <h1>The <span class="highlight">LABBRA</span> Intersection</h1>
+            <h1>The <span class="highlight">LABBRA</span> System</h1>
             <p>
-              Our concept for the first 5D situational awareness traffic system,
-              tracking space, time, motion, heat, and sound to detect and
-              respond to accidents at intersections.
+              A solar powered roadside unit designed to detect crashes, alert
+              emergency services, and give cities actionable safety data. No
+              trenching, no wiring, no AC power.
             </p>
             <div class="hero-buttons">
-              <a href="#comparison-slider" class="cta-button">See in 5D</a>
-              <a href="#timeline" class="btn-secondary">Our Timeline</a>
+              <a href="#hardware" class="cta-button">See the Hardware</a>
+              <a href="#ai-progress" class="btn-secondary">AI Progress</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Image Comparison Slider Section -->
-    <section id="comparison-slider" class="comparison-section">
+    <!-- Hardware Evolution -->
+    <section id="hardware" class="hardware-section">
       <div class="container">
         <div class="section-header centered">
-          <h2>Experience 5D Situational Awareness</h2>
-          <p>
-            See how our advanced AI detection system transforms intersection
-            safety
-          </p>
+          <h2>Hardware Evolution</h2>
+          <p>From proof of concept to pilot ready.</p>
         </div>
-
-        <div class="image-comparison-container">
-          <div class="comparison-slider">
-            <div class="image-container">
-              <img
-                src="../media/slider 1.png"
-                alt="Traditional System"
-                class="comparison-image before-image"
-              />
-              <img
-                src="../media/slider 2.png"
-                alt="LABBRA Intersection"
-                class="comparison-image after-image"
-              />
-              <div class="slider-handle">
-                <div class="slider-line"></div>
-                <div class="slider-button">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M15 18L9 12L15 6"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M9 18L15 12L9 6"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="comparison-labels">
-              <div class="label before-label">LABBRA Intersection</div>
-              <div class="label after-label">Traditional Systems</div>
-            </div>
+        <div class="gen-timeline">
+          <div class="gen-card">
+            <img
+              src="../media/version1 .JPG"
+              alt="LABBRA Gen 1 Hardware"
+              class="gen-photo"
+            />
+            <div class="gen-badge">Gen 1</div>
+            <div class="gen-date">Aug to Dec 2025</div>
+            <h3>Proof of Concept</h3>
+            <p>
+              First working system. Demonstrated core detection and sensor
+              architecture.
+            </p>
+            <span class="gen-status status-complete">Completed</span>
+          </div>
+          <div class="gen-card">
+            <img
+              src="../media/Version 2.JPG"
+              alt="LABBRA Gen 2 Hardware"
+              class="gen-photo"
+            />
+            <div class="gen-badge">Gen 2</div>
+            <div class="gen-date">Jan to Mar 2026</div>
+            <h3>Field Testable System</h3>
+            <p>
+              Deployed for real world data collection. Generated training data
+              for AI models.
+            </p>
+            <span class="gen-status status-complete">Completed</span>
+          </div>
+          <div class="gen-card">
+            <img
+              src="../media/version 3.png"
+              alt="LABBRA Gen 3 Hardware Render"
+              class="gen-photo"
+            />
+            <span class="render-disclosure"
+              >Conceptual render. Not final product.</span
+            >
+            <div class="gen-badge">Gen 3</div>
+            <div class="gen-date">Apr to Jun 2026</div>
+            <h3>Pilotable Version</h3>
+            <ul class="gen-features">
+              <li>Solar + battery powered</li>
+              <li>Designed for under 2 hour installation</li>
+              <li>Expected pilot ready: July 2026</li>
+            </ul>
+            <span class="gen-status status-active">In Active R&amp;D</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Comparison Chart Section -->
-    <section class="comparison-chart-section">
+    <!-- AI Model Progress (Line Graph) -->
+    <section id="ai-progress" class="ai-section">
       <div class="container">
         <div class="section-header centered">
-          <h2>Traditional RGB vs LABBRA Intersection</h2>
+          <h2>AI Model Progress</h2>
           <p>
-            See why LABBRA aims to represent the future of intersection safety
+            Crash detection accuracy over time as we've added real sensors and
+            real world data.
           </p>
         </div>
-
-        <div class="t-chart">
-          <div class="chart-column traditional">
-            <div class="column-header">
-              <h3>Traditional RGB Systems</h3>
-              <div class="icon">📹</div>
-            </div>
-            <div class="comparison-items">
-              <div class="comparison-item">
-                <div class="item-icon">🌙</div>
-                <div class="item-content">
-                  <h4>Poor Night Vision</h4>
-                  <p>
-                    RGB cameras struggle in low-light conditions and complete
-                    darkness
-                  </p>
-                </div>
-              </div>
-              <div class="comparison-item">
-                <div class="item-icon">🌧️</div>
-                <div class="item-content">
-                  <h4>Weather Limitations</h4>
-                  <p>
-                    Rain, fog, and snow significantly reduce detection accuracy
-                  </p>
-                </div>
-              </div>
-              <div class="comparison-item">
-                <div class="item-icon">👁️</div>
-                <div class="item-content">
-                  <h4>Single Sensor Dependency</h4>
-                  <p>
-                    Relies solely on visual data, missing critical information
-                  </p>
-                </div>
-              </div>
-              <div class="comparison-item">
-                <div class="item-icon">⚠️</div>
-                <div class="item-content">
-                  <h4>High False Positives</h4>
-                  <p>
-                    Shadows, lighting changes, and objects cause incorrect
-                    alerts
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="chart-column labbra">
-            <div class="column-header">
-              <h3>LABBRA Intersection</h3>
-              <div class="icon">🤖</div>
-            </div>
-            <div class="comparison-items">
-              <div class="comparison-item">
-                <div class="item-icon">📹</div>
-                <div class="item-content">
-                  <h4>RGB Camera</h4>
-                  <p>
-                    Visual detection for object identification and movement
-                    tracking
-                  </p>
-                </div>
-              </div>
-              <div class="comparison-item">
-                <div class="item-icon">🔥</div>
-                <div class="item-content">
-                  <h4>Thermal Sensor</h4>
-                  <p>
-                    Heat signature detection designed for low-light and adverse
-                    weather conditions
-                  </p>
-                </div>
-              </div>
-              <div class="comparison-item">
-                <div class="item-icon">📡</div>
-                <div class="item-content">
-                  <h4>Radar Sensor</h4>
-                  <p>
-                    Distance and speed detection designed to work in various
-                    weather conditions
-                  </p>
-                </div>
-              </div>
-              <div class="comparison-item">
-                <div class="item-icon">📊</div>
-                <div class="item-content">
-                  <h4>LiDAR Sensor</h4>
-                  <p>
-                    3D mapping and precise distance measurement for spatial
-                    awareness
-                  </p>
-                </div>
-              </div>
-              <div class="comparison-item">
-                <div class="item-icon">🔊</div>
-                <div class="item-content">
-                  <h4>Acoustic Sensor</h4>
-                  <p>
-                    Audio analysis designed to detect crash sounds and impact
-                    events
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="ai-graph-container">
+          <canvas id="ai-chart"></canvas>
         </div>
-      </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section id="timeline" class="timeline-section">
-      <div class="container">
-        <div class="timeline-header">
-          <h2>Our Development Timeline</h2>
-          <p>
-            Support our school project to bring the first 5D situational
-            awareness system to life.
-          </p>
-          <a href="../pages/donate.html" class="funding-cta"
-            >Help Fund Our Hardware</a
+        <div class="ai-demo">
+          <img
+            src="../media/AI working.gif"
+            alt="LABBRA AI crash detection demo"
+            class="ai-demo-img"
+          />
+          <span class="ai-demo-caption"
+            >Nov 2025 model: LiDAR + RGB fusion, 97% accuracy running on the
+            CARLA simulator</span
           >
         </div>
+        <div class="ai-notes">
+          <p>
+            Latest model: 6 sensor fusion (2 RGB, 2 thermal, radar, LiDAR)
+            trained on both synthetic and real world data from Gen 2 hardware.
+          </p>
+          <p>
+            <strong>Goal:</strong> Near perfect real time crash detection.
+            <strong>Status:</strong> R&amp;D, improving rapidly.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <div class="timeline-phases">
-          <div class="phase-card">
-            <div class="phase-header">
-              <h3>Phase 0</h3>
-              <span class="phase-subtitle">Idea and Funding</span>
-              <span class="phase-duration">Sep 2024 - July 2025</span>
-            </div>
-            <div class="phase-goals">
-              <div class="goal">Recruit 3 team members</div>
-              <div class="goal">Raise $5,000 for hardware</div>
-              <div class="goal">Plan technology architecture</div>
-            </div>
+    <!-- Analytics Vision -->
+    <section class="analytics-section">
+      <div class="container">
+        <div class="analytics-content">
+          <div class="analytics-text">
+            <h2>Traffic Flow Intelligence</h2>
+            <p>
+              We're working toward visualizing traffic flow data and letting
+              cities interact with it using natural language. Ask a question in
+              plain English, get an actionable answer.
+            </p>
+            <p class="analytics-status">
+              <em
+                >This is a vision we're actively developing, not a finished
+                product.</em
+              >
+            </p>
           </div>
-
-          <div class="phase-card">
-            <div class="phase-header">
-              <h3>Phase 1</h3>
-              <span class="phase-subtitle">SD1</span>
-              <span class="phase-duration">Aug 2025 - Dec 2025</span>
+          <div class="analytics-examples">
+            <div class="analytics-example">
+              <span class="example-label">Example</span>
+              <p class="example-query">
+                "Which intersections had the most near misses last month?"
+              </p>
             </div>
-            <div class="phase-goals">
-              <div class="goal">Purchase and assemble hardware</div>
-              <div class="goal">Develop AI detection algorithm</div>
-              <div class="goal">Build system enclosures</div>
-            </div>
-          </div>
-
-          <div class="phase-card">
-            <div class="phase-header">
-              <h3>Phase 2</h3>
-              <span class="phase-subtitle">SD2</span>
-              <span class="phase-duration">Jan 2026 - Apr 2026</span>
-            </div>
-            <div class="phase-goals">
-              <div class="goal">Test our system in real enviorments</div>
-              <div class="goal">Refine and polish our project</div>
-              <div class="goal">Present final results.</div>
+            <div class="analytics-example">
+              <span class="example-label">Example</span>
+              <p class="example-query">
+                "What time of day are cyclists most at risk near campus?"
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Team Updates Section -->
-    <section class="team-updates-section">
+    <!-- CTA -->
+    <section class="solution-cta-section">
       <div class="container">
-        <div class="section-header centered">
-          <h2>Team Updates</h2>
-          <p>
-            Stay connected with our latest progress and insights from the LABBRA
-            team
-          </p>
-        </div>
-
-        <div class="linkedin-button-container">
-          <a
-            href="https://www.linkedin.com/company/labbra-systems/posts/?feedView=all&viewAsMember=true"
-            class="linkedin-btn"
-            target="_blank"
+        <div class="solution-cta-content">
+          <h2>Interested in Piloting?</h2>
+          <p>We're preparing for our first deployments in mid 2026.</p>
+          <a href="mailto:bmingst@labbrasystems.com" class="btn btn-primary"
+            >Get in Touch</a
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
-              />
-            </svg>
-            Follow us on LinkedIn
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Ready to help pioneer our school project?</h2>
-          <p>
-            Join us in developing the first 5D situational awareness system with
-            innovative AI technology
-          </p>
-          <div class="cta-buttons">
-            <a href="../pages/donate.html" class="cta-button primary"
-              >Support Our Mission</a
-            >
-            <a href="../pages/team.html" class="cta-button secondary"
-              >Meet Our Team</a
-            >
-          </div>
         </div>
       </div>
     </section>
@@ -331,160 +201,136 @@
     <script src="../js/common.js"></script>
     <script src="../js/nav.js"></script>
     <script>
-      // Image Comparison Slider Functionality
       document.addEventListener("DOMContentLoaded", function () {
-        const slider = document.querySelector(".comparison-slider");
-        const handle = document.querySelector(".slider-handle");
-        const afterImage = document.querySelector(".after-image");
-        const imageContainer = document.querySelector(".image-container");
+        const canvas = document.getElementById("ai-chart");
+        if (canvas) {
+          const ctx = canvas.getContext("2d");
+          const dpr = window.devicePixelRatio || 1;
+          const parent = canvas.parentElement;
+          const parentStyle = getComputedStyle(parent);
+          const padL = parseFloat(parentStyle.paddingLeft) || 0;
+          const padR = parseFloat(parentStyle.paddingRight) || 0;
+          const cw = parent.clientWidth - padL - padR;
+          const isMobile = cw < 500;
+          const ch = isMobile
+            ? Math.min(300, cw * 0.8)
+            : Math.min(350, cw * 0.5);
+          canvas.width = cw * dpr;
+          canvas.height = ch * dpr;
+          canvas.style.width = cw + "px";
+          canvas.style.height = ch + "px";
+          ctx.scale(dpr, dpr);
 
-        if (slider && handle && afterImage && imageContainer) {
-          let isActive = false;
-          let startX = 0;
-          let currentX = 0;
+          const data = [
+            { label: "Sep '25", value: 85, detail: "RGB only" },
+            { label: "Oct '25", value: 95, detail: "RGB + LiDAR" },
+            { label: "Nov '25", value: 97, detail: "LiDAR + RGB" },
+            { label: "Mar '26", value: 96.9, detail: "6 sensor fusion" },
+          ];
 
-          function updateSlider(x) {
-            const rect = slider.getBoundingClientRect();
-            const position = Math.max(0, Math.min(x - rect.left, rect.width));
-            const percentage = (position / rect.width) * 100;
+          const pad = isMobile
+            ? { top: 35, right: 50, bottom: 45, left: 40 }
+            : { top: 40, right: 80, bottom: 50, left: 55 };
+          const w = cw - pad.left - pad.right;
+          const h = ch - pad.top - pad.bottom;
+          const minY = 80;
+          const maxY = 100;
 
-            handle.style.left = percentage + "%";
-            afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+          function yPos(v) {
+            return pad.top + h - ((v - minY) / (maxY - minY)) * h;
+          }
+          function xPos(i) {
+            return pad.left + (i / (data.length - 1)) * w;
           }
 
-          // Mouse events
-          handle.addEventListener("mousedown", (e) => {
-            isActive = true;
-            startX = e.clientX;
-            document.body.style.userSelect = "none";
+          ctx.strokeStyle = "#e5e7eb";
+          ctx.lineWidth = 1;
+          for (let v = 80; v <= 100; v += 5) {
+            const y = yPos(v);
+            ctx.beginPath();
+            ctx.moveTo(pad.left, y);
+            ctx.lineTo(cw - pad.right, y);
+            ctx.stroke();
+            ctx.fillStyle = "#9ca3af";
+            ctx.font = (isMobile ? "10" : "12") + "px Inter, sans-serif";
+            ctx.textAlign = "right";
+            ctx.fillText(v + "%", pad.left - 8, y + 4);
+          }
+
+          ctx.strokeStyle = "#ff3b3b";
+          ctx.lineWidth = 3;
+          ctx.lineJoin = "round";
+          ctx.beginPath();
+          data.forEach((d, i) => {
+            const x = xPos(i),
+              y = yPos(d.value);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
           });
+          ctx.stroke();
 
-          document.addEventListener("mousemove", (e) => {
-            if (!isActive) return;
-            e.preventDefault();
-            updateSlider(e.clientX);
+          const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + h);
+          grad.addColorStop(0, "rgba(255,59,59,0.15)");
+          grad.addColorStop(1, "rgba(255,59,59,0)");
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          data.forEach((d, i) => {
+            const x = xPos(i),
+              y = yPos(d.value);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
           });
+          ctx.lineTo(xPos(data.length - 1), pad.top + h);
+          ctx.lineTo(xPos(0), pad.top + h);
+          ctx.closePath();
+          ctx.fill();
 
-          document.addEventListener("mouseup", () => {
-            isActive = false;
-            document.body.style.userSelect = "";
-          });
+          var dotR = isMobile ? 4 : 6;
+          var dotInner = isMobile ? 2 : 3;
+          data.forEach((d, i) => {
+            const x = xPos(i),
+              y = yPos(d.value);
+            ctx.beginPath();
+            ctx.arc(x, y, dotR, 0, Math.PI * 2);
+            ctx.fillStyle = "#ff3b3b";
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(x, y, dotInner, 0, Math.PI * 2);
+            ctx.fillStyle = "#fff";
+            ctx.fill();
 
-          // Enhanced touch events for mobile
-          handle.addEventListener(
-            "touchstart",
-            (e) => {
-              isActive = true;
-              startX = e.touches[0].clientX;
-              e.preventDefault();
-              // Add visual feedback
-              handle.style.transform = "translateX(-50%) scale(1.1)";
-            },
-            { passive: false }
-          );
+            ctx.fillStyle = "#1a1a1a";
+            ctx.font =
+              "bold " + (isMobile ? "11" : "13") + "px Inter, sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText(d.value + "%", x, y - (isMobile ? 10 : 14));
 
-          document.addEventListener(
-            "touchmove",
-            (e) => {
-              if (!isActive) return;
-              e.preventDefault();
-              const touch = e.touches[0];
-              currentX = touch.clientX;
-              updateSlider(currentX);
-            },
-            { passive: false }
-          );
+            ctx.fillStyle = "#6b7280";
+            ctx.font = (isMobile ? "9" : "11") + "px Inter, sans-serif";
+            ctx.fillText(d.detail, x, y - (isMobile ? 20 : 28));
 
-          document.addEventListener(
-            "touchend",
-            (e) => {
-              if (!isActive) return;
-              isActive = false;
-              e.preventDefault();
-              // Remove visual feedback
-              handle.style.transform = "translateX(-50%) scale(1)";
-            },
-            { passive: false }
-          );
-
-          // Allow clicking/tapping anywhere on the slider to move handle
-          imageContainer.addEventListener("click", (e) => {
-            if (!isActive) {
-              updateSlider(e.clientX);
-            }
-          });
-
-          imageContainer.addEventListener(
-            "touchstart",
-            (e) => {
-              if (
-                e.target === imageContainer ||
-                e.target.classList.contains("comparison-image")
-              ) {
-                const touch = e.touches[0];
-                updateSlider(touch.clientX);
-              }
-            },
-            { passive: true }
-          );
-
-          // Keyboard accessibility
-          handle.addEventListener("keydown", (e) => {
-            const rect = slider.getBoundingClientRect();
-            const currentPos = parseFloat(handle.style.left) || 50;
-            let newPos = currentPos;
-
-            switch (e.key) {
-              case "ArrowLeft":
-                newPos = Math.max(0, currentPos - 5);
-                break;
-              case "ArrowRight":
-                newPos = Math.min(100, currentPos + 5);
-                break;
-              case "Home":
-                newPos = 0;
-                break;
-              case "End":
-                newPos = 100;
-                break;
-              default:
-                return;
-            }
-
-            e.preventDefault();
-            const newX = rect.left + (newPos / 100) * rect.width;
-            updateSlider(newX);
-          });
-
-          // Make handle focusable for keyboard navigation
-          handle.setAttribute("tabindex", "0");
-          handle.setAttribute("role", "slider");
-          handle.setAttribute("aria-label", "Image comparison slider");
-          handle.setAttribute("aria-valuemin", "0");
-          handle.setAttribute("aria-valuemax", "100");
-          handle.setAttribute("aria-valuenow", "50");
-
-          // Initialize at 50%
-          setTimeout(() => {
-            const rect = slider.getBoundingClientRect();
-            if (rect.width > 0) {
-              updateSlider(rect.left + rect.width / 2);
-            }
-          }, 100);
-
-          // Handle window resize
-          window.addEventListener("resize", () => {
-            setTimeout(() => {
-              const rect = slider.getBoundingClientRect();
-              if (rect.width > 0) {
-                const currentPercentage = parseFloat(handle.style.left) || 50;
-                updateSlider(
-                  rect.left + (currentPercentage / 100) * rect.width
-                );
-              }
-            }, 100);
+            ctx.fillStyle = "#1a1a1a";
+            ctx.font = (isMobile ? "10" : "12") + "px Inter, sans-serif";
+            ctx.fillText(d.label, x, pad.top + h + (isMobile ? 16 : 20));
           });
         }
+
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.style.animation = "fadeInUp 0.8s ease-out forwards";
+                obs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+        document.querySelectorAll(".gen-card").forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(30px)";
+          obs.observe(el);
+        });
       });
     </script>
   </body>

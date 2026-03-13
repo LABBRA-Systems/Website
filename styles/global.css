@@ -1,10 +1,9 @@
 /* ========================================
    LABBRA Systems - Global Styles
-   Shared styles used across all pages
    ======================================== */
 
 /* ========================================
-   CSS CUSTOM PROPERTIES (VARIABLES)
+   CSS CUSTOM PROPERTIES
    ======================================== */
 :root {
   --primary-red: #ff3b3b;
@@ -16,12 +15,12 @@
   --success-green: #10b981;
   --warning-orange: #f59e0b;
   --tech-purple: #8b5cf6;
-  --navbar-height: 76px; /* New variable for navbar total height */
-  --navbar-height-mobile: 60px; /* New variable for mobile navbar height */
+  --navbar-height: 76px;
+  --navbar-height-mobile: 60px;
 }
 
 /* ========================================
-   GLOBAL RESET & BASE STYLES
+   RESET & BASE
    ======================================== */
 * {
   margin: 0;
@@ -38,7 +37,7 @@ body {
 }
 
 /* ========================================
-   NAVIGATION STYLES
+   NAVIGATION
    ======================================== */
 .navbar {
   position: fixed;
@@ -53,7 +52,6 @@ body {
   height: var(--navbar-height);
   padding: 0;
   transition: all 0.3s ease;
-  will-change: transform, background-color, box-shadow;
 }
 
 .nav-container {
@@ -63,7 +61,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   height: 60px;
 }
 
@@ -99,11 +96,13 @@ body {
   list-style: none;
   gap: 2rem;
   align-items: center;
-}  .mobile-menu-toggle {
-    display: none;
-  }
+}
 
-  .nav-links a {
+.mobile-menu-toggle {
+  display: none;
+}
+
+.nav-links a {
   text-decoration: none;
   color: var(--secondary-gray);
   font-weight: 500;
@@ -120,7 +119,7 @@ body {
 }
 
 /* ========================================
-   REUSABLE BUTTON COMPONENTS
+   BUTTONS
    ======================================== */
 .btn {
   display: inline-block;
@@ -157,16 +156,6 @@ body {
   transform: translateY(-2px);
 }
 
-.btn-white {
-  background: white;
-  color: var(--primary-dark);
-}
-
-.btn-white:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
-}
-
 .btn-outline {
   background: transparent;
   color: white;
@@ -179,19 +168,6 @@ body {
   transform: translateY(-2px);
 }
 
-.btn-large {
-  padding: 1.5rem 3rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  border-radius: 12px;
-}
-
-.btn-large:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
-}
-
-/* CTA Button (legacy support) */
 .cta-button {
   background: var(--primary-red);
   color: white;
@@ -211,9 +187,15 @@ body {
 }
 
 /* ========================================
-   REUSABLE LAYOUT COMPONENTS
+   LAYOUT
    ======================================== */
 .section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -239,181 +221,7 @@ body {
 }
 
 /* ========================================
-   REUSABLE CARD COMPONENTS
-   ======================================== */
-.card {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-}
-
-.card-glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.card-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--primary-red);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  color: white;
-  font-size: 1.5rem;
-}
-
-.card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--primary-dark);
-}
-
-.card p {
-  color: var(--secondary-gray);
-  line-height: 1.6;
-}
-
-/* ========================================
-   REUSABLE GRID LAYOUTS
-   ======================================== */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
-}
-
-.grid-auto {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.grid-auto-250 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-/* ========================================
-   REUSABLE FORM COMPONENTS
-   ======================================== */
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: var(--primary-dark);
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-  background: white;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--primary-red);
-  box-shadow: 0 0 0 3px rgba(255, 59, 59, 0.1);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-/* ========================================
-   REUSABLE PROGRESS COMPONENTS
-   ======================================== */
-.progress-bar-container {
-  background: #e5e7eb;
-  border-radius: 25px;
-  height: 40px;
-  margin: 2rem 0;
-  overflow: hidden;
-  position: relative;
-}
-
-.progress-bar {
-  background: linear-gradient(90deg, var(--primary-red), var(--warning-orange));
-  height: 100%;
-  border-radius: 25px;
-  transition: width 1s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-.progress-bar-blue {
-  background: linear-gradient(90deg, var(--accent-blue), var(--success-green));
-}
-
-/* ========================================
-   REUSABLE STAT COMPONENTS
-   ======================================== */
-.stat-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin-bottom: 0.5rem;
-  color: var(--warning-orange);
-}
-
-.stat-label {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* ========================================
-   REUSABLE ANIMATIONS
+   ANIMATIONS
    ======================================== */
 @keyframes fadeInUp {
   from {
@@ -427,94 +235,26 @@ body {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-.animate-fade-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animate-fade-up-delay-1 {
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.1s;
-}
-
-.animate-fade-up-delay-2 {
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.2s;
-}
-
-.animate-fade-up-delay-3 {
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-.animate-fade-up-delay-4 {
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.4s;
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ========================================
-   RESPONSIVE DESIGN - MOBILE STYLES
+   RESPONSIVE - MOBILE
    ======================================== */
-@media (max-width: 1024px) {
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-}
-
 @media (max-width: 768px) {
-  /* Prevent horizontal overflow */
   body {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
   }
 
-  /* Navigation */
   .nav-container {
     padding: 0 1rem;
-    position: relative;
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
   }
-  
-  .cta-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    height: 44px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    text-align: center;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    margin: 0.5rem auto;
-    background-color: var(--primary-red);
-    color: white !important;
-  }
-  
+
   .nav-links {
     position: fixed;
     top: 0;
@@ -529,8 +269,7 @@ body {
     gap: 1.5rem;
     transition: transform 0.3s ease;
     z-index: 1001;
-    box-sizing: border-box;
-    padding: 100px 0 2rem 0; /* Removed horizontal padding */
+    padding: 100px 0 2rem;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
@@ -538,59 +277,15 @@ body {
     max-height: 100vh;
   }
 
-  .nav-links li {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-links a {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 0.75rem 1rem;
-    text-align: center;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-
-  /* Special styling for the donate link */
-  .nav-links a[href*="donate"],
-  .cta-button {
-    width: 85%;
-    margin: 0 auto;
-    background-color: var(--primary-red);
-    color: white !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1rem;
-  }
-  
   .nav-links.active {
     transform: translateX(0);
     right: 0;
   }
-  
-  /* Prevent scrolling when menu is open */
-  body.menu-open {
-    overflow: hidden;
-  }
-  .nav-links.active {
-    right: 0;
-    transform: translateX(0);
-  }
 
   .nav-links li {
     width: 100%;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
     opacity: 0;
     transform: translateX(20px);
     transition: all 0.3s ease;
@@ -605,51 +300,26 @@ body {
   .nav-links li:nth-child(2) { transition-delay: 0.15s; }
   .nav-links li:nth-child(3) { transition-delay: 0.2s; }
   .nav-links li:nth-child(4) { transition-delay: 0.25s; }
-  .nav-links li:nth-child(5) { transition-delay: 0.3s; }
-  .nav-links li:nth-child(6) { transition-delay: 0.35s; }
 
   .nav-links a {
     font-size: 1.25rem;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
-    width: 100%;
+    width: 85%;
     text-align: center;
     border-radius: 8px;
-    transition: all 0.3s ease;
     display: block;
+    transition: all 0.3s ease;
   }
 
   .nav-links a:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
-  
-  .nav-links a.active {
-    background-color: rgba(var(--primary-red-rgb), 0.1);
-    color: var(--primary-red);
-  }
-  /* Add donate link to mobile menu */
-  .nav-links .mobile-donate {
-    display: none; /* Hidden by default */
+
+  body.menu-open {
+    overflow: hidden;
   }
 
-  @media (max-width: 768px) {
-    /* Show donate in mobile menu */
-    .nav-links .mobile-donate {
-      display: block;
-      background: var(--primary-red);
-      color: white !important;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1rem;
-    }
-    
-    /* Hide desktop donate button */
-    .cta-button {
-      display: none !important;
-    }
-  }
   .mobile-menu-toggle {
     display: flex;
     flex-direction: column;
@@ -670,8 +340,9 @@ body {
     margin: 3px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
-    position: relative;
-  }  .mobile-menu-toggle.active span:nth-child(1) {
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 5px);
     width: 28px;
   }
@@ -686,7 +357,6 @@ body {
     width: 28px;
   }
 
-  /* Menu Overlay */
   .menu-overlay {
     position: fixed;
     top: 0;
@@ -707,21 +377,6 @@ body {
     visibility: visible;
   }
 
-  body.menu-open {
-    overflow: hidden;
-  }
-
-  .mobile-close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--primary-dark);
-    z-index: 1003;
-    display: block;
-  }
-
   .logo {
     font-size: 1.2rem;
   }
@@ -731,238 +386,61 @@ body {
     height: 35px;
   }
 
-  /* Grids */
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .grid-auto {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .grid-auto-250 {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  /* Sections */
-  .section-container {
+  .section-container,
+  .container {
     padding: 0 1rem;
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
   }
 
   .section-header h2 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 
   .section-header p {
-    font-size: 1rem !important;
-  }
-
-  /* Cards */
-  .card {
-    padding: 1.5rem;
-  }
-
-  /* Buttons */
-  .btn-large {
-    padding: 1.2rem 2.5rem;
-    font-size: 1.1rem;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-  }
-
-  .btn-secondary,
-  .btn-white,
-  .btn-outline {
-    padding: 1rem 2rem;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-  }
-
-  /* Form elements */
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    font-size: 16px; /* Prevents zoom on iOS */
-  }
-
-  /* Responsive images */
-  iframe {
-    width: 100% !important;
-    height: 200px !important;
-  }
-
-  /* Spacing adjustments */
-  section {
-    padding: 3rem 0;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 480px) {
-  .section-header h2 {
-    font-size: 1.8rem !important;
-  }
-
-  .btn-large {
-    padding: 1rem 2rem;
     font-size: 1rem;
   }
 
-  .nav-container {
-    padding: 0 0.5rem;
+  section {
+    padding: 3rem 0;
   }
 
-  .section-container {
-    padding: 0 0.5rem;
-  }
-
-  .card {
-    padding: 1rem;
-  }
-}
-
-/* Mobile Menu Overlay */
-@media (max-width: 768px) {
-  .menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 999;
-  }
-
-  body.menu-open .menu-overlay {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-links {
-    transform: translateX(100%);
-    padding-top: 80px; /* Account for navbar height */
-  }
-
-  .nav-links.active {
-    transform: translateX(0);
-  }
-
-  /* Improve mobile menu items spacing */
-  .nav-links li {
-    width: 100%;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: all 0.3s ease;
-    transition-delay: calc(0.1s * var(--item-index, 0));
-  }
-
-  .nav-links.active li {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
   .nav-links::-webkit-scrollbar {
     display: none;
   }
 
-  /* Hide scrollbar for IE, Edge and Firefox */
   .nav-links {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-}
-
-/* ========================================
-   NAVIGATION STYLES
-   ======================================== */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  z-index: 2000;
-  height: var(--navbar-height);
-  padding: 0;
-  transition: all 0.3s ease;
-  will-change: transform, background-color, box-shadow;
-}
-
-/* Add padding to the top of main content to account for fixed navbar */
-main {
-  padding-top: var(--navbar-height);
 }
 
 @media (max-width: 768px) {
   .navbar {
     height: var(--navbar-height-mobile);
   }
+}
 
-  main {
-    padding-top: var(--navbar-height-mobile);
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.8rem;
   }
 
-  /* Adjust hero sections for mobile */
-  .hero.page-hero {
-    padding-top: calc(var(--navbar-height-mobile) + 2rem) !important;
-    min-height: 100vh;
+  .nav-container {
+    padding: 0 0.5rem;
+  }
+
+  .section-container,
+  .container {
+    padding: 0 0.75rem;
   }
 }
 
-/* ========================================
-   PROJECT DISCLAIMER STYLES
-   ======================================== */
-.project-disclaimer {
-  background: #fff3cd;
-  border: 2px solid #ffc107;
-  border-radius: 8px;
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0;
+.render-disclosure {
+  display: block;
   text-align: center;
-}
-
-.project-disclaimer p {
-  margin: 0;
-  color: #856404;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.donate-disclaimer {
-  background: #fff3cd;
-  border: 2px solid #ffc107;
-  margin: 2rem 0;
-}
-
-.donate-disclaimer p {
-  color: #856404;
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .project-disclaimer {
-    padding: 1rem;
-    margin: 1rem 0;
-  }
-  
-  .project-disclaimer p {
-    font-size: 0.9rem;
-  }
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-style: italic;
+  margin-top: 0.5rem;
 }

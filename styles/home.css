@@ -1,9 +1,9 @@
 /* ========================================
-   Home Page Specific Styles
+   Home Page Styles
    ======================================== */
 
 /* ========================================
-   HOME HERO SECTION
+   HERO SECTION
    ======================================== */
 .hero {
   min-height: 100vh;
@@ -26,7 +26,7 @@
 
 .hero-content h1 {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1.1;
   margin-bottom: 1.5rem;
   color: var(--primary-dark);
@@ -56,110 +56,348 @@
 }
 
 .logo-large {
-  width: 300px;
-  height: 300px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding: 2rem;
 }
 
 .logo-large img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
+  border-radius: 16px;
 }
 
 /* ========================================
-   HOME STATS SECTION
+   VALUE PROPOSITION
    ======================================== */
-.stats {
-  padding: 5rem 0;
+.value-prop-section {
+  padding: 4rem 0;
   background: white;
 }
 
-.stats-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.value-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  text-align: center;
-}
-
-.stat-item h3 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--primary-red);
-  margin-bottom: 0.5rem;
-}
-
-.stat-item p {
-  color: var(--secondary-gray);
-  font-size: 1.1rem;
-}
-
-/* ========================================
-   HOME FEATURES SECTION
-   ======================================== */
-.features {
-  padding: 5rem 0;
-  background: var(--light-gray);
-}
-
-.features-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-/* ========================================
-   HOME CTA SECTION
-   ======================================== */
-.cta-section {
-  padding: 5rem 0;
-  background: var(--primary-dark);
-  color: white;
+.value-card {
   text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  background: var(--light-gray);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-.cta-section h2 {
-  font-size: 2.5rem;
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+}
+
+.value-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.value-card h3 {
+  font-size: 1.3rem;
   font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.value-card p {
+  color: var(--secondary-gray);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* ========================================
+   HOW IT WORKS
+   ======================================== */
+.how-it-works-section {
+  padding: 4rem 0;
+  background: var(--light-gray);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.step-card {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-red);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
   margin-bottom: 1rem;
 }
 
-.cta-section p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+.step-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.step-card p {
+  color: var(--secondary-gray);
+  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
 /* ========================================
-   HOME MOBILE RESPONSIVE
+   WHY IT MATTERS
    ======================================== */
+.why-it-matters-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #2d2d2d 100%);
+  color: white;
+}
+
+.why-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.why-text h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.why-text p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 1.25rem;
+}
+
+.why-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.why-stat {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.why-stat-number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-red);
+}
+
+.why-stat-label {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* ========================================
+   PILOT CTA
+   ======================================== */
+.pilot-cta-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #2d2d2d 100%);
+  color: white;
+}
+
+.audience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.audience-tag {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.pilot-cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pilot-cta-content h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.pilot-cta-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.pilot-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pilot-cta-section .btn-outline {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.pilot-cta-section .btn-outline:hover {
+  background: white;
+  color: var(--primary-dark);
+  border-color: white;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.site-footer {
+  background: #111;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  margin-bottom: 2rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.footer-links {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-col h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  margin-bottom: 0.4rem;
+}
+
+.footer-col a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.25rem;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+.hero-content > * {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-content h1 { animation-delay: 0.1s; }
+.hero-content p { animation-delay: 0.2s; }
+.hero-buttons { animation-delay: 0.3s; }
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .value-grid,
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
-  /* Hero sections */
+  .hero {
+    padding: 100px 0 60px;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 2rem;
     padding: 0 1rem;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
   .hero-content h1 {
@@ -173,62 +411,50 @@
 
   .hero-buttons {
     flex-direction: column;
-    gap: 1rem;
     align-items: center;
   }
 
   .logo-large {
-    width: 200px;
-    height: 200px;
-    padding: 1rem;
+    max-width: 350px;
   }
 
-  /* Stats */
-  .stats-container {
-    padding: 0 1rem;
-    gap: 2rem;
-  }
-
-  .stat-item h3 {
-    font-size: 2.5rem;
-  }
-
-  /* Features */
-  .features-grid {
+  .value-grid,
+  .steps-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
-  /* Spacing adjustments */
-  .hero {
-    padding: 100px 0 60px 0;
-  }
-
-  .features {
+  .value-prop-section,
+  .how-it-works-section,
+  .why-it-matters-section {
     padding: 3rem 0;
+  }
+
+  .why-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .pilot-cta-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .pilot-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
 
-/* Extra small devices */
 @media (max-width: 480px) {
   .hero-content h1 {
     font-size: 2rem;
   }
-}
 
-/* ========================================
-   HOME ANIMATION CLASSES
-   ======================================== */
-.hero-content > * {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.hero-content h1 {
-  animation-delay: 0.1s;
-}
-.hero-content p {
-  animation-delay: 0.2s;
-}
-.hero-buttons {
-  animation-delay: 0.3s;
+  .why-stat-number {
+    font-size: 1.75rem;
+  }
 }
