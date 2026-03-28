@@ -122,11 +122,18 @@
           <canvas id="ai-chart"></canvas>
         </div>
         <div class="ai-demo">
-          <img
-            src="../media/AI working.gif"
-            alt="LABBRA AI crash detection demo"
-            class="ai-demo-img"
-          />
+          <video
+            class="ai-demo-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            disablePictureInPicture
+            aria-label="LABBRA AI crash detection demo"
+          >
+            <source src="../media/ai demo.mp4" type="video/mp4" />
+          </video>
           <span class="ai-demo-caption"
             >March 2026 model: LiDAR, RGB, thermal, radar fusion, 97.4% accuracy running on the
             CARLA simulator</span
@@ -293,6 +300,12 @@
           el.style.transform = "translateY(30px)";
           obs.observe(el);
         });
+
+        var aiDemoVideo = document.querySelector(".ai-demo-video");
+        if (aiDemoVideo) {
+          aiDemoVideo.muted = true;
+          aiDemoVideo.play().catch(function () {});
+        }
       });
     </script>
   </body>
