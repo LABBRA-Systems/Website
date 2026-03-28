@@ -67,8 +67,7 @@
             <div class="gen-date">Aug to Dec 2025</div>
             <h3>Proof of Concept</h3>
             <p>
-              First working system. Demonstrated core detection and sensor
-              architecture.
+             Demonstrated sensor fusion architecture.
             </p>
             <span class="gen-status status-complete">Completed</span>
           </div>
@@ -82,8 +81,7 @@
             <div class="gen-date">Jan to Mar 2026</div>
             <h3>Field Testable System</h3>
             <p>
-              Deployed for real world data collection. Generated training data
-              for AI models.
+              Deployed for data collection for AI model training.
             </p>
             <span class="gen-status status-complete">Completed</span>
           </div>
@@ -130,55 +128,19 @@
             class="ai-demo-img"
           />
           <span class="ai-demo-caption"
-            >Nov 2025 model: LiDAR + RGB fusion, 97% accuracy running on the
+            >March 2026 model: LiDAR, RGB, thermal, radar fusion, 97.4% accuracy running on the
             CARLA simulator</span
           >
         </div>
-        <div class="ai-notes">
-          <p>
-            Latest model: 6 sensor fusion (2 RGB, 2 thermal, radar, LiDAR)
-            trained on both synthetic and real world data from Gen 2 hardware.
-          </p>
-          <p>
-            <strong>Goal:</strong> Near perfect real time crash detection.
-            <strong>Status:</strong> R&amp;D, improving rapidly.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Analytics Vision -->
-    <section class="analytics-section">
-      <div class="container">
-        <div class="analytics-content">
-          <div class="analytics-text">
-            <h2>Traffic Flow Intelligence</h2>
-            <p>
-              We're working toward visualizing traffic flow data and letting
-              cities interact with it using natural language. Ask a question in
-              plain English, get an actionable answer.
-            </p>
-            <p class="analytics-status">
-              <em
-                >This is a vision we're actively developing, not a finished
-                product.</em
-              >
-            </p>
-          </div>
-          <div class="analytics-examples">
-            <div class="analytics-example">
-              <span class="example-label">Example</span>
-              <p class="example-query">
-                "Which intersections had the most near misses last month?"
-              </p>
-            </div>
-            <div class="analytics-example">
-              <span class="example-label">Example</span>
-              <p class="example-query">
-                "What time of day are cyclists most at risk near campus?"
-              </p>
-            </div>
-          </div>
+        <div class="sensor-feed">
+          <img
+            src="../media/sesnor feed.png"
+            alt="LABBRA sensor feed screenshot"
+            class="sensor-feed-img"
+          />
+          <span class="sensor-feed-caption"
+            >Screenshot from the Gen 2 sensor feed during field testing</span
+          >
         </div>
       </div>
     </section>
@@ -225,7 +187,7 @@
             { label: "Sep '25", value: 85, detail: "RGB only" },
             { label: "Oct '25", value: 95, detail: "RGB + LiDAR" },
             { label: "Nov '25", value: 97, detail: "LiDAR + RGB" },
-            { label: "Mar '26", value: 96.9, detail: "6 sensor fusion" },
+            { label: "Mar '26", value: 97.4, detail: "6 sensor fusion" },
           ];
 
           const pad = isMobile

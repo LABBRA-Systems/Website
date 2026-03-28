@@ -15,6 +15,7 @@ function getNavbarTemplate() {
           <li><a href="problem.html" data-page="problem">The Problem</a></li>
           <li><a href="solution.html" data-page="solution">Our Solution</a></li>
           <li><a href="team.html" data-page="team">Team</a></li>
+          <li><a href="story.html" data-page="story">Our Story</a></li>
         </ul>
         <div class="mobile-menu-toggle">
           <span></span>

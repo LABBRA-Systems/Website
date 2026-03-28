@@ -304,66 +304,27 @@
 }
 
 /* ========================================
-   ANALYTICS
+   SENSOR FEED
    ======================================== */
-.analytics-section {
-  padding: 6rem 0;
-  background: var(--light-gray);
+.sensor-feed {
+  max-width: 800px;
+  margin: 2.5rem auto 0;
+  text-align: center;
 }
 
-.analytics-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.analytics-text h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  color: var(--primary-dark);
-}
-
-.analytics-text p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--secondary-gray);
-  margin-bottom: 1.25rem;
-}
-
-.analytics-examples {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.analytics-example {
-  background: white;
-  padding: 1.5rem;
+.sensor-feed-img {
+  width: 100%;
   border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-left: 4px solid var(--primary-red);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
-.example-label {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--primary-red);
-  margin-bottom: 0.5rem;
-}
-
-.example-query {
-  font-size: 1.05rem;
-  color: var(--primary-dark);
+.sensor-feed-caption {
+  display: block;
+  font-size: 0.8rem;
+  color: #9ca3af;
   font-style: italic;
-  line-height: 1.5;
-  margin: 0;
+  margin-top: 0.5rem;
 }
 
 /* ========================================
@@ -409,7 +370,6 @@
   .hero.solution-hero .hero-buttons { justify-content: center; }
 
   .gen-timeline { grid-template-columns: 1fr 1fr; }
-  .analytics-content { grid-template-columns: 1fr; gap: 3rem; }
 }
 
 @media (max-width: 768px) {
@@ -454,8 +414,7 @@
   }
 
   .hardware-section,
-  .ai-section,
-  .analytics-section {
+  .ai-section {
     padding: 4rem 0;
   }
 
@@ -465,10 +424,6 @@
 
   .gen-photo {
     height: auto;
-  }
-
-  .analytics-text h2 {
-    font-size: 2rem;
   }
 
   .solution-cta-content h2 {
