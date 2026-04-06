@@ -332,6 +332,37 @@
 }
 
 /* ========================================
+   PRIVACY & SAFETY
+   ======================================== */
+.privacy-safety-section {
+  padding: 6rem 0;
+  background: var(--light-gray);
+}
+
+.privacy-safety-section .privacy-safety-subsections {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.privacy-safety-section .privacy-safety-subsections h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 1.75rem 0 0.5rem;
+}
+
+.privacy-safety-section .privacy-safety-subsections h3:first-of-type {
+  margin-top: 0;
+}
+
+.privacy-safety-section .privacy-safety-subsections p {
+  color: var(--secondary-gray);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ========================================
    SOLUTION CTA
    ======================================== */
 .solution-cta-section {

@@ -172,6 +172,61 @@
 }
 
 /* ========================================
+   SAFETY WITHOUT SURVEILLANCE
+   ======================================== */
+.safety-without-surveillance-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.safety-without-surveillance-section .section-header {
+  margin-bottom: 1.5rem;
+}
+
+.safety-without-surveillance-section p {
+  color: var(--secondary-gray);
+  line-height: 1.6;
+  font-size: 1.05rem;
+  max-width: 720px;
+  margin: 0 auto 1rem;
+}
+
+.safety-without-surveillance-section p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   PRIVACY FAQ (HOME)
+   ======================================== */
+.home-privacy-faq-section .section-header {
+  margin-bottom: 1.5rem;
+}
+
+.home-privacy-faq {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.home-privacy-faq dt {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--primary-dark);
+  margin-top: 1.25rem;
+}
+
+.home-privacy-faq dt:first-child {
+  margin-top: 0;
+}
+
+.home-privacy-faq dd {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  color: var(--secondary-gray);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ========================================
    WHY IT MATTERS
    ======================================== */
 .why-it-matters-section {
