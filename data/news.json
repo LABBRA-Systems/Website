@@ -1,0 +1,26 @@
+[
+  {
+    "id": "nicholson-feature-2026-04-10",
+    "title": "Computer science student develops technology to improve pedestrian safety",
+    "source": "Nicholson Student Media",
+    "sourceLabel": "The Charge",
+    "date": "2026-04-10",
+    "summary": "A feature on LABBRA Systems, the project mission, and development of the roadside safety prototype near UCF.",
+    "url": "https://www.nicholsonstudentmedia.com/news/computer-science-student-develops-technology-to-improve-pedestrian-safety/article_180a30ea-7613-422f-bc62-07edf328fd8b.html",
+    "thumbnail": "../media/DataCollection.jpg",
+    "type": "article",
+    "featured": true
+  },
+  {
+    "id": "youtube-coverage-2026-04-10",
+    "title": "The Charge On Air - April 10th 2026",
+    "source": "Sign in",
+    "sourceLabel": "Sign in",
+    "date": "2026-04-10",
+    "summary": "Video coverage highlighting the LABBRA story and project context.",
+    "url": "https://www.youtube.com/watch?v=1Ss6e64QGxM&t=5s",
+    "thumbnail": "https://img.youtube.com/vi/1Ss6e64QGxM/hqdefault.jpg",
+    "type": "video",
+    "featured": true
+  }
+]

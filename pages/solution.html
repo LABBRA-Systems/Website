@@ -6,7 +6,7 @@
     <title>Our Solution | LABBRA Systems</title>
     <meta
       name="description"
-      content="Solar powered roadside intelligence. See how LABBRA's hardware, AI, and analytics work together to make roads safer."
+      content="LABBRA is not an ALPR and does not identify or track people or vehicles."
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
@@ -42,9 +42,39 @@
             </p>
             <div class="hero-buttons">
               <a href="#hardware" class="cta-button">See the Hardware</a>
-              <a href="#ai-progress" class="btn-secondary">AI Progress</a>
+              <a href="#privacy-safety" class="btn-secondary">Privacy &amp; Safety</a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy-safety" class="privacy-safety-section" aria-labelledby="privacy-safety-heading">
+      <div class="container">
+        <div class="section-header centered">
+          <h2 id="privacy-safety-heading" aria-label="Privacy and Safety">Privacy &amp; Safety</h2>
+        </div>
+        <div class="privacy-safety-grid">
+          <article class="privacy-safety-card">
+            <h3>Not an ALPR</h3>
+            <p>We do not identify people or vehicles, and we do not track anyone.</p>
+          </article>
+          <article class="privacy-safety-card">
+            <h3>Privacy by architecture</h3>
+            <p>Raw data is processed in RAM and never stored or transmitted in raw form. Faces and plates are anonymized on device.</p>
+          </article>
+          <article class="privacy-safety-card">
+            <h3>Anonymized retention</h3>
+            <p>Normal operation keeps anonymized data only. After a verified crash, a short anonymized clip with timestamp may be retained.</p>
+          </article>
+          <article class="privacy-safety-card">
+            <h3>Lawful requests</h3>
+            <p>Retained data is anonymized and encrypted and not suitable for movement tracking. We do not store raw footage.</p>
+          </article>
+        </div>
+        <div class="privacy-safety-faq-link">
+          <p>Still have questions?</p>
+          <a href="home.html#home-privacy-faq-heading" class="btn btn-secondary">See Common Questions</a>
         </div>
       </div>
     </section>
@@ -139,38 +169,6 @@
             CARLA simulator</span
           >
         </div>
-        <div class="sensor-feed">
-          <img
-            src="../media/sesnor feed.png"
-            alt="LABBRA sensor feed screenshot"
-            class="sensor-feed-img"
-          />
-          <span class="sensor-feed-caption"
-            >Screenshot from the Gen 2 sensor feed during field testing</span
-          >
-        </div>
-      </div>
-    </section>
-
-    <section id="privacy-safety" class="privacy-safety-section" aria-labelledby="privacy-safety-heading">
-      <div class="container">
-        <div class="section-header centered">
-          <h2 id="privacy-safety-heading" aria-label="Privacy and Safety">Privacy &amp; Safety</h2>
-        </div>
-        <div class="privacy-safety-subsections">
-          <h3>How we protect privacy</h3>
-          <p>
-            On‑device anonymization of RGB; thermal and radar provide non‑identifiable safety data; only anonymized features are used for continuous learning.
-          </p>
-          <h3>Forensic mode</h3>
-          <p>
-            Crash‑triggered only. Short encrypted clip stored locally. Access restricted to authorized investigators. Auto‑deletion policy enforced.
-          </p>
-          <h3>Data minimization</h3>
-          <p>
-            We send only anonymized events, sensor features, and metadata to the cloud for analytics and model improvement.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -186,6 +184,8 @@
         </div>
       </div>
     </section>
+
+    <div id="footer-container"></div>
 
     <script src="../js/utils.js"></script>
     <script src="../js/components.js"></script>

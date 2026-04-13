@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LABBRA Systems | Safe Steps, Save Lives</title>
-    <meta name="description" content="LABBRA provides privacy‑first roadside safety intelligence: crash detection, hazard alerts, and anonymized sensor data for safer roads." />
+    <meta
+      name="description"
+      content="LABBRA is not an ALPR. We do not identify people or vehicles, and we do not track anyone."
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -21,43 +24,28 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1>Safe Steps,<br /><span class="highlight">Save Lives.</span></h1>
-          <p>Built for safety. Designed for privacy.</p>
           <p>
-            We're developing a roadside system designed to help vehicles see
-            around corners, alert EMS when crashes happen, and give cities
-            real time safety analytics.
-          </p>
-          <p class="privacy-blurb">
-            LABBRA delivers real‑time crash and hazard detection using privacy‑preserving sensor fusion: thermal, radar, and anonymized RGB. We process physics, not identities.
+            Roadside intelligence that alerts EMS when crashes occur and helps
+            vehicles anticipate hazards while preserving privacy.
           </p>
           <div class="hero-buttons">
-            <a href="solution.html" class="btn btn-primary">See Our Technology</a>
+            <a href="solution.html" class="btn btn-primary"
+              >See Our Technology</a
+            >
             <a href="problem.html" class="btn btn-secondary">Why It Matters</a>
           </div>
         </div>
         <div class="hero-visual">
           <div class="logo-large">
-            <img src="../media/version 3.png" alt="LABBRA Gen 3 Hardware Render" />
-            <span class="render-disclosure">Conceptual render. Not final product.</span>
+            <img
+              src="../media/version 3.png"
+              alt="LABBRA Gen 3 Hardware Render"
+            />
+            <span class="render-disclosure"
+              >Conceptual render. Not final product.</span
+            >
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="safety-without-surveillance-section" aria-labelledby="safety-without-surveillance-heading">
-      <div class="section-container">
-        <div class="section-header centered">
-          <h2 id="safety-without-surveillance-heading" aria-label="Safety Without Surveillance">Safety Without Surveillance</h2>
-        </div>
-        <p>
-          LABBRA is a roadside safety system focused on detecting crashes, hazards, and roadway risks — not on tracking people or vehicles.
-        </p>
-        <p>
-          All RGB video is anonymized on‑device before it ever leaves a unit. No faces. No license plates. No identity tracking.
-        </p>
-        <p>
-          Only when a verified crash is detected does the device temporarily retain a short encrypted clip for public safety investigations. This forensic mode cannot be activated manually and footage is auto‑deleted unless formally requested by authorities.
-        </p>
       </div>
     </section>
 
@@ -72,7 +60,9 @@
               build. Communities need solutions that deploy fast and provide
               real insight.
             </p>
-            <a href="problem.html" class="btn btn-primary">See the Full Picture</a>
+            <a href="problem.html" class="btn btn-primary"
+              >See the Full Picture</a
+            >
           </div>
           <div class="why-stats">
             <div class="why-stat">
@@ -88,6 +78,38 @@
       </div>
     </section>
 
+    <section
+      class="safety-without-surveillance-section"
+      aria-labelledby="safety-without-surveillance-heading"
+    >
+      <div class="section-container">
+        <div class="section-header centered">
+          <h2
+            id="safety-without-surveillance-heading"
+            aria-label="Privacy by architecture"
+          >
+            Privacy by Architecture
+          </h2>
+          <p>Built for roadway safety without identity-based surveillance.</p>
+        </div>
+        <div class="privacy-tile-grid">
+          <article class="privacy-tile">
+            <h3>Not an ALPR</h3>
+            <p>No identity tracking of people or vehicles.</p>
+          </article>
+          <article class="privacy-tile">
+            <h3>Anonymized by design</h3>
+            <p>RAM processing, on-device anonymization, encrypted output.</p>
+          </article>
+        </div>
+        <div class="home-news-cta">
+          <a href="solution.html#privacy-safety" class="btn btn-secondary"
+            >Learn More About Privacy</a
+          >
+        </div>
+      </div>
+    </section>
+
     <!-- How It Works -->
     <section class="how-it-works-section">
       <div class="section-container">
@@ -97,64 +119,106 @@
         <div class="steps-grid">
           <div class="step-card">
             <div class="step-number">1</div>
-            <h3>Designed to Install in Under Two Hours</h3>
-            <p>Solar powered. No trenching, no wiring, no civil work required.</p>
+            <h3>Install in Under 2 Hours</h3>
+            <p>
+              Solar powered and roadside-ready with no trenching or AC wiring.
+            </p>
           </div>
           <div class="step-card">
             <div class="step-number">2</div>
-            <h3>Designed for All Conditions</h3>
-            <p>Thermal, radar, and RGB sensors built to work day or night, rain or fog.</p>
+            <h3>Detect Crashes and Alert EMS</h3>
+            <p>
+              When a crash is verified, LABBRA sends rapid emergency alerts.
+            </p>
           </div>
           <div class="step-card">
             <div class="step-number">3</div>
-            <h3>Act and Inform</h3>
-            <p>Designed to deliver hazard alerts and stream analytics to city dashboards.</p>
+            <h3>Warn Nearby Vehicles (V2X)</h3>
+            <p>
+              Hazard and conflict alerts are broadcast to approaching vehicles.
+            </p>
           </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Power City Safety Analytics</h3>
+            <p>
+              Anonymized safety events feed dashboards for planning and
+              response.
+            </p>
+          </div>
+        </div>
+        <div class="audience-tags home-audience-tags">
+          <span class="audience-tag">DOTs</span>
+          <span class="audience-tag">Cities &amp; Counties</span>
+          <span class="audience-tag">Campuses</span>
+          <span class="audience-tag">Insurance Partners</span>
         </div>
       </div>
     </section>
 
-    <!-- Who We Serve + CTA -->
-    <section class="pilot-cta-section">
+    <section class="home-news-section" aria-labelledby="home-news-heading">
       <div class="section-container">
-        <div class="pilot-cta-content">
-          <h2>Who This Is For</h2>
-          <div class="audience-tags">
-            <span class="audience-tag">DOTs</span>
-            <span class="audience-tag">Cities &amp; Counties</span>
-            <span class="audience-tag">Smart City Programs</span>
-            <span class="audience-tag">Campuses</span>
-            <span class="audience-tag">AV Developers</span>
-            <span class="audience-tag">Insurance Partners</span>
-          </div>
-          <p>
-            We're preparing for first deployments in mid 2026. Reach out.
-          </p>
-          <div class="pilot-cta-buttons">
-            <a href="mailto:bmingst@labbrasystems.com" class="btn btn-primary">Schedule a Meeting</a>
-            <a href="team.html" class="btn btn-outline">Meet the Team</a>
-          </div>
+        <div class="section-header centered home-news-header">
+          <h2 id="home-news-heading">In the News</h2>
+          <p>Recent coverage about LABBRA Systems and our mission.</p>
+        </div>
+        <div
+          id="home-news-list"
+          class="home-news-grid"
+          aria-live="polite"
+        ></div>
+        <div class="home-news-cta">
+          <a href="story.html#story-news-heading" class="btn btn-secondary"
+            >Read More In Our Story</a
+          >
         </div>
       </div>
     </section>
 
-    <section class="how-it-works-section home-privacy-faq-section" aria-labelledby="home-privacy-faq-heading">
+    <section
+      class="how-it-works-section home-privacy-faq-section"
+      aria-labelledby="home-privacy-faq-heading"
+    >
       <div class="section-container">
         <div class="section-header centered">
-          <h2 id="home-privacy-faq-heading" aria-label="Privacy frequently asked questions">Common questions</h2>
+          <h2
+            id="home-privacy-faq-heading"
+            aria-label="Privacy frequently asked questions"
+          >
+            Common questions
+          </h2>
         </div>
         <dl class="home-privacy-faq">
-          <dt>Do you track people or license plates?</dt>
-          <dd>No. LABBRA anonymizes video on‑device and does not perform identity tracking.</dd>
-          <dt>When is unblurred footage retained?</dt>
-          <dd>Only when a verified crash is detected. The clip is encrypted, access‑controlled, and auto‑deleted unless requested by authorities.</dd>
+          <dt>Do you store faces or license plates?</dt>
+          <dd>
+            No. We do not store faces or license plates, and we do not attempt
+            to identify individuals or vehicles.
+          </dd>
+          <dt>What is retained after a verified crash?</dt>
+          <dd>
+            A short anonymized clip with a timestamp may be retained for safety,
+            insurance, and reconstruction.
+          </dd>
+          <dt>Do you support right to be forgotten requests?</dt>
+          <dd>
+            Because we do not store identity-based data, individuals are not
+            directly identifiable in our system.
+          </dd>
+          <dt>Can you provide raw footage to third parties?</dt>
+          <dd>
+            No. We cannot provide raw footage because we do not store raw
+            footage.
+          </dd>
         </dl>
       </div>
     </section>
+
+    <div id="footer-container"></div>
 
     <script src="../js/utils.js"></script>
     <script src="../js/components.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/news.js"></script>
   </body>
 </html>

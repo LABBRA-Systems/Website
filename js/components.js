@@ -27,11 +27,31 @@ function getNavbarTemplate() {
   `;
 }
 
+function getFooterTemplate() {
+  return `
+    <footer class="site-footer" role="contentinfo">
+      <div class="section-container">
+        <div class="site-footer-content">
+          <p class="site-footer-copyright">Copyright 2026 LABBRA Systems. All rights reserved.</p>
+          <nav class="site-footer-links" aria-label="Legal">
+            <a href="privacy.html">Privacy &amp; Civil Liberties</a>
+            <a href="terms.html">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  `;
+}
+
 const COMPONENT_CONFIG = {
   navbar: {
     template: getNavbarTemplate,
     target: '#navbar-container',
     postLoad: initNavbarComponent
+  },
+  footer: {
+    template: getFooterTemplate,
+    target: '#footer-container'
   }
 };
 
@@ -94,13 +114,13 @@ function initNavbarComponent() {
 
 function loadAllComponents() {
   loadAndInsertComponent('navbar');
+  loadAndInsertComponent('footer');
 }
 
 function initComponents() {
   const navbarContainer = safeSelect('#navbar-container');
-  if (navbarContainer) {
-    loadAllComponents();
-  }
+  const footerContainer = safeSelect('#footer-container');
+  if (navbarContainer || footerContainer) loadAllComponents();
 }
 
 onDOMReady(initComponents);

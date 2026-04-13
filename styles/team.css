@@ -267,8 +267,8 @@
    ======================================== */
 .investors-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--primary-dark) 0%, #2d2d2d 100%);
-  color: white;
+  background: #f8fafc;
+  color: var(--primary-dark);
 }
 
 .investors-content {
@@ -286,19 +286,19 @@
 .investors-content p {
   font-size: 1.1rem;
   line-height: 1.7;
-  opacity: 0.9;
+  color: var(--secondary-gray);
   margin-bottom: 2rem;
 }
 
 .investors-section .btn-secondary {
-  border-color: rgba(255, 255, 255, 0.5);
-  color: white;
+  border-color: var(--primary-dark);
+  color: var(--primary-dark);
 }
 
 .investors-section .btn-secondary:hover {
-  background: white;
-  color: var(--primary-dark);
-  border-color: white;
+  background: var(--primary-dark);
+  color: white;
+  border-color: var(--primary-dark);
 }
 
 /* ========================================

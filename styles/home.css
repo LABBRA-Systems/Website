@@ -127,7 +127,7 @@
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
@@ -183,16 +183,31 @@
   margin-bottom: 1.5rem;
 }
 
-.safety-without-surveillance-section p {
-  color: var(--secondary-gray);
-  line-height: 1.6;
-  font-size: 1.05rem;
-  max-width: 720px;
-  margin: 0 auto 1rem;
+.privacy-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 360px));
+  justify-content: center;
+  gap: 1rem;
 }
 
-.safety-without-surveillance-section p:last-of-type {
-  margin-bottom: 0;
+.privacy-tile {
+  background: var(--light-gray);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.privacy-tile h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: var(--primary-dark);
+}
+
+.privacy-tile p {
+  margin: 0;
+  max-width: none;
+  font-size: 0.95rem;
+  color: var(--secondary-gray);
 }
 
 /* ========================================
@@ -227,12 +242,141 @@
 }
 
 /* ========================================
+   HOME NEWS TEASER
+   ======================================== */
+.home-news-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.home-news-header {
+  margin-bottom: 1.5rem;
+}
+
+.home-news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.home-news-section .news-card {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.home-news-section .news-card-media {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  aspect-ratio: 16 / 9;
+}
+
+.home-news-section .news-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1.01);
+  transition: transform 0.35s ease;
+}
+
+.home-news-section .news-video-badge {
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.55rem;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+}
+
+.home-news-section .news-card-meta {
+  display: none;
+}
+
+.home-news-section .news-pill {
+  background: rgba(255, 59, 59, 0.12);
+  color: #c71f1f;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+}
+
+.home-news-section .news-card-title {
+  font-size: 1.1rem;
+  line-height: 1.35;
+  color: white;
+}
+
+.home-news-section .news-card-summary {
+  display: none;
+}
+
+.home-news-section .news-card-link {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.home-news-section .news-card-source {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+}
+
+.home-news-section .news-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  padding: 1rem;
+  color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.15) 55%, rgba(0, 0, 0, 0));
+}
+
+.home-news-section .news-card:hover .news-card-media img,
+.home-news-section .news-card:focus-within .news-card-media img {
+  transform: scale(1.06);
+}
+
+.home-news-section .news-card:hover .news-card-link,
+.home-news-section .news-card:focus-within .news-card-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-news-section .news-empty-state {
+  color: var(--secondary-gray);
+  background: var(--light-gray);
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.home-news-cta {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* ========================================
    WHY IT MATTERS
    ======================================== */
 .why-it-matters-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, var(--primary-dark) 0%, #2d2d2d 100%);
-  color: white;
+  background: #f3f4f6;
+  color: var(--primary-dark);
 }
 
 .why-content {
@@ -251,7 +395,7 @@
 .why-text p {
   font-size: 1.05rem;
   line-height: 1.6;
-  opacity: 0.9;
+  color: var(--secondary-gray);
   margin-bottom: 1.25rem;
 }
 
@@ -262,10 +406,10 @@
 }
 
 .why-stat {
-  background: rgba(255, 255, 255, 0.08);
+  background: white;
   padding: 1.5rem;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -279,142 +423,31 @@
 
 .why-stat-label {
   font-size: 0.95rem;
-  opacity: 0.85;
+  color: var(--secondary-gray);
 }
 
 /* ========================================
    PILOT CTA
    ======================================== */
-.pilot-cta-section {
-  padding: 4rem 0;
-  background: linear-gradient(135deg, var(--primary-dark) 0%, #2d2d2d 100%);
-  color: white;
-}
-
 .audience-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .audience-tag {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
 }
 
-.pilot-cta-content {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.pilot-cta-content h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-}
-
-.pilot-cta-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  opacity: 0.9;
-  margin-bottom: 1.5rem;
-}
-
-.pilot-cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.pilot-cta-section .btn-outline {
-  border-color: rgba(255, 255, 255, 0.5);
-  color: white;
-}
-
-.pilot-cta-section .btn-outline:hover {
-  background: white;
-  color: var(--primary-dark);
-  border-color: white;
-}
-
-/* ========================================
-   FOOTER
-   ======================================== */
-.site-footer {
-  background: #111;
-  color: rgba(255, 255, 255, 0.8);
-  padding: 3rem 0 1.5rem;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-brand {
-  margin-bottom: 2rem;
-}
-
-.footer-logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: white;
-  margin-bottom: 0.25rem;
-}
-
-.footer-tagline {
-  font-size: 0.95rem;
-  opacity: 0.7;
-}
-
-.footer-links {
-  display: flex;
-  gap: 4rem;
-  margin-bottom: 2rem;
-}
-
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.footer-col h4 {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: white;
-  margin-bottom: 0.4rem;
-}
-
-.footer-col a {
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
-}
-
-.footer-col a:hover {
-  color: white;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1.25rem;
-}
-
-.footer-bottom p {
-  font-size: 0.8rem;
-  opacity: 0.5;
+.home-audience-tags {
+  margin-top: 1.75rem;
 }
 
 /* ========================================
@@ -435,6 +468,14 @@
   .value-grid,
   .steps-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-tile-grid {
+    grid-template-columns: 1fr;
   }
 
   .why-content {
@@ -485,17 +526,16 @@
     padding: 3rem 0;
   }
 
+  .home-news-section {
+    padding: 3rem 0;
+  }
+
+  .home-news-section .news-card-overlay {
+    gap: 0.25rem;
+  }
+
   .why-text h2 {
     font-size: 1.75rem;
-  }
-
-  .pilot-cta-content h2 {
-    font-size: 1.75rem;
-  }
-
-  .pilot-cta-buttons {
-    flex-direction: column;
-    align-items: center;
   }
 
   .footer-links {
