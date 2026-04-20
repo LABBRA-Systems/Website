@@ -1,0 +1,41 @@
+# https://labbrasystems.com/robots.txt
+# Human-readable site context for AI assistants and crawlers: /llms.txt
+
+User-agent: *
+Allow: /
+
+# Large non-HTML assets (optional crawl-budget hint; adjust if you need them indexed)
+Disallow: /media/crashes.bin
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
