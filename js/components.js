@@ -14,6 +14,7 @@ function getNavbarTemplate() {
           <li><a href="home.html" data-page="home">Home</a></li>
           <li><a href="problem.html" data-page="problem">The Problem</a></li>
           <li><a href="solution.html" data-page="solution">Our Solution</a></li>
+          <li><a href="news.html" data-page="news">News</a></li>
           <li><a href="team.html" data-page="team">Team</a></li>
           <li><a href="story.html" data-page="story">Our Story</a></li>
         </ul>

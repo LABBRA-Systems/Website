@@ -93,9 +93,9 @@ async function loadNews() {
 
 async function initNewsSections() {
   const homeList = document.getElementById("home-news-list");
-  const storyList = document.getElementById("story-news-list");
+  const newsPageList = document.getElementById("news-page-list");
 
-  if (!homeList && !storyList) return;
+  if (!homeList && !newsPageList) return;
 
   try {
     const items = sortNewsByDate(await loadNews());
@@ -106,13 +106,13 @@ async function initNewsSections() {
       renderNewsList(homeList, featuredItems.length > 0 ? featuredItems : fallbackItems);
     }
 
-    if (storyList) {
-      renderNewsList(storyList, items);
+    if (newsPageList) {
+      renderNewsList(newsPageList, items);
     }
   } catch (error) {
     const message = "News is temporarily unavailable. Please try again later.";
     renderNewsError(homeList, message);
-    renderNewsError(storyList, message);
+    renderNewsError(newsPageList, message);
   }
 }
 
