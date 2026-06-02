@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Problem | LABBRA Systems</title>
-    <meta name="description" content="Over 40,000 people die on American roads every year. Current infrastructure is too slow and too expensive to keep up. There's a better way." />
+    <meta name="description" content="Reactive intersection safety changes take 2-10+ years. While the system studies, designs, funds, and builds, the same patterns keep producing harm." />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -27,40 +27,76 @@
     <div id="navbar-container"></div>
     <div class="menu-overlay"></div>
 
-    <!-- Map -->
-    <section class="map-section">
+    <section class="problem-hero">
       <div class="section-container">
-        <div class="map-container">
+        <h1 class="problem-hero-title">
+          Reactive intersection safety changes take
+          <span class="problem-hero-time">2 - 10+ years</span>.
+        </h1>
+        <p class="problem-hero-sub">
+          The system waits for someone to get hurt or killed, then studies,
+          designs, funds, and builds. While the clock runs, the same patterns
+          keep producing harm.
+        </p>
+      </div>
+    </section>
+
+    <section class="phase-timeline-section" aria-labelledby="reactive-timeline-heading">
+      <div class="section-container">
+        <h2 id="reactive-timeline-heading" class="visually-hidden">Reactive timeline</h2>
+        <ol class="phase-timeline phase-timeline--bad">
+          <li class="phase-step">
+            <div class="phase-card">
+              <h3>The crash</h3>
+              <p>Someone gets hurt or killed.</p>
+            </div>
+          </li>
+          <li class="phase-step">
+            <div class="phase-card">
+              <h3>Investigation &amp; traffic study</h3>
+              <p>Study the crash and review patterns.</p>
+            </div>
+          </li>
+          <li class="phase-step">
+            <div class="phase-card">
+              <h3>Plan, design &amp; fund</h3>
+              <p>Seek grants and contract design work.</p>
+            </div>
+          </li>
+          <li class="phase-step">
+            <div class="phase-card">
+              <h3>Bid &amp; build</h3>
+              <p>Construct the safety fix.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="phase-timeline-conclusion phase-timeline-conclusion--bad">
+          People die waiting.
+        </p>
+      </div>
+    </section>
+
+    <section class="fatal-map-section" aria-labelledby="fatal-map-heading">
+      <div class="fatal-map-stage">
+        <div class="map-container fatal-map-container">
           <div id="loading" class="loading">
             <p>Loading crash data...</p>
-          </div>
-          <div class="map-attribution">
-            <p class="map-attribution-text">
-              U.S. Fatal Crashes | FARS Data, 2010 to 2022
-            </p>
           </div>
           <div id="map"></div>
         </div>
       </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="crisis-section">
-      <div class="crisis-container">
-        <div class="crisis-header">
-          <h1 class="crisis-title">TOO MANY RED DOTS</h1>
-          <p class="crisis-subtitle">
-            Every red dot on that map is a fatal crash.
-          </p>
-        </div>
-
+      <div class="fatal-map-body">
+        <h2 id="fatal-map-heading" class="fatal-map-title">
+          Every red dot is a fatal crash.
+        </h2>
+        <p class="fatal-map-fars">
+          Points show fatal crashes from FARS (Fatality Analysis Reporting
+          System), 2010&ndash;2022, mapped at approximate locations.
+        </p>
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-number">40,901</div>
-            <div class="stat-label">Deaths in 2023</div>
-            <p class="stat-description">
-              Over 40,000 people were killed on U.S. roads in 2023.
-            </p>
+            <div class="stat-label">U.S. road deaths in 2023</div>
             <div class="stat-source">
               <a href="https://www.nhtsa.gov/press-releases/nhtsa-2023-traffic-fatalities-2024-estimates" target="_blank" rel="noopener">
                 Source: NHTSA Final 2023 Data
@@ -70,10 +106,7 @@
 
           <div class="stat-card">
             <div class="stat-number">7,318</div>
-            <div class="stat-label">Pedestrians Killed</div>
-            <p class="stat-description">
-              Pedestrian deaths remain near historic highs, up 77% since 2010.
-            </p>
+            <div class="stat-label">Pedestrians killed in 2023</div>
             <div class="stat-source">
               <a href="https://www.ghsa.org/resource-hub/pedestrian-fatalities-2023-data" target="_blank" rel="noopener">
                 Source: GHSA 2023 Preliminary Data
@@ -82,14 +115,11 @@
           </div>
 
           <div class="stat-card">
-            <div class="stat-number">24%</div>
-            <div class="stat-label">Hit and Run Deaths</div>
-            <p class="stat-description">
-              Nearly one in four pedestrian fatalities is a hit and run.
-            </p>
+            <div class="stat-number">432,676</div>
+            <div class="stat-label">Fatal crashes on the map (2010&ndash;2022)</div>
             <div class="stat-source">
-              <a href="https://www.iihs.org/research-areas/fatality-statistics/detail/pedestrians" target="_blank" rel="noopener">
-                Source: IIHS 2022
+              <a href="https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars" target="_blank" rel="noopener">
+                Source: NHTSA FARS
               </a>
             </div>
           </div>
@@ -97,92 +127,15 @@
       </div>
     </section>
 
-    <!-- Infrastructure Gap -->
-    <section class="gap-section">
-      <div class="section-container">
-        <div class="gap-content">
-          <div class="gap-text">
-            <h2>The Infrastructure Gap</h2>
-            <p>
-              Today's roadside safety tools were designed for a different era.
-              They require expensive civil work, AC power, trenching, and weeks
-              of installation. Communities need something that deploys in hours,
-              works in all conditions, and provides real insight.
-            </p>
-          </div>
-          <div class="gap-points">
-            <div class="gap-point">
-              <div class="gap-icon">&#9201;</div>
-              <div>
-                <h3>Slow to Deploy</h3>
-                <p>Weeks or months to install, with heavy civil work and permitting.</p>
-              </div>
-            </div>
-            <div class="gap-point">
-              <div class="gap-icon">&#128176;</div>
-              <div>
-                <h3>Expensive to Scale</h3>
-                <p>Trenching, wiring, and power infrastructure make large scale deployment cost prohibitive.</p>
-              </div>
-            </div>
-            <div class="gap-point">
-              <div class="gap-icon">&#127783;&#65039;</div>
-              <div>
-                <h3>Weather Limited</h3>
-                <p>Systems that rely solely on visible light cameras can struggle in rain, fog, and darkness.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="surveillance-subsection">
-          <div class="surveillance-text">
-            <h3>Surveillance Concerns</h3>
-            <p>
-              Most roadway safety infrastructure is not identity surveillance.
-              But a growing number of deployed systems are.
-            </p>
-          </div>
-          <div class="surveillance-points">
-            <div class="gap-point">
-              <div class="gap-icon">&#128663;</div>
-              <div>
-                <h3>ALPRs</h3>
-                <p>Automatic license plate reader networks can continuously log vehicle movement and travel history.</p>
-              </div>
-            </div>
-            <div class="gap-point">
-              <div class="gap-icon">&#129489;</div>
-              <div>
-                <h3>Facial Recognition Models</h3>
-                <p>Face-matching systems can identify and track people in public spaces without clear consent.</p>
-              </div>
-            </div>
-            <div class="gap-point">
-              <div class="gap-icon">&#128451;&#65039;</div>
-              <div>
-                <h3>Data Brokers</h3>
-                <p>Location and behavior data can be packaged, sold, and reused far beyond the original purpose.</p>
-              </div>
-            </div>
-          </div>
-          <p class="surveillance-note">
-            LABBRA does not track faces or license plates.
-          </p>
-          <a href="solution.html#privacy-safety" class="btn btn-secondary surveillance-cta">See how LABBRA preserves privacy</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
     <section class="problem-cta-section">
       <div class="section-container">
         <div class="problem-cta-content">
-          <h2>There's a Better Way</h2>
+          <h2>There is a faster path.</h2>
           <p>
-            We're building roadside technology designed to deploy fast, work in
-            all conditions, and give cities the data they need to help save lives.
+            Prevention does not need a fatality to start. See how proactive
+            intersection safety works in months, not years.
           </p>
-          <a href="solution.html" class="btn btn-primary">See Our Solution</a>
+          <a href="solution.html" class="btn btn-primary">See the solution</a>
         </div>
       </div>
     </section>
@@ -206,7 +159,7 @@
           });
         }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-        document.querySelectorAll(".stat-card, .gap-point").forEach((el) => {
+        document.querySelectorAll(".stat-card, .phase-step").forEach((el) => {
           el.style.opacity = "0";
           el.style.transform = "translateY(30px)";
           observer.observe(el);

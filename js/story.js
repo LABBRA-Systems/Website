@@ -10,9 +10,7 @@ function initTimelineAnimations() {
     });
   }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
 
-  document.querySelectorAll(
-    ".timeline-item, .sd-member-card"
-  ).forEach(function (el) {
+  document.querySelectorAll(".timeline-item").forEach(function (el) {
     observer.observe(el);
   });
 }

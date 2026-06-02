@@ -2,9 +2,43 @@
    Map Styles
    ======================================== */
 
-.map-section {
-  padding-top: 80px;
-  background: var(--light-gray);
+/* Problem page: full-bleed fatal crash map */
+.fatal-map-section {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.fatal-map-stage {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.fatal-map-body {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.25rem 2rem 4.5rem;
+  text-align: center;
+}
+
+.fatal-map-title {
+  margin: 0 auto 0.6rem;
+  max-width: 720px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #dc2626;
+}
+
+.fatal-map-fars {
+  margin: 0 auto;
+  max-width: 640px;
+  font-size: 0.95rem;
+  color: var(--secondary-gray);
+  line-height: 1.55;
 }
 
 .map-container {
@@ -16,6 +50,14 @@
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.map-container.fatal-map-container {
+  height: min(88vh, 960px);
+  min-height: 520px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 #map {
@@ -93,7 +135,16 @@
 }
 
 @media (max-width: 768px) {
-  .map-container {
+  .map-container.fatal-map-container {
+    height: min(72vh, 640px);
+    min-height: 380px;
+  }
+
+  .fatal-map-body {
+    padding: 1.75rem 1rem 3.5rem;
+  }
+
+  .map-container:not(.fatal-map-container) {
     height: 60vh;
     border-radius: 12px;
   }
@@ -110,7 +161,12 @@
 }
 
 @media (max-width: 480px) {
-  .map-container {
+  .map-container.fatal-map-container {
+    height: min(68vh, 520px);
+    min-height: 320px;
+  }
+
+  .map-container:not(.fatal-map-container) {
     height: 50vh;
   }
 

@@ -14,6 +14,18 @@ function getNewsTypeLabel(type) {
   return "Article";
 }
 
+function isInternalNewsUrl(url) {
+  if (typeof url !== "string") return false;
+  return (
+    url.startsWith("mailto:") ||
+    url.startsWith("#") ||
+    url.startsWith("solution.html") ||
+    url.startsWith("story.html") ||
+    url.startsWith("home.html") ||
+    url.startsWith("../pages/")
+  );
+}
+
 function sortNewsByDate(items) {
   return [...items].sort((a, b) => {
     const left = new Date(`${a.date}T00:00:00`).getTime();
@@ -37,20 +49,29 @@ function buildNewsCard(item) {
   const safeSource = escapeHtml(item.sourceLabel || item.source || "Unknown source");
   const safeUrl = escapeHtml(item.url || "#");
   const safeThumbnail = escapeHtml(item.thumbnail || "");
-  const ctaLabel = item.type === "video" ? "Watch more" : "Read more";
-  const mediaHtml = safeThumbnail
-    ? `
-      <a class="news-card-media" href="${safeUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open coverage: ${safeTitle}">
-        <img src="${safeThumbnail}" alt="${safeTitle}" loading="lazy" />
-        ${item.type === "video" ? '<span class="news-video-badge">Video</span>' : ""}
+  const internal = isInternalNewsUrl(item.url || "");
+  const relAttr = internal ? "" : ' rel="noopener noreferrer"';
+  const targetAttr = internal ? "" : ' target="_blank"';
+  const ctaRaw =
+    item.ctaLabel ||
+    (item.type === "video" ? "Watch" : internal ? "Open" : "Read more");
+  const ctaLabel = escapeHtml(ctaRaw);
+  const videoBadge = item.type === "video" ? '<span class="news-video-badge">Video</span>' : "";
+  const imgHtml = safeThumbnail
+    ? `<img src="${safeThumbnail}" alt="" loading="lazy" />`
+    : `<div class="news-card-synthetic" aria-hidden="true"></div>`;
+
+  const mediaHtml = `
+      <a class="news-card-media"${targetAttr} href="${safeUrl}"${relAttr} aria-label="${ctaLabel}: ${safeTitle}">
+        ${imgHtml}
+        ${videoBadge}
         <div class="news-card-overlay">
           <h3 class="news-card-title">${safeTitle}</h3>
           <p class="news-card-source">${safeSource}</p>
           <span class="news-card-link">${ctaLabel}</span>
         </div>
       </a>
-    `
-    : "";
+    `;
 
   return `
     <article class="news-card">
@@ -101,9 +122,7 @@ async function initNewsSections() {
     const items = sortNewsByDate(await loadNews());
 
     if (homeList) {
-      const featuredItems = items.filter(item => item.featured).slice(0, 2);
-      const fallbackItems = items.slice(0, 2);
-      renderNewsList(homeList, featuredItems.length > 0 ? featuredItems : fallbackItems);
+      renderNewsList(homeList, items.slice(0, 4));
     }
 
     if (newsPageList) {

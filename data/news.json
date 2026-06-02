@@ -1,38 +1,26 @@
 [
   {
-    "id": "wftv-ucf-ai-crash-2026-04-28",
-    "title": "UCF Students Develop AI System for Crash Detection",
+    "id": "wftv-ucf-ai-local-2026-04-28",
+    "title": "UCF students developing AI system to detect crashes and speed emergency response",
     "source": "WFTV",
-    "sourceLabel": "WFTV",
+    "sourceLabel": "WFTV Channel 9",
     "date": "2026-04-28",
-    "summary": "UCF engineering students develop a real-time crash detection system using sensors and AI to improve roadway safety and emergency response.",
-    "url": "https://www.wftv.com/news/ucf-students-develop-ai-system-crash-detection/fb50d72e-3f06-40d5-9bd4-fd7f2e38fa02/",
+    "summary": "WFTV reports on UCF engineering students building a multi-sensor, AI-based crash detection prototype for faster emergency response.",
+    "url": "https://www.wftv.com/news/local/ucf-students-developing-ai-system-detect-crashes-speed-emergency-response/26JOZU42XVFIFJUSPT3XMMESGM/",
     "thumbnail": "https://cmg-cmg-tv-10070-prod.cdn.arcpublishing.com/resizer/v2/https%3A%2F%2Fd1hfln2sfez66z.cloudfront.net%2F04-28-2026%2Ft_971b54ae67384080933004b945c05e58_name_Copy_of_Custom_Story_Image_Template__71_.jpg?auth=1478eaac46696793e7437f1b20ca0d5185199d08ea735dedfeacbc6fb6b03374&width=1200&height=630&smart=true",
     "type": "article",
     "featured": true
   },
   {
-    "id": "nicholson-feature-2026-04-10",
-    "title": "Computer science student develops technology to improve pedestrian safety",
-    "source": "Nicholson Student Media",
-    "sourceLabel": "The Charge",
-    "date": "2026-04-10",
-    "summary": "A feature on LABBRA Systems, the project mission, and development of the roadside safety prototype near UCF.",
-    "url": "https://www.nicholsonstudentmedia.com/news/computer-science-student-develops-technology-to-improve-pedestrian-safety/article_180a30ea-7613-422f-bc62-07edf328fd8b.html",
-    "thumbnail": "../media/DataCollection.jpg",
-    "type": "article",
-    "featured": true
-  },
-  {
     "id": "youtube-coverage-2026-04-10",
-    "title": "The Charge On Air - April 10th 2026",
+    "title": "The Charge On Air: LABBRA discussion",
     "source": "YouTube",
-    "sourceLabel": "YouTube · The Charge On Air",
+    "sourceLabel": "YouTube, The Charge On Air",
     "date": "2026-04-10",
-    "summary": "Video coverage highlighting the LABBRA story and project context.",
+    "summary": "Interview on the project and road safety work.",
     "url": "https://www.youtube.com/watch?v=1Ss6e64QGxM&t=5s",
     "thumbnail": "https://img.youtube.com/vi/1Ss6e64QGxM/hqdefault.jpg",
     "type": "video",
-    "featured": false
+    "featured": true
   }
 ]

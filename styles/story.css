@@ -8,7 +8,8 @@
 .hero.story-hero {
   min-height: 60vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   background: linear-gradient(135deg, var(--light-gray) 0%, #e5e7eb 100%);
   color: var(--primary-dark);
   position: relative;
@@ -20,8 +21,11 @@
   z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
-  padding-top: 80px;
+  padding: 80px 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: inherit;
 }
 
 .hero.story-hero .hero-content {
@@ -85,8 +89,96 @@
   object-fit: contain;
 }
 
+.story-mission-section {
+  padding: 6rem 0;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.story-mission-section .closing-quote {
+  letter-spacing: -0.02em;
+}
+
+/* Momentum strip (accelerators / pilots / DOT) */
+.story-momentum-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.story-momentum-section .section-header {
+  margin-bottom: 2rem;
+}
+
+.story-momentum-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.story-momentum-card {
+  background: var(--light-gray);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.story-momentum-card.animated {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.story-momentum-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.story-momentum-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--secondary-gray);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .story-momentum-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.story-timeline-compact {
+  padding: 4rem 0 5rem;
+  background: white;
+}
+
+.story-compact-timeline {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.story-compact-timeline p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--secondary-gray);
+  margin: 0 0 1.25rem;
+}
+
+.story-compact-timeline p:last-child {
+  margin-bottom: 0;
+}
+
+.story-compact-timeline strong {
+  color: var(--primary-dark);
+}
+
 /* ========================================
-   SENIOR DESIGN TEAM
+   SENIOR DESIGN TEAM (legacy styles retained for reference)
    ======================================== */
 .sd-team-section {
   padding: 6rem 0;
@@ -374,7 +466,7 @@
   line-height: 1.2;
 }
 
-.timeline-card--stack .timeline-card-copy > p:not(.timeline-render-note) {
+.timeline-card--stack .timeline-card-copy > p:not(.timeline-render-note):not(.timeline-caption-note) {
   font-size: 0.95rem;
   color: var(--secondary-gray);
   line-height: 1.65;
@@ -429,14 +521,15 @@
   line-height: 1.2;
 }
 
-.timeline-card--split .timeline-card-copy > p:not(.timeline-render-note) {
+.timeline-card--split .timeline-card-copy > p:not(.timeline-render-note):not(.timeline-caption-note) {
   font-size: 0.93rem;
   color: var(--secondary-gray);
   line-height: 1.6;
   margin-bottom: 0;
 }
 
-.timeline-card-copy .timeline-render-note {
+.timeline-card-copy .timeline-render-note,
+.timeline-card-copy .timeline-caption-note {
   margin-top: 0.5rem !important;
   text-align: inherit;
 }
@@ -483,7 +576,8 @@
   background: transparent;
 }
 
-.timeline-render-note {
+.timeline-render-note,
+.timeline-caption-note {
   font-size: 0.78rem;
   color: #9ca3af;
   font-style: italic;
@@ -690,8 +784,7 @@
   }
 
   .hero.story-hero .hero-container {
-    padding: 0 1rem;
-    padding-top: 60px;
+    padding: 60px 1rem 2rem;
   }
 
   .hero.story-hero .hero-content h1 {
@@ -719,6 +812,7 @@
   .sd-team-section,
   .timeline-section,
   .story-news-section,
+  .story-mission-section,
   .story-cta-section {
     padding: 4rem 0;
   }

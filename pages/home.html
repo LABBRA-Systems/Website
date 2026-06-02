@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LABBRA Systems | Safe Steps, Save Lives</title>
+    <title>LABBRA Systems | Stop Waiting. Proactive Road Safety.</title>
     <meta
       name="description"
-      content="LABBRA is not an ALPR. We do not identify people or vehicles, and we do not track anyone."
+      content="LABBRA Systems builds proactive intersection safety: rapid studies and low-cost interventions in 3-7 months instead of the typical 2-10+ year reactive cycle."
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
@@ -14,6 +14,11 @@
     />
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   </head>
   <body>
     <div id="navbar-container"></div>
@@ -21,193 +26,202 @@
 
     <!-- Hero -->
     <section class="hero">
+      <div class="hero-map-bg" aria-hidden="true">
+        <div
+          id="hero-map"
+          data-lat="28.5413"
+          data-lng="-81.3786"
+          data-zoom="17"
+          title="Map preview — Orange Ave &amp; Central Blvd, downtown Orlando"
+        ></div>
+      </div>
+      <div class="hero-map-fade" aria-hidden="true"></div>
+      <p class="hero-map-credit">
+        &copy;
+        <a
+          href="https://www.openstreetmap.org/copyright"
+          target="_blank"
+          rel="noopener noreferrer"
+          >OpenStreetMap</a
+        >
+        &copy;
+        <a
+          href="https://carto.com/attributions/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >CARTO</a
+        >
+      </p>
       <div class="hero-container">
         <div class="hero-content">
-          <h1>Safe Steps,<br /><span class="highlight">Save Lives.</span></h1>
-          <p>
-            Roadside intelligence that alerts EMS when crashes occur and helps
-            vehicles anticipate hazards while preserving privacy.
+          <h1 class="hero-tagline">
+            Stop Waiting.<br />
+            <span class="highlight">Proactive Road Safety.</span>
+          </h1>
+          <p class="hero-subline">
+            We provide the road intelligence to make safety changes in
+            months, not years.
+          </p>
+          <p class="hero-lede">
+            We provide rapid safety reports through
+            <strong>LABBRA Insight</strong>, our dashboard, powered by
+            <strong>KineticCore</strong>, our hardware, so decision makers can
+            improve safety faster.
           </p>
           <div class="hero-buttons">
-            <a href="solution.html" class="btn btn-primary"
-              >See Our Technology</a
+            <a
+              href="https://calendly.com/bmingst-labbrasystems/30min"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Let's schedule a meeting</a
             >
-            <a href="problem.html" class="btn btn-secondary">Why It Matters</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="logo-large">
-            <img
-              src="../media/version 3.png"
-              alt="LABBRA Gen 3 Hardware Render"
-            />
-            <span class="render-disclosure"
-              >Conceptual render. Not final product.</span
+            <a href="solution.html" class="btn btn-secondary"
+              >See how it works</a
             >
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Why It Matters -->
-    <section class="why-it-matters-section">
-      <div class="section-container">
-        <div class="why-content">
-          <div class="why-text">
-            <h2>40,901 people died on U.S. roads in 2023.</h2>
-            <p>
-              Traditional infrastructure takes years to plan and millions to
-              build. Communities need solutions that deploy fast and provide
-              real insight.
-            </p>
-            <a href="problem.html" class="btn btn-primary"
-              >See the Full Picture</a
-            >
-          </div>
-          <div class="why-stats">
-            <div class="why-stat">
-              <span class="why-stat-number">&lt;2 hrs</span>
-              <span class="why-stat-label">target install time</span>
+        <div class="hero-visual" aria-label="LABBRA Insight preview">
+          <figure class="risk-card" aria-hidden="true">
+            <div class="risk-card-head">
+              <div class="risk-card-brand">
+                <span class="risk-card-product">LABBRA Insight</span>
+                <span class="risk-card-view">Intersection risk</span>
+              </div>
+              <span class="risk-card-pill">Preview</span>
             </div>
-            <div class="why-stat">
-              <span class="why-stat-number">All weather</span>
-              <span class="why-stat-label">thermal + radar + RGB</span>
+            <div class="risk-row risk-row--danger">
+              <div class="risk-row-label">Crash risk &middot; next 30 days</div>
+              <div class="risk-row-value">
+                <span class="risk-badge risk-badge--high">High</span>
+              </div>
+              <div class="risk-meter">
+                <span class="risk-meter-fill risk-meter-fill--high"></span>
+              </div>
             </div>
-          </div>
+            <div class="risk-row">
+              <div class="risk-row-label">Largest conflict &middot; trend</div>
+              <div class="risk-row-value">
+                <span class="risk-trend">Left-turn &uarr; 18%</span>
+              </div>
+              <svg class="risk-spark" viewBox="0 0 120 32" preserveAspectRatio="none">
+                <polyline
+                  points="0,26 20,24 40,25 60,18 80,16 100,9 120,4"
+                  fill="none"
+                  stroke="#f59e0b"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="risk-fixes">
+              <span class="risk-fixes-label">Recommended fixes</span>
+              <ul class="risk-fixes-list">
+                <li>Add protected left-turn phase</li>
+                <li>Daylight the crosswalk</li>
+                <li>Lower approach speed</li>
+              </ul>
+            </div>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section
-      class="safety-without-surveillance-section"
-      aria-labelledby="safety-without-surveillance-heading"
-    >
+    <!-- Problem -> Solution -->
+    <section class="cycle-section" aria-labelledby="cycle-heading">
       <div class="section-container">
-        <div class="section-header centered">
-          <h2
-            id="safety-without-surveillance-heading"
-            aria-label="Privacy by architecture"
-          >
-            Privacy by Architecture
+        <header class="cycle-section-intro">
+          <h2 id="cycle-heading" class="cycle-section-title">
+            Reactive vs. Proactive
           </h2>
-          <p>Built for roadway safety without identity-based surveillance.</p>
-        </div>
-        <div class="privacy-tile-grid">
-          <article class="privacy-tile">
-            <h3>Not an ALPR</h3>
-            <p>No identity tracking of people or vehicles.</p>
+          <p class="cycle-section-lede">
+            Too often, safety changes only start after someone gets hurt. We help
+            organizations deliver safety proactively in months, not years.
+          </p>
+        </header>
+        <div class="cycle-grid">
+          <article class="cycle-card cycle-card--problem">
+            <header class="cycle-card-head">
+              <h3 class="cycle-label">The Problem</h3>
+              <p class="cycle-metric-caption">
+                Typical time from accident to intersection safety upgrades
+              </p>
+            </header>
+            <p class="cycle-metric">
+              <span class="cycle-metric-value">2&ndash;10+ years</span>
+            </p>
+            <p class="cycle-text">
+              People die waiting for changes today.
+            </p>
+            <a href="problem.html" class="cycle-link">See the problem &rarr;</a>
           </article>
-          <article class="privacy-tile">
-            <h3>Anonymized by design</h3>
-            <p>RAM processing, on-device anonymization, encrypted output.</p>
+          <article class="cycle-card cycle-card--solution">
+            <header class="cycle-card-head">
+              <h3 class="cycle-label">The Solution</h3>
+              <p class="cycle-metric-caption">
+                Time for rapid safety reports and proactive change
+              </p>
+            </header>
+            <p class="cycle-metric">
+              <span class="cycle-metric-value">3&ndash;7 months</span>
+            </p>
+            <p class="cycle-text">
+              Safety reports that help organizations act before the next crash.
+            </p>
+            <a href="solution.html" class="cycle-link">See the solution &rarr;</a>
           </article>
         </div>
-        <div class="home-news-cta">
-          <a href="solution.html#privacy-safety" class="btn btn-secondary"
-            >Learn More About Privacy</a
+      </div>
+    </section>
+
+    <!-- What we offer -->
+    <section class="offer-section" aria-labelledby="offer-heading">
+      <div class="section-container">
+        <h2 id="offer-heading" class="offer-section-title">How we do it</h2>
+        <div class="offer-grid">
+          <article class="offer-item offer-item--insight">
+            <h3>LABBRA Insight</h3>
+            <p>
+              A safety optimization dashboard that surfaces hidden risk
+              patterns and turns them into clear, data driven recommendations.
+            </p>
+          </article>
+          <article class="offer-item offer-item--kinetic">
+            <h3>KineticCore</h3>
+            <p>
+              AI survey hardware that captures near miss and traffic activity,
+              then feeds the insight that drives faster decisions.
+            </p>
+          </article>
+        </div>
+        <div class="offer-cta">
+          <a href="solution.html" class="btn btn-secondary">See how it works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing statement -->
+    <section class="closing-section">
+      <div class="section-container">
+        <blockquote class="closing-quote">
+          <p class="mission-quote-emphasis">
+            We know where people are likely to get hurt.
+          </p>
+          <p class="mission-quote-tragedy">
+            The tragedy is that we wait for them to get hurt.
+          </p>
+          <p class="mission-quote-emphasis">LABBRA ends that.</p>
+        </blockquote>
+        <div class="closing-cta">
+          <a
+            href="https://calendly.com/bmingst-labbrasystems/30min"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Let's schedule a meeting</a
           >
         </div>
-      </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works-section">
-      <div class="section-container">
-        <div class="section-header centered">
-          <h2>How It Works</h2>
-        </div>
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <h3>Install in Under 2 Hours</h3>
-            <p>
-              Solar powered and roadside-ready with no trenching or AC wiring.
-            </p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <h3>Designed to Detect Crashes and Alert EMS</h3>
-            <p>
-              When a crash is verified, LABBRA sends rapid emergency alerts.
-            </p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <h3>Designed to Warn Nearby Vehicles (V2X)</h3>
-            <p>
-              Hazard and conflict alerts are broadcast to approaching vehicles.
-            </p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">4</div>
-            <h3>Designed to Power City Safety Analytics</h3>
-            <p>
-              Anonymized safety events feed dashboards for planning and
-              response.
-            </p>
-          </div>
-        </div>
-        <div class="audience-tags home-audience-tags">
-          <span class="audience-tag">DOTs</span>
-          <span class="audience-tag">Cities &amp; Counties</span>
-          <span class="audience-tag">Campuses</span>
-          <span class="audience-tag">Insurance Partners</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-news-section" aria-labelledby="home-news-heading">
-      <div class="section-container">
-        <div class="section-header centered home-news-header">
-          <h2 id="home-news-heading">In the News</h2>
-          <p>Recent coverage about LABBRA Systems and our mission.</p>
-        </div>
-        <div
-          id="home-news-list"
-          class="home-news-grid"
-          aria-live="polite"
-        ></div>
-        <div class="home-news-cta">
-          <a href="news.html" class="btn btn-secondary">View all news &amp; feeds</a>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="how-it-works-section home-privacy-faq-section"
-      aria-labelledby="home-privacy-faq-heading"
-    >
-      <div class="section-container">
-        <div class="section-header centered">
-          <h2
-            id="home-privacy-faq-heading"
-            aria-label="Privacy frequently asked questions"
-          >
-            Common questions
-          </h2>
-        </div>
-        <dl class="home-privacy-faq">
-          <dt>Do you store faces or license plates?</dt>
-          <dd>
-            No. We do not store faces or license plates, and we do not attempt
-            to identify individuals or vehicles.
-          </dd>
-          <dt>What is retained after a verified crash?</dt>
-          <dd>
-            A short anonymized clip with a timestamp may be retained for safety,
-            insurance, and reconstruction.
-          </dd>
-          <dt>Do you support right to be forgotten requests?</dt>
-          <dd>
-            Because we do not store identity-based data, individuals are not
-            directly identifiable in our system.
-          </dd>
-          <dt>Can you provide raw footage to third parties?</dt>
-          <dd>
-            No. We cannot provide raw footage because we do not store raw
-            footage.
-          </dd>
-        </dl>
       </div>
     </section>
 
@@ -217,6 +231,6 @@
     <script src="../js/components.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/nav.js"></script>
-    <script src="../js/news.js"></script>
+    <script src="../js/hero-map.js"></script>
   </body>
 </html>

@@ -35,8 +35,23 @@
   line-height: 1.65;
 }
 
-.legal-card ul {
-  padding-left: 1.1rem;
+.legal-card--trust {
+  max-width: 640px;
+}
+
+.legal-lead {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.legal-ip {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.25rem;
 }
 
 @media (max-width: 768px) {

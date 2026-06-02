@@ -6,7 +6,7 @@
     <title>Our Solution | LABBRA Systems</title>
     <meta
       name="description"
-      content="LABBRA is not an ALPR and does not identify or track people or vehicles."
+      content="LABBRA Insight and LABBRA KineticCore deliver preventative intersection safety changes in 3-7 months: identify risk, study near-misses, intervene."
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
@@ -14,172 +14,163 @@
     />
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/solution.css" />
+    <link rel="stylesheet" href="../styles/problem.css" />
   </head>
   <body>
     <div id="navbar-container"></div>
     <div class="menu-overlay"></div>
 
-    <!-- Hero -->
-    <section class="hero solution-hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-image">
-            <img
-              src="../media/roadside unit mockup.png"
-              alt="LABBRA Roadside Unit Render"
-              class="intersection-image"
-            />
-            <span class="render-disclosure"
-              >Conceptual render. Not final product.</span
-            >
-          </div>
-          <div class="hero-text">
-            <h1>The <span class="highlight">LABBRA</span> System</h1>
-            <p>
-              A solar powered roadside unit designed to detect crashes, alert
-              emergency services, and give cities actionable safety data. No
-              trenching, no wiring, no AC power.
-            </p>
-            <div class="hero-buttons">
-              <a href="#hardware" class="cta-button">See the Hardware</a>
-              <a href="#privacy-safety" class="btn-secondary">Privacy &amp; Safety</a>
+    <section class="solution-hero-block">
+      <div class="section-container">
+        <h1 class="solution-hero-title">
+          Preventative intersection safety changes in
+          <span class="highlight">3 - 7 months</span>.
+        </h1>
+        <p class="solution-hero-sub">
+          Stop waiting. Make prevention possible.
+        </p>
+      </div>
+    </section>
+
+    <section class="phase-timeline-section" aria-labelledby="proactive-timeline-heading">
+      <div class="section-container">
+        <h2 id="proactive-timeline-heading" class="visually-hidden">Proactive timeline</h2>
+        <ol class="phase-timeline phase-timeline--good">
+          <li class="phase-step">
+            <div class="phase-card">
+              <h3>Propose a safety study</h3>
+              <p>Identify risk using open-source data.</p>
             </div>
-          </div>
-        </div>
+          </li>
+          <li class="phase-step">
+            <div class="phase-card">
+              <h3>Rapid safety study</h3>
+              <p>Collect near-miss data with sensors.</p>
+            </div>
+          </li>
+          <li class="phase-step">
+            <div class="phase-card">
+              <h3>Preventative interventions</h3>
+              <p>Deploy low-cost, high-impact fixes faster.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section id="privacy-safety" class="privacy-safety-section" aria-labelledby="privacy-safety-heading">
-      <div class="container">
-        <div class="section-header centered">
-          <h2 id="privacy-safety-heading" aria-label="Privacy and Safety">Privacy &amp; Safety</h2>
-        </div>
-        <div class="privacy-safety-grid">
-          <article class="privacy-safety-card">
-            <h3>Not an ALPR</h3>
-            <p>We do not identify people or vehicles, and we do not track anyone.</p>
-          </article>
-          <article class="privacy-safety-card">
-            <h3>Privacy by architecture</h3>
-            <p>Raw data is designed to be processed in RAM and never stored or transmitted in raw form. Faces and plates are designed to be anonymized on device.</p>
-          </article>
-          <article class="privacy-safety-card">
-            <h3>Anonymized retention</h3>
-            <p>Normal operation keeps anonymized data only. After a verified crash, a short anonymized clip with timestamp may be retained.</p>
-          </article>
-          <article class="privacy-safety-card">
-            <h3>Lawful requests</h3>
-            <p>Retained data is anonymized and encrypted and not suitable for movement tracking. We do not store raw footage.</p>
-          </article>
-        </div>
-        <div class="privacy-safety-faq-link">
-          <p>Still have questions?</p>
-          <a href="home.html#home-privacy-faq-heading" class="btn btn-secondary">See Common Questions</a>
-        </div>
-      </div>
-    </section>
+    <!-- What we offer -->
+    <section class="offer-section" id="labbra-insight" aria-labelledby="offer-lede">
+      <div class="section-container">
+        <p class="offer-lede" id="offer-lede">
+          We deliver <strong>Rapid Safety Reports</strong> in weeks with
+          <strong>LABBRA Insight</strong>, our dashboard that shows how risk
+          patterns evolve, all powered by <strong>KineticCore</strong>,
+          our AI survey hardware that is fast to install, simple to remove, and
+          fully grid independent.
+        </p>
 
-    <!-- Hardware Evolution -->
-    <section id="hardware" class="hardware-section">
-      <div class="container">
-        <div class="section-header centered">
-          <h2>Hardware Evolution</h2>
-          <p>From proof of concept to pilot ready.</p>
-        </div>
-        <div class="gen-timeline">
-          <div class="gen-card">
-            <img
-              src="../media/version1 .JPG"
-              alt="LABBRA Gen 1 Hardware"
-              class="gen-photo"
-            />
-            <div class="gen-badge">Gen 1</div>
-            <div class="gen-date">Aug to Dec 2025</div>
-            <h3>Proof of Concept</h3>
+        <div class="offer-lede-rule" aria-hidden="true"></div>
+
+        <div class="offer-product-row">
+          <div class="offer-product-copy">
+            <h3 class="offer-product-name">LABBRA Insight</h3>
             <p>
-             Demonstrated sensor fusion architecture.
+              A safety optimization dashboard that surfaces hidden risk
+              patterns and turns them into clear, data driven recommendations.
             </p>
-            <span class="gen-status status-complete">Completed</span>
           </div>
-          <div class="gen-card">
+          <figure class="product-mockup-figure">
             <img
-              src="../media/Version 2.JPG"
-              alt="LABBRA Gen 2 Hardware"
-              class="gen-photo"
+              src="../media/Mockup of Insight.png"
+              alt="LABBRA Insight dashboard mockup with intersection map and safety analytics"
+              width="1200"
+              height="675"
+              loading="lazy"
             />
-            <div class="gen-badge">Gen 2</div>
-            <div class="gen-date">Jan to Mar 2026</div>
-            <h3>Field Testable System</h3>
+            <figcaption class="concept-caption">
+              LABBRA Insight UI mockup. Pre-release and not final. Not real
+              data.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="offer-product-row offer-product-row--reverse">
+          <div class="offer-product-copy">
+            <h3 class="offer-product-name">KineticCore</h3>
             <p>
-              Deployed for data collection for AI model training.
+              AI survey hardware that captures near miss and traffic activity
+              for LABBRA Insight. Fast to install, remove, and fully grid
+              independent.
             </p>
-            <span class="gen-status status-complete">Completed</span>
           </div>
-          <div class="gen-card">
+          <figure class="product-mockup-figure">
             <img
-              src="../media/version 3.png"
-              alt="LABBRA Gen 3 Hardware Render"
-              class="gen-photo"
+              src="../media/KineticCore Mockup.png"
+              alt="KineticCore roadside survey hardware mockup"
+              width="1200"
+              height="675"
+              loading="lazy"
             />
-            <span class="render-disclosure"
-              >Conceptual render. Not final product.</span
-            >
-            <div class="gen-badge">Gen 3</div>
-            <div class="gen-date">Apr to Jun 2026</div>
-            <h3>Pilotable Version</h3>
-            <ul class="gen-features">
-              <li>Solar + battery powered</li>
-              <li>Designed for under 2 hour installation</li>
-              <li>Expected pilot ready: July 2026</li>
-            </ul>
-            <span class="gen-status status-active">In Active R&amp;D</span>
-          </div>
+            <figcaption class="concept-caption">
+              KineticCore hardware mockup. Pre-release.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- AI Model Progress (Line Graph) -->
-    <section id="ai-progress" class="ai-section">
-      <div class="container">
+    <!-- Vision phases -->
+    <section class="roadmap-section" aria-labelledby="roadmap-heading">
+      <div class="section-container">
         <div class="section-header centered">
-          <h2>AI Model Progress</h2>
-          <p>
-            Crash detection accuracy over time as we've added real sensors and
-            real world data.
-          </p>
+          <h2 id="roadmap-heading">Where we&rsquo;re headed</h2>
+          <p>A vision for bringing proactive safety from pilot to national impact.</p>
         </div>
-        <div class="ai-graph-container">
-          <canvas id="ai-chart"></canvas>
-        </div>
-        <div class="ai-demo">
-          <video
-            class="ai-demo-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto"
-            disablePictureInPicture
-            aria-label="LABBRA AI crash detection demo"
-          >
-            <source src="../media/ai demo.mp4" type="video/mp4" />
-          </video>
-          <span class="ai-demo-caption"
-            >March 2026 model: LiDAR, RGB, thermal, radar fusion, 97.4% accuracy running on the
-            CARLA simulator</span
-          >
-        </div>
+        <ol class="roadmap-line">
+          <li class="roadmap-node roadmap-node--current">
+            <span class="roadmap-dot"></span>
+            <div class="roadmap-phase">Phase 1</div>
+            <h3>Pilot</h3>
+            <p>
+              Bring KineticCore and LABBRA Insight into the field with partners
+              at pilot intersections.
+            </p>
+          </li>
+          <li class="roadmap-node">
+            <span class="roadmap-dot"></span>
+            <div class="roadmap-phase">Phase 2</div>
+            <h3>Expand</h3>
+            <p>
+              Expand from pilot intersections into cities, regions, and states.
+            </p>
+          </li>
+          <li class="roadmap-node">
+            <span class="roadmap-dot"></span>
+            <div class="roadmap-phase">Phase 3</div>
+            <h3>Scale</h3>
+            <p>
+              National footprint through partnerships that multiply road-safety
+              impact.
+            </p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="solution-cta-section">
       <div class="container">
         <div class="solution-cta-content">
-          <h2>Interested in Piloting?</h2>
-          <p>We're preparing for our first deployments in mid 2026.</p>
-          <a href="mailto:bmingst@labbrasystems.com" class="btn btn-primary"
-            >Get in Touch</a
+          <h2>Stop waiting. Make prevention possible.</h2>
+          <p>
+            If you operate an intersection, corridor, or campus area where
+            crashes keep happening, we want to talk.
+          </p>
+          <a
+            href="https://calendly.com/bmingst-labbrasystems/30min"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Let's schedule a meeting</a
           >
         </div>
       </div>
@@ -191,144 +182,5 @@
     <script src="../js/components.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/nav.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const canvas = document.getElementById("ai-chart");
-        if (canvas) {
-          const ctx = canvas.getContext("2d");
-          const dpr = window.devicePixelRatio || 1;
-          const parent = canvas.parentElement;
-          const parentStyle = getComputedStyle(parent);
-          const padL = parseFloat(parentStyle.paddingLeft) || 0;
-          const padR = parseFloat(parentStyle.paddingRight) || 0;
-          const cw = parent.clientWidth - padL - padR;
-          const isMobile = cw < 500;
-          const ch = isMobile
-            ? Math.min(300, cw * 0.8)
-            : Math.min(350, cw * 0.5);
-          canvas.width = cw * dpr;
-          canvas.height = ch * dpr;
-          canvas.style.width = cw + "px";
-          canvas.style.height = ch + "px";
-          ctx.scale(dpr, dpr);
-
-          const data = [
-            { label: "Sep '25", value: 85, detail: "RGB only" },
-            { label: "Oct '25", value: 95, detail: "RGB + LiDAR" },
-            { label: "Nov '25", value: 97, detail: "LiDAR + RGB" },
-            { label: "Mar '26", value: 97.4, detail: "6 sensor fusion" },
-          ];
-
-          const pad = isMobile
-            ? { top: 35, right: 50, bottom: 45, left: 40 }
-            : { top: 40, right: 80, bottom: 50, left: 55 };
-          const w = cw - pad.left - pad.right;
-          const h = ch - pad.top - pad.bottom;
-          const minY = 80;
-          const maxY = 100;
-
-          function yPos(v) {
-            return pad.top + h - ((v - minY) / (maxY - minY)) * h;
-          }
-          function xPos(i) {
-            return pad.left + (i / (data.length - 1)) * w;
-          }
-
-          ctx.strokeStyle = "#e5e7eb";
-          ctx.lineWidth = 1;
-          for (let v = 80; v <= 100; v += 5) {
-            const y = yPos(v);
-            ctx.beginPath();
-            ctx.moveTo(pad.left, y);
-            ctx.lineTo(cw - pad.right, y);
-            ctx.stroke();
-            ctx.fillStyle = "#9ca3af";
-            ctx.font = (isMobile ? "10" : "12") + "px Inter, sans-serif";
-            ctx.textAlign = "right";
-            ctx.fillText(v + "%", pad.left - 8, y + 4);
-          }
-
-          ctx.strokeStyle = "#ff3b3b";
-          ctx.lineWidth = 3;
-          ctx.lineJoin = "round";
-          ctx.beginPath();
-          data.forEach((d, i) => {
-            const x = xPos(i),
-              y = yPos(d.value);
-            if (i === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          });
-          ctx.stroke();
-
-          const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + h);
-          grad.addColorStop(0, "rgba(255,59,59,0.15)");
-          grad.addColorStop(1, "rgba(255,59,59,0)");
-          ctx.fillStyle = grad;
-          ctx.beginPath();
-          data.forEach((d, i) => {
-            const x = xPos(i),
-              y = yPos(d.value);
-            if (i === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          });
-          ctx.lineTo(xPos(data.length - 1), pad.top + h);
-          ctx.lineTo(xPos(0), pad.top + h);
-          ctx.closePath();
-          ctx.fill();
-
-          var dotR = isMobile ? 4 : 6;
-          var dotInner = isMobile ? 2 : 3;
-          data.forEach((d, i) => {
-            const x = xPos(i),
-              y = yPos(d.value);
-            ctx.beginPath();
-            ctx.arc(x, y, dotR, 0, Math.PI * 2);
-            ctx.fillStyle = "#ff3b3b";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(x, y, dotInner, 0, Math.PI * 2);
-            ctx.fillStyle = "#fff";
-            ctx.fill();
-
-            ctx.fillStyle = "#1a1a1a";
-            ctx.font =
-              "bold " + (isMobile ? "11" : "13") + "px Inter, sans-serif";
-            ctx.textAlign = "center";
-            ctx.fillText(d.value + "%", x, y - (isMobile ? 10 : 14));
-
-            ctx.fillStyle = "#6b7280";
-            ctx.font = (isMobile ? "9" : "11") + "px Inter, sans-serif";
-            ctx.fillText(d.detail, x, y - (isMobile ? 20 : 28));
-
-            ctx.fillStyle = "#1a1a1a";
-            ctx.font = (isMobile ? "10" : "12") + "px Inter, sans-serif";
-            ctx.fillText(d.label, x, pad.top + h + (isMobile ? 16 : 20));
-          });
-        }
-
-        const obs = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.style.animation = "fadeInUp 0.8s ease-out forwards";
-                obs.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
-        );
-        document.querySelectorAll(".gen-card").forEach((el) => {
-          el.style.opacity = "0";
-          el.style.transform = "translateY(30px)";
-          obs.observe(el);
-        });
-
-        var aiDemoVideo = document.querySelector(".ai-demo-video");
-        if (aiDemoVideo) {
-          aiDemoVideo.muted = true;
-          aiDemoVideo.play().catch(function () {});
-        }
-      });
-    </script>
   </body>
 </html>
