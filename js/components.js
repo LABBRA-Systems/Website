@@ -1,7 +1,5 @@
 // LABBRA Systems - Component Loader
 
-const CALENDLY_URL = "https://calendly.com/bmingst-labbrasystems/30min";
-
 function getNavbarTemplate() {
   return `
     <nav class="navbar">
@@ -14,8 +12,6 @@ function getNavbarTemplate() {
         </a>
         <ul class="nav-links">
           <li><a href="home.html" data-page="home">Home</a></li>
-          <li><a href="problem.html" data-page="problem">The Problem</a></li>
-          <li><a href="solution.html" data-page="solution">Our Solution</a></li>
           <li><a href="news.html" data-page="news">News</a></li>
           <li><a href="team.html" data-page="team">Team</a></li>
           <li><a href="story.html" data-page="story">Our Story</a></li>
@@ -55,10 +51,6 @@ function getFooterTemplate() {
     <footer class="site-footer" role="contentinfo">
       <div class="section-container">
         <div class="site-footer-top">
-          <div class="site-footer-cta">
-            <p class="site-footer-cta-text">Stop waiting. Make prevention possible.</p>
-            <a href="${CALENDLY_URL}" class="btn btn-primary site-footer-btn" target="_blank" rel="noopener noreferrer">Schedule a meeting</a>
-          </div>
           <div class="site-footer-social" aria-label="LABBRA Systems social media">
             ${getSocialLinksTemplate()}
           </div>
